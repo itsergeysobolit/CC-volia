@@ -1,0 +1,125 @@
+body {
+  background-image: url(/break/image/bg-coffe.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.break {
+  width: 100%;
+}
+
+.break-interval_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.break-interval_item {
+  min-width: 40px;
+}
+
+.break-list_wrapper_1st, .break .break-list_wrapper_cross, .break .break-list_wrapper_happy {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: center;
+  background-color: #d1d1d1c4;
+  padding: 6px 0px;
+}
+
+.break-list_h2 {
+  border-bottom: 1px solid black;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.break-list_item {
+  padding: 10px;
+  position: relative;
+  background-color: #d8ff8c;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.break-list_item:hover .break-delete_people {
+  color: #ff4f4f;
+}
+
+.break-order_button {
+  min-width: 120px;
+}
+
+.break-forecast {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.break-forecast_new {
+  width: 75%;
+  padding: 3px;
+}
+
+.break-forecast_button {
+  padding: 5px;
+}
+
+.break-delete_people {
+  color: transparent;
+  padding: 0 10px;
+}
+
+.break-delete_people:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.break-increase_forecast {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.break-increase_forecast:hover {
+  color: #56ff70;
+  transform: translateY(-5px);
+}
+
+.break-reduce_forecast {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.break-reduce_forecast:hover {
+  color: #ff5656;
+  transform: translateY(5px);
+}
+
+.break-group {
+  text-align: center;
+}
+
+.break-sv {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.break-sv_btn {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.break-sv_btn-active {
+  background: #97ff97;
+}
+
+.message {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message_box {
+  padding: 20px;
+}

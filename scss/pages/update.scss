@@ -1,0 +1,30 @@
+body{
+    background-image: url(/break/image/bg-update.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.update{
+    background-color: #dee1ffd4;
+    padding:10px;
+    &_item{
+        padding-bottom:30px;
+        padding-top:10px;
+        &_header{
+            font-size: 30px;
+            text-align: center;
+            border-bottom:1px solid black;
+            width: 600px;
+            margin:0 auto;
+        }
+        &_list{
+            list-style: circle;
+            paading:10px 20px;
+            &_item{
+                padding:5px;
+                margin-left: 25px;
+            }
+
+        }
+    }
+}

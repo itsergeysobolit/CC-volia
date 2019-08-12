@@ -1,0 +1,31 @@
+@-webkit-keyframes tremor_deny {
+    0%, 25% {
+        border-top:40px solid #ff0000;
+        border-bottom:40px solid #ff0000;
+
+    }
+    50%, 100% {
+        border-top:40px solid #5cff5c;
+        border-bottom:40px solid #ffcd5c;
+    }
+}
+@-webkit-keyframes tremor_empty {
+    0%, 25% {
+        border-top:40px solid #c263ff;
+        border-bottom:40px solid #c263ff;
+    }
+    50%, 100% {
+        border-top:40px solid #5cff5c;
+        border-bottom:40px solid #ffcd5c;
+    }
+}
+@-webkit-keyframes access {
+    0%, 25% {
+        border-top:40px solid #49ff66;
+        border-bottom:40px solid #49ff66;
+    }
+    50%, 100% {
+        border-top:40px solid #5cff5c;
+        border-bottom:40px solid #ffcd5c;
+    }
+}

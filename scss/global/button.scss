@@ -1,0 +1,58 @@
+button{
+//    padding:5px 16px;
+//    border-radius:5px;
+    min-height: 30px;
+    min-width: 75px;
+    font-weight: bold;
+}
+%btn{
+    border-radius:5px;
+    outline:none;
+    cursor: pointer;
+}
+%schbtn{
+    width: 16px;
+    height: 18px;
+    min-height: 0;
+    min-width: 0;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 5px;
+}
+.btn_s{
+    @extend %btn;
+    background-color: #21AF5D;
+}
+.btn_d{
+    @extend %btn;
+    background-color: #C24135;
+}
+.btn_n{
+    @extend %btn;
+    background-color: #1aa0fa;
+    padding: 10px;
+    transition: 0.5s all;
+    border: none;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+.delete-btn{
+    @extend %schbtn;
+    right: -18px;
+    &:hover{
+        color:red;
+        cursor: pointer;
+    }
+}
+.edit-btn{
+    @extend %schbtn;
+    left: -17px;
+    &:hover{
+        color:#0027ff;
+        cursor: pointer;
+    }
+}

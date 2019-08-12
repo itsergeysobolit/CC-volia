@@ -1,0 +1,175 @@
+body {
+  background-image: url(/break/image/bg-admin.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.adminmenu {
+  font-size: 0;
+}
+
+.adminmenu_button {
+  width: 20%;
+  height: 50px;
+  background-color: #757aff;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 1s transform;
+  border-radius: 0;
+}
+
+.adminmenu_button:hover {
+  background-color: #8d91ff;
+  transform: translateY(-5px);
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.user-item {
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.user-item_mentor {
+  background-color: #000000;
+  color: white;
+}
+
+.user-item_happy {
+  background-color: #f46bff;
+}
+
+.user-item_cross {
+  background-color: #67ff78;
+}
+
+.user-item_block {
+  padding: 5px;
+}
+
+.user-item_block:hover .user-item_edit {
+  color: #00b100;
+}
+
+.user-item_ava {
+  width: 180px;
+  padding: 0;
+}
+
+.user-item_edit {
+  color: transparent;
+  cursor: pointer;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.user-item_delete {
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  font-size: 30px;
+  text-align: center;
+  height: 42px;
+  padding: 5px;
+  transition: 0.4s all;
+}
+
+.user-item_delete:hover {
+  background: #d0d0d0;
+  color: red;
+}
+
+.user-add_item {
+  padding: 5px 0;
+  margin: 0 5px;
+}
+
+.user-add_block {
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+.taxi {
+  background-color: #ffe1e1;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.taxi-history {
+  padding: 10px 30px;
+  border: 1px solid black;
+}
+
+.taxi-history_tr:hover {
+  background-color: #ffe6e6;
+}
+
+.taxi-history_head {
+  background-color: #8d91ff;
+}
+
+.taxi-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.messege_admin {
+  width: 100%;
+}
+
+.messege_admin-text {
+  padding: 20px;
+  background-color: #d2f8ff;
+}
+
+.messege_admin-q {
+  padding: 20px;
+  background-color: #c1cdff;
+}
+
+.messege_admin-a {
+  padding: 20px;
+  background-color: #d2f8ff;
+}
+
+.messege_admin-not_answer {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.messege_admin-answer {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.messege_admin-not_answer_item_h {
+  padding: 10px;
+  background-color: #ff6a6a;
+  display: block;
+}
+
+.messege_admin-answer_item_h {
+  padding: 10px;
+  background-color: #7bff6a;
+  display: block;
+}
+
+.messege_admin-answer_item {
+  padding: 10px;
+  display: block;
+  background-color: #ffe7e7;
+}

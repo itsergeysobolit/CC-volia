@@ -1,0 +1,552 @@
+body{
+    background-image: url(/break/image/bg-personal.jpg);
+    background-attachment: fixed;
+}
+.personal{
+    padding:20px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+    background: white;
+    &_avatar{
+        width: 250px;
+        z-index: 999;
+    }
+    &_avatarwrapper{
+        position: relative;
+        font-size: 0;
+        &:hover .personal_avatar-download{
+            display:block;
+            cursor: pointer;
+        } 
+    }
+    &_avatar-download{
+        position: absolute;
+        text-align: center;
+        bottom:0;
+        width: 100%;
+        opacity: 0.7;
+        background: grey;
+        display: block;
+        font-family: fontawesome;
+        font-size: 30px;
+        display:none;
+    }
+    &_infoBlock{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 25%;
+        padding: 20px;
+        height: 80%;
+    }
+    &_text{
+        color: #646464;
+        padding: 0 10px;
+        &:hover{
+            color:black;
+        }
+    }
+    &_callcraft{
+        display: flex;
+        position: relative;
+        &_lvl{
+            display:inline-block;
+            font-size:24px;
+            padding:5px;
+            width: 20%;
+            text-align: center;
+            background-color: #ff3a3a;
+        }
+        &_exp{
+            display:inline-block;
+            font-size:15px;
+            padding:10px;
+            width: 80%;
+            text-align: center;
+            background-color: #fff938;
+        }
+        &_rank{
+            font-size:15px;
+            padding:10px;
+            text-align: center;
+            background-color: #00ad15;
+            width: 87%;
+        }
+        &_info{
+            font-size: 20px;
+            display: flex;
+            position: relative;
+            &_i{
+                padding: 7px;
+                &:hover .personal_callcraft_info_img{
+                    display:block;
+                }
+            }
+            &_img{
+                position:absolute;
+                display:none;
+                bottom: 28px;
+                left: 236px;
+            }
+        }
+
+    }
+}
+.kpi{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:10px 10%;
+    background: #e7e7e7;
+    position: relative;
+    flex-wrap: wrap;
+    &_self{
+        background-color: #ffffff;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &_item{
+        padding:5px;
+        margin:5px;
+        text-align: center;
+    }    
+    &_text{
+        border-bottom: 1px solid grey;
+        margin-bottom: 10px;
+        width: 100px;
+        text-align: center;
+    }    
+    &_indi{
+        text-align: center;
+        color:grey;
+        width: 100px;
+        &:hover{
+            color:#271a01;
+        }
+
+    }
+    &_custom{
+        position: fixed;
+        top: 45%;
+        padding: 28px 20px;
+        background-color: #b9b9b9;
+        margin-left: -600px;
+        left: 68%;
+        width: 700px;
+    }
+    &_other{
+        font-size: 24px;
+        width: 100%;
+        background: #e7e7e7;
+        text-align: center;
+        margin-top: -5px;
+        padding-top: 5px;
+        &:hover{
+            cursor: pointer;
+            background-color: #cccccc;
+        }
+    }
+    &_bad{
+        background-color: #ff8484;
+    }
+    &_good{
+        background-color: #f6ff84;
+    }
+    &_ok{
+        background-color: #97ff84;
+
+    }
+
+}
+.personal_order{
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #ffffff;
+    position: relative;
+
+    &_taxi-form > p{
+        padding: 5px;
+        font-size: 17px;
+    }
+    &-taxi{
+        width: 20%;
+        min-width: 265px;
+        height: 175px;
+        padding-right: 10px;
+    }
+    &_h{
+        display: block;
+        width: 100px;
+    }
+    &_street{
+        padding:5px;
+        width: 150px;
+    }
+    &_select{
+        padding:5px;
+        width: 150px;
+    }
+    &_submit{
+        padding: 5px;
+        width: 100px;
+        float: right;
+        height: 35px;
+    }   
+    &_not_me{
+        position: absolute;
+        left: 170px;
+        top: 110px;
+        padding: 5px;
+        width: 100px;
+        height: 35px;
+    }
+    &_taxi-form{
+        margin-top:5px;
+        vertical-align: middle;
+    }
+    &_taxiTime{
+        min-width: 150px;
+        padding:5px
+    }
+    &-car{
+        font-size: 30px;
+        float: right;
+        &-access{
+            color:#07c607;
+        }
+        &:hover .personal_order-carplace{
+            display:block;
+        }
+    }
+    &-carnum{
+        font-weight: bold;
+        padding: 0 10px;
+        color:black;
+
+    }
+    &-carplace{
+        bottom: 0px;
+        position: absolute;
+        left: 50px;
+        display: none;
+        z-index: 2;
+        &>img{
+            width: 250px;
+        }
+    }
+    &_h5{
+        text-align: center;
+        font-size: 20px;
+        background-color: #25ff60;
+        padding:5px;
+        font-size: 24px;
+        font-weight: bold;
+        border-bottom: 1px solid black;
+    }
+
+    &_place{
+        position: absolute;
+        top: 265px;
+        right: 35px;
+        font-size: 12px;
+        text-align: center;
+        word-break: break-word;
+        &_ava{
+            width:70px;
+            border-radius: 35px;
+        }
+        &:nth-child(2){
+            top: 390px;
+            right: 35px;
+        }
+        &:nth-child(3){
+            top: 265px;
+            right: 135px;
+        }
+        &:nth-child(4){
+            top: 390px;
+            right: 135px;
+        }
+    }
+    &_time{
+        position: absolute;
+        bottom: 50px;
+        color: white;
+        left: 27%;
+        font-size: 50px;
+    } 
+}
+.break{
+    width: 100%;
+    
+    &-interval_wrapper{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 100%;
+    }
+    &-interval_item{
+        min-width: 40px;
+        &:hover{
+            transform: scale(1.2);
+            transition: 0.2s;
+        }
+    }
+    &-list_wrapper{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        text-align: center;
+    }
+    &-list{
+        &_h2{
+            border-bottom: 1px solid black;
+            padding: 10px;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+    }
+    &-order_button{
+        min-width: 120px;
+    }
+    &-alredy{
+        background-color: #6eff68;
+        border: 1px solid black;
+    }
+
+}
+.useful_info{
+    text-align: center;
+    &-h{
+        font-size: 40px;
+        margin: 0 auto;
+        font-weight: bold;
+        display: inline-block;
+        padding: 20px 0;
+        &_su{
+            font-size: 25px;
+            padding: 5px;
+            cursor:pointer;
+            &:hover{
+                background-color: #c5ffd7;
+            }
+        }
+    }
+    background: white;
+    &-list{
+        text-align: left;
+        &_item{
+            border-left:10px solid transparent;
+            &:nth-child(2n-1){
+                background-color: #e4e4e4;
+            }
+            &:hover{
+                border-left:10px solid green;
+                background-color: #939bff;
+            }
+            &-a{
+                text-decoration: none;
+                color:black;
+                display:block;
+                width: 100%;
+                padding: 10px;
+                &:hover{
+                }
+            }
+        }
+    }
+    &-table{
+        width: 100%;
+        &_td-good{
+            padding:5px;
+            border: 1px solid black;
+            background-color: #55ff6f;
+        }
+        &_td-bad{
+            padding:5px;
+            border: 1px solid black;
+            background-color: #ff5555;
+        }
+        &_td_h{
+            min-width: 170px;
+            padding: 15px;
+            background: #749eff;
+            border: 1px solid black;
+        }
+    }
+    &-identification_list{
+        &-wrapper{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+        }
+        display: inline-block;
+        text-align: left;
+        &_item{
+            padding: 10px;
+            &:hover{
+                background-color: #c7c7c7;
+            }
+            &_header{
+                background-color: #00a012;
+                padding: 10px;
+                height: 50px;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+    }
+    &-copy{
+        padding: 10px;
+        background: #bfbfbf;
+        width: 184px;
+        margin: 10px;
+        &_wrapper{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            text-align: center; 
+            flex-wrap: wrap;
+        }
+        &_wrapper_su{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            text-align: left; 
+        }
+        cursor: pointer;
+        &:hover{
+            background-color: #53a8fc;
+        }
+        &_su{
+            padding: 10px;
+            background: #efefef;
+            width: 100%;
+            font-size: 19px;
+            cursor: pointer;
+            border-left:15px solid transparent;
+            &:nth-child(2n){
+                background: #c7d8fc;
+            }
+            &:hover{
+                border-left:15px solid #3fb500;
+                background-color: #53a8fc;
+            }
+        }
+    }
+
+    &-lifecell{
+        box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.5);
+        padding: 2px 2px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 6px 0 4px 0;
+        transition-duration: 0.5s;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        border-radius: 10px;
+        transition: all 0.5s;
+
+        & img{
+            display: block;
+            height: 0;
+            transition: all 0.5s;
+
+        }
+
+        &:hover img{
+            height: 600px;
+        }
+        &:hover {
+            font-size:0;
+        }
+
+    }
+
+
+    &-concurent{
+        padding: 5px;
+        background: #bfbfbf;
+        width: 100px;
+        margin: 5px;
+        color: #000;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 5px;
+        &:hover{
+            transition: all 0.5s;
+            color: #fff;
+            font-weight: normal;
+            background: #000;
+        }
+    }
+
+    &-href{
+        text-decoration: none;
+        color: #000;
+        &:visited{
+            color: #000;
+        }
+    }
+
+    &-discount{
+        &_wrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        &_price{
+            padding:20px;
+        }
+        &_new_price{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding:10px;
+            height: 100px;
+            width: 16%;
+            &:nth-child(2){
+                background-color: #49ff73;
+            }            
+            &:nth-child(3){
+                background-color: #00c426;
+            }           
+            &:nth-child(4){
+                background-color: #9cd600;
+            }           
+            &:nth-child(5){
+                background-color: #ff4949;
+            }    
+            &:nth-child(6){
+                background-color: #c70000;
+            }
+
+        }
+    }
+
+}
+.copied{
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    background: white;
+    text-align: center;
+    padding-top: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    &_chek{
+        color: #00e000;
+        padding: 0 5px;
+    }
+}

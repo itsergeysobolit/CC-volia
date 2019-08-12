@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="/break/image/favicon.ico">
+        <title>Личный кабинет</title>
+        <link rel="stylesheet" href="/break/css/main.css">
+        <link rel="stylesheet" href="/break/css/pages/personal.css">
+    </head>
+    <body>
+        
+        <div class="header">
+            <!--меню открывется -->
+            <nav class='nav-menu'> 
+                <a href="/break/index.html" class="nav-menu_logo_a">
+                    <img src="/break/image/logo.png" alt="logo" class="nav-menu_logo">
+                </a>
+                <a href="/break/pages/update.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="fas fa-sync-alt"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Обновление</div>
+                        <div class='nav-menu_f2'>Детали обновлений</div>
+                    </div>
+                </a>
+                <a href="/break/index.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="far fa-newspaper"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Главная</div>
+                        <div class='nav-menu_f2'>Новости и разное интересное</div>
+                    </div>
+                </a>
+                <span class='nav-menu_link dev_pos'>
+                    <div class="dev_wait"></div>
+                    <div class='nav-menu_small  dev_blur'><i class="far fa-comment-dots  dev_blur"></i></div>
+                    <div class='nav-menu_full  dev_blur'>
+                        <div class='nav-menu_f1'>Опросы</div>
+                        <div class='nav-menu_f2'>Обратная связь и голосования</div>
+                    </div>
+                </span>
+                <a href="/break/pages/break.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="fas fa-coffee"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Break</div>
+                        <div class='nav-menu_f2'>Запишись и отдохни</div>
+                    </div>
+                </a>
+                <a href="/break/pages/taxi.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="fas fa-taxi"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Taxi</div>
+                        <div class='nav-menu_f2'>Надо ехать домой</div>
+                    </div>
+                </a>
+                <a href="/break/pages/admin.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="fas fa-tools"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Admin</div>
+                        <div class='nav-menu_f2'>Only VIP, sorry</div>
+                    </div>
+                </a>
+                <a href="/break/pages/personal.html" class='nav-menu_link nav-menu_small-active'>
+                    <div class="smobef"></div>
+                    <div class='nav-menu_small'><i class="far fa-address-card"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Личный кабинет</div>
+                        <div class='nav-menu_f2'>Все самое полезное под рукой!</div>
+                    </div>
+                    <div class="smoaft"></div>
+                </a>
+            </nav>
+            <!--меню заканчивается-->
+            <div class="login">
+                <h1 class="header_main"> Личный кабинет</h1>
+                <!--форма успешного логина начало-->
+                <div class="login_success">
+                    <img src="/break/image/avatars/no-avatar.jpg" alt="avatar" class="login_avatar">
+                    <span>Привет, <a href="/break/pages/personal.html"><span class="login_userName"></span></a></span>
+                    <a href="#" class="login_buttonOut"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+                <!-- конец-->
+            </div>
+        </div>
+        <!-- начало контента личного кабинета-->
+        <div class="wrapper">    
+            <div class="personal">
+                <div class="personal_avatarwrapper">
+                    <img src="/break/image/avatars/no-avatar.jpg" alt="avatar" class="personal_avatar">
+                    <div class="personal_callcraft">
+                        <div class="personal_callcraft_lvl" title="Текущий уровень в CallCraft">0</div>
+                        <div class="personal_callcraft_exp" title="Количество опыта до следующего уровня CallCraft">0/80</div>
+                    </div>
+                    <div class="personal_callcraft_info">
+                        <div class="personal_callcraft_rank" title="У тебя такой ранг в CallCraft">Новичок</div>
+                        <i class="fas fa-info-circle personal_callcraft_info_i">
+                            <img src="/break/image/callcraft.jpg" alt="Призы" class="personal_callcraft_info_img">
+                        </i>
+                    </div>
+                </div>
+                <div class="personal_infoBlock">
+                    <div class="personal_infoItem">ФИО:<span class="personal_text"></span></div>
+                    <div class="personal_infoItem">Логин: <span class="personal_text"></span></div>
+                    <div class="personal_infoItem">Дата приема:<span class="personal_text"></span></div>
+                    <div class="personal_infoItem"><span class="personal_text"></span></div>
+                    <div class="personal_infoItem"><span class="personal_text"></span></div>
+                </div>
+            </div>
+            <div class="kpi">
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Показатели обновлены по эту дату, включительно">Дата</div>
+                    <div class="kpi_date "></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Контрольный лист качества(оценка звонка). Цель 90%.">КЛК</div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество C-SAT оценок от абонента после звонка. Цель 32%.">C`sat</div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Средняя длительность разговора в звонке. Цель 300 с.">AHT</div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Решение тех вопросов без переключения на СТП и без СО. Цель 62%.">SR</div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item kpi_self" onclick="open_kpi()">
+                    <div class="kpi_text" title="Процент выполнения всех показателей">% KPI</div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Процент премии который вы получите">% премии</div>
+                    <div class="kpi_indi"></div>
+                </div>
+            </div>
+            <i class="fas fa-chevron-down kpi_other" onclick="tog_hed(this)"></i>
+            <div class="kpi">
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество пауз от общего времени в логине, больше 18% не оплачиваются.">
+                        % Work+Break
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество тех обращений в которых вы использовали тех. помощник. Цель 90%.">
+                        TSS
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество обращений в которых было предложено помощник по продажам 2,9. Цель 70%.">
+                        STS/2.9
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество абонентов которые не перезванивают в КЦ после вашей консультации. Цель 80%."> 
+                        RFT
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество телефонов которые были актуализированы(подтверждены) во время звонка. Цель 50%.">
+                        Телефоны
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" onclick="open_kpi()" title="Количество почт которые были актуализированы(подтверждены/внесены) во время звонка. Цель 13%."> 
+                        E-mails
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество звонков после которых вы стали на Work. Цель 30%."> 
+                        % work
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Контрольный лист качества(оценка звонка) для Happy. Цель 90%.">  
+                        КЛК Happy
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество Абонентов готовые рекомендовать компанию. Цель 32%.">  
+                        NPS
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество зарегистрированых обращений, от всех звонков. Цель 95%.">  
+                        % reg
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Количество часов на одну продажу. Цель 8.">  
+                        Sales Coef
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="Факт часов">  
+                        Факт часов
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+                <div class="kpi_item">
+                    <div class="kpi_text" title="План часов">  
+                        План часов
+                    </div>
+                    <div class="kpi_indi"></div>
+                </div>
+            </div>
+            <div class="personal_order">
+                <div class="personal_order-taxi">
+                    <h5 class="personal_order_h5">Taxi</h5>
+                    <form action="/break/modules/taxi_order.php" class="personal_order_taxi-form" method="POST">
+                        <span class="personal_order_h">Когда?</span>
+                        <select id="time" class="personal_order_taxiTime" name="time">
+                            <option id="time21">21</option>
+                            <option id="time22">22</option>
+                            <option id="time23">23</option>
+                            <option id="time24">24</option>
+                            <option id="time1">1</option>
+                        </select>
+                        <input type="submit" value="Записаться" class="personal_order_submit">
+                        <input type="button" value="Я не еду!" class="personal_order_not_me">
+                        <span class="personal_order_h">Район</span>
+                        <select class="personal_order_select" id="area" name="area">
+                            <option value="Проспект">Проспект</option>
+                            <option value="АС-1">АС-1</option>
+                            <option value="Грузевица">Грузевица</option>
+                            <option value="Гречаны">Гречаны</option>
+                            <option value="Дубово">Дубово</option>
+                            <option value="Водопроводная">Водопроводная</option>
+                            <option value="Електроника">Електроника</option>
+                            <option value="ЖД вокзал">ЖД вокзал</option>
+                            <option value="Заготзерно">Заготзерно</option>
+                            <option value="Заречанская">Заречанская</option>
+                            <option value="Институтская">Институтская</option>
+                            <option value="Катион">Катион</option>
+                            <option value="Львовское">Львовское</option>
+                            <option value="Областная больница">Областная больница</option>
+                            <option value="Озерная">Озерная</option>
+                            <option value="Подолька">Подолька</option>
+                            <option value="Прибугская">Прибугская</option>
+                            <option value="Раково">Раково</option>
+                            <option value="Ружичина">Ружичина</option>
+                            <option value="Силистра">Силистра</option>
+                            <option value="Тернопольская">Тернопольская</option>
+                            <option value="Центр">Центр</option>
+                            <option value="Шаровечка">Шаровечка</option>
+                        </select>
+                        <span class="personal_order_h">Улица</span>
+                        <input class="personal_order_street" type="text" placeholder="Заречанская, 23" name="street" required>
+
+                        <div class="personal_order-car">
+                            <span class="personal_order-carnum">
+                                0
+                            </span>
+                            <i class="fas fa-taxi">
+                                <div class="personal_order-carplace">
+                                    <img src="/break/image/car.png" alt="">
+
+                                </div>
+                            </i>
+                        </div>
+                    </form>
+                    <input type="button" value="Я не еду!" class="personal_order_not_me" onclick="not_me()">
+                </div>
+                <div class="break">
+                    <h2 class="personal_order_h5">Break</h2>
+                    <div class="break-interval_wrapper">
+                        <button class="break-interval_item" value="8" onclick="get_interval(this)">08</button>
+                        <button class="break-interval_item" value="9" onclick="get_interval(this)">09</button>
+                        <button class="break-interval_item" value="10" onclick="get_interval(this)">10</button>
+                        <button class="break-interval_item" value="11" onclick="get_interval(this)">11</button>
+                        <button class="break-interval_item" value="12" onclick="get_interval(this)">12</button>
+                        <button class="break-interval_item" value="13" onclick="get_interval(this)">13</button>
+                        <button class="break-interval_item" value="14" onclick="get_interval(this)">14</button>
+                        <button class="break-interval_item" value="15" onclick="get_interval(this)">15</button>
+                        <button class="break-interval_item" value="16" onclick="get_interval(this)">16</button>
+                        <button class="break-interval_item" value="17" onclick="get_interval(this)">17</button>
+                        <button class="break-interval_item" value="18" onclick="get_interval(this)">18</button>
+                        <button class="break-interval_item" value="19" onclick="get_interval(this)">19</button>
+                        <button class="break-interval_item" value="20" onclick="get_interval(this)">20</button>
+                        <button class="break-interval_item" value="21" onclick="get_interval(this)">21</button>
+                        <button class="break-interval_item" value="22" onclick="get_interval(this)">22</button>
+                        <button class="break-interval_item" value="23" onclick="get_interval(this)">23</button>
+                    </div>
+                    <div class="break-list_wrapper">
+                        <div class="break-list">
+                            <h2 class="break-list_h2">
+                                Lunch в
+                                <span class="break-list_time">
+
+                                </span>
+                            </h2> 
+                            <button class="break-order_button" value="0" onclick="break_order(this)">Занять</button>
+                            <div>Свободно:<div class="break-amount_people"></div></div>
+                        </div>
+                        <div class="break-list">
+                            <h2 class="break-list_h2">
+                                Break в 
+                                <span class="break-list_time">
+
+                                </span>
+                            </h2> 
+                            <button class="break-order_button" value="20" onclick="break_order(this)">Занять</button>
+                            <div>Свободно:<div class="break-amount_people"></div></div>
+                        </div>
+                        <div class="break-list">
+                            <h2 class="break-list_h2">
+                                Break в 
+                                <span class="break-list_time">
+
+                                </span>
+                            </h2> 
+                            <button class="break-order_button" value="30" onclick="break_order(this)">Занять</button>
+                            <div>Свободно:<div class="break-amount_people"></div></div>
+                        </div>
+                        <div class="break-list">
+                            <h2 class="break-list_h2">
+                                Break в 
+                                <span class="break-list_time">
+
+                                </span>
+                            </h2> 
+                            <button class="break-order_button" value="40" onclick="break_order(this)">Занять</button>
+                            <div>Свободно:<div class="break-amount_people"></div></div>
+                        </div>
+                        <div class="break-list">
+                            <h2 class="break-list_h2">
+                                Break в 
+                                <span class="break-list_time">
+
+                                </span>
+                            </h2> 
+                            <button class="break-order_button" value="50" onclick="break_order(this)">Занять</button>
+                            <div>Свободно:<div class="break-amount_people"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="br"></div>
+            <div class="useful_info">
+                <div class="useful_info-h">Часто задаваемые вопросы</div>   
+                <ol class="useful_info-list">
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/abon_price.pdf" class="useful_info-list_item-a" target="_blank">ПОЧЕМУ СНИМАЮТСЯ ДЕНЬГИ, ЕСЛИ ПО ДОМУ АВАРИЯ/ТО?</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/TVsort.pdf" class="useful_info-list_item-a" target="_blank">ПЕРЕМЕЩЕНИЕ/СОЗДАНИЕ СПИСКОВ КАНАЛОВ НА ТЮНЕРАХ</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/pppoeMACOS.pdf" class="useful_info-list_item-a" target="_blank">НАСТРОЙКА PPPOE НА MACOS</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/transfer.pdf" class="useful_info-list_item-a" target="_blank">ПЕРЕКЛЮЧЕНИЕ НА СТАРШЕГО/ПИСЬМО В КОМПАНИЮ?</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/order.pdf" class="useful_info-list_item-a" target="_blank">КАК ОФОРМЛЯТЬ ОРДЕР?</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/e-mail.pdf" class="useful_info-list_item-a" target="_blank">ДЛЯ ЧЕГО ПРЕДОСТАВЛЯТЬ E-MAIL?</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/dostup.pdf" class="useful_info-list_item-a" target="_blank">ПОЧЕМУ Я ДОЛЖЕН ПРЕДОСТАВЛЯТЬ ДОСТУП К ВАШЕМУ ОБОРУДОВАНИЮ?</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/win10.pdf" class="useful_info-list_item-a" target="_blank">НАСТРОЙКА PPPOE WINDOWS10</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/SO.pdf" class="useful_info-list_item-a" target="_blank">ПОЧЕМУ СО ПЛАТНОЕ?</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/kopii.pdf" class="useful_info-list_item-a" target="_blank">ПОЧЕМУ Я ДОЛЖЕН ДАВАТЬ КОПИИ ДОКУМЕНТОВ ТЕХНИКУ?</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/priostanovka.pdf" class="useful_info-list_item-a" target="_blank">ПОЧЕМУ СНИМАЮТСЯ ДЕНЬГИ ЗА ПЕРЕХОД НА ПАКЕТ МЕНЬШИЙ ПО СТОИМОСТИ?</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/60grn.pdf" class="useful_info-list_item-a" target="_blank">ПОЧЕМУ СПИСЫВАЮТСЯ СРЕДСТВА, Я ПРИОСТАНОВИЛ УСЛУГИ?</a>
+                    </li>
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/modem.pdf" class="useful_info-list_item-a" target="_blank">ПРИНАДЛЕЖНОСТЬ МОДЕМОВ К ТЕХНОЛОГИЯМ DOCSIS</a>
+                    </li> 
+                    <li class="useful_info-list_item">
+                        <a href="/break/useful/proxi.pdf" class="useful_info-list_item-a" target="_blank">НЕ ОТКРЫВАЕТСЯ Work, FAS, днепр база, сайт volia.com</a>
+                    </li>
+                </ol>
+                <div class="useful_info-h">Все о TDR</div>
+                <table class="useful_info-table">
+                    <tr class="useful_info-table_tr">
+                        <td class="useful_info-table_td_h">Admin: UP Oper: UP</td>
+                        <td class="useful_info-table_td_h" colspan="5">СО не нужно!</td>
+                        <td class="useful_info-table_td_h" colspan="6">Переподключаете кабель, если не поменялось, то нужно СО.</td>
+                    </tr>
+                    <tr class="useful_info-table_tr">
+                        <td class="useful_info-table_td_h">FAS</td>
+                        <td class="useful_info-table_td-good">NT</td>
+                        <td class="useful_info-table_td-good">OK</td>
+                        <td class="useful_info-table_td-good">UN</td>
+                        <td class="useful_info-table_td-good">TF</td>
+                        <td class="useful_info-table_td-good">NS</td>
+                        <td class="useful_info-table_td-bad">ON</td>
+                        <td class="useful_info-table_td-bad">ST</td>
+                        <td class="useful_info-table_td-bad">-</td>
+                        <td class="useful_info-table_td-bad">-</td>
+                        <td class="useful_info-table_td-bad">IE</td>
+                        <td class="useful_info-table_td-bad">NC</td>
+                    </tr>
+                    <tr class="useful_info-table_tr">
+                        <td class="useful_info-table_td_h">Work</td>
+                        <td class="useful_info-table_td-good">notTestedYet(1)</td>
+                        <td class="useful_info-table_td-good">ok(2)</td>
+                        <td class="useful_info-table_td-good">unknown(7)</td>
+                        <td class="useful_info-table_td-good">failed(9)</td>
+                        <td class="useful_info-table_td-good">notSupported(10)</td>
+                        <td class="useful_info-table_td-bad">open(3)</td>
+                        <td class="useful_info-table_td-bad">short(4)</td>
+                        <td class="useful_info-table_td-bad">openShort(5)</td>
+                        <td class="useful_info-table_td-bad">crosstalk(6)</td>
+                        <td class="useful_info-table_td-bad">impedanceMismatch(8)</td>
+                        <td class="useful_info-table_td-bad">noCable(11)</td>
+                    </tr>
+                    <tr class="useful_info-table_tr">
+                        <td class="useful_info-table_td_h">Admin: DOWN Oper: UP</td>
+                        <td class="useful_info-table_td_h" colspan="11">Убедитесь что оборудование абонента включено, переподключите кабель, сверьте порт,  если так и осталось, то нужно СО.</td>
+                    </tr>
+                </table>
+                <div class="useful_info-h">Идентификация</div>
+                <div class="useful_info-identification_list-wrapper">
+                    <ol class="useful_info-identification_list">
+                        <li class="useful_info-identification_list_item_header">Сверить адрес, если абонент не идентифицирован</li>
+                        <li class="useful_info-identification_list_item">1. Технические вопросы</li>
+                    </ol>    
+                    <ol class="useful_info-identification_list">
+                        <li class="useful_info-identification_list_item_header">ФИО или № договора или паспорт</li>
+                        <li class="useful_info-identification_list_item">1. Добавлене телефона</li>
+                        <li class="useful_info-identification_list_item">2. Решение фин. вопросов и консультация по ТП</li>
+                    </ol>  
+                    <ol class="useful_info-identification_list">
+                        <li class="useful_info-identification_list_item_header">ФИО + № договора  или Паспорт + ФИО</li>
+                        <li class="useful_info-identification_list_item">1. Смена пакета или дополнительных услуг</li>
+                        <li class="useful_info-identification_list_item">2. Восстановление или приостановка услуг</li>
+                        <li class="useful_info-identification_list_item">3. Внесение кредита или изменения статуса кредитирования</li>
+                        <li class="useful_info-identification_list_item">4. Изменения способа получения счета</li>
+                        <li class="useful_info-identification_list_item">5. Внесения МАК-адреса в СД(при переключении на СТП)</li>
+                    </ol> 
+                    <ol class="useful_info-identification_list">
+                        <li class="useful_info-identification_list_item_header">Только ВЛАДЕЛЕЦ ФИО + № договора  или Паспорт + ФИО</li>
+                        <li class="useful_info-identification_list_item">1. Номер договора</li>
+                        <li class="useful_info-identification_list_item">2. Логин/пароль PPPoE</li>
+                        <li class="useful_info-identification_list_item">3. Логин/пароль к Воля ТВ</li>
+                        <li class="useful_info-identification_list_item">4. Логин/пароль к ПА "Мой кабинет"</li>
+                        <li class="useful_info-identification_list_item">5. Код активации на ОТТ</li>
+                        <li class="useful_info-identification_list_item">6. Внесение/Подтверждение e-mail</li>
+                        <li class="useful_info-identification_list_item">7. Подтверждение телефона</li>
+                    </ol>
+                </div>
+
+                <div class="useful_info-h">Хаверы</div>
+                <div class="useful_info-copy_wrapper">
+                    <div class="useful_info-lifecell">Показать пакеты LC
+                        <img src="/break/image/lc.jpg" alt="lc">
+                    </div>
+                </div>
+
+                <!--
+<div class="lc_picture"><br>
+<div class="lc_show">Показать Новые пакеты ЛС
+<img src="images/lc.jpg" alt="lc">
+</div>
+<p>Показаны только названия пакетов, цена и наполнение. Технологию и коды смотрите в файлах <a target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518po0000lo4700n3epgr4k0&activeComponent=FilesAdv">__тут__</a> </p>
+</div>
+-->
+
+                <div class="useful_info-h">Конкуренты</div>
+                <div class="useful_info-copy_wrapper">
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518so0000lbp1qsq74sair18" >
+                        <div class="useful_info-concurent">Белая Церковь</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vk83ehfd433o0" >
+                        <div class="useful_info-concurent">Винница</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vk8gksqvuhf8g" >
+                        <div class="useful_info-concurent">Днепр</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vk8tkq52nl3q0" >
+                        <div class="useful_info-concurent">Запорожье</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518so0000lr23h8aovaot1os" >
+                        <div class="useful_info-concurent">Ивано-Франковск</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vk95ggon5eou8" >
+                        <div class="useful_info-concurent">Киев</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vk5supg4kgbj0" >
+                        <div class="useful_info-concurent">Краматорск</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vk9u6hbc7jnp4" >
+                        <div class="useful_info-concurent">Кривой Рог</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vk9hj2o0qqc3k" >
+                        <div class="useful_info-concurent">Кропивницкий</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vkaklpthr780g" >
+                        <div class="useful_info-concurent">Луцк</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vkba1qoam842c" >
+                        <div class="useful_info-concurent">Львов</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518so0000m4j6n8v3oalbb5o" >
+                        <div class="useful_info-concurent">Обухов</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vkg3c7r4shu5c" >
+                        <div class="useful_info-concurent">Полтава</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518380000kbt34794b79s9p8" >
+                        <div class="useful_info-concurent">Путивль</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vkbjhu5k94ies" >
+                        <div class="useful_info-concurent">Ровно</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k4voc6dv53goakk" >
+                        <div class="useful_info-concurent">Солоницівка</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000ka210l1jp72d7lc" >
+                        <div class="useful_info-concurent">Сумы</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vkchtqualuh58" >
+                        <div class="useful_info-concurent">Тернополь</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k6keht0q0ms810k" >
+                        <div class="useful_info-concurent">Украинка</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518so0000m4j6oapa5es6n78" >
+                        <div class="useful_info-concurent">Фастов</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vkd2aofn5pn20" >
+                        <div class="useful_info-concurent">Харьков</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vkeoobmid6n7c" >
+                        <div class="useful_info-concurent">Херсон</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vk9ep7sgpvf2g" >
+                        <div class="useful_info-concurent">Хмельницкий</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vkfpl3u7f0c9k" >
+                        <div class="useful_info-concurent">Черкасы</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518280000k3vklp2tfguqa4s" >
+                        <div class="useful_info-concurent">Черновцы</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518so0000la2l4bok5nhu6ns" >
+                        <div class="useful_info-concurent">Житомир</div>
+                    </a>
+                    <a class="useful_info-href" target="_blank" href="https://sd.volia.com:8443/fx/sd/ru.naumen.sd.published_jsp?uuid=corebo18518so0000m33ggv3s02k6ad4" >
+                        <div class="useful_info-concurent">Мелитополь</div>
+                    </a>
+                </div>
+                <div class="useful_info-h">Быстрые копипасты</div>
+                <div class="useful_info-copy_wrapper">
+                    <div class="useful_info-copy" onclick="copy(this)" value="1">Абонент переезжает</div>
+                    <div class="useful_info-copy" onclick="copy(this)" value="2">Абонент уведомлен</div>
+                    <div class="useful_info-copy" onclick="copy(this)" value="3">Письмо на продажи</div>
+                    <div class="useful_info-copy" onclick="copy(this)" value="dmytro.kurochka@volia.com">Логин в Work</div>
+                    <div class="useful_info-copy" onclick="copy(this)" value="9Ytud8Qpxc8q">Пароль от Work</div>
+                </div>
+
+
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Churn Downer 2Р АТВ+LC</div>
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (не устраивает связь оператора LC)  - остается на прежних условиях,согласен с оптимизацией ТП">
+                        Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (не устраивает связь оператора LC)  - остается на прежних условиях,согласен с оптимизацией ТП
+                    </div> 
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (необходим MNP, на контроле)  - остается на прежних условиях,согласен с оптимизацией ТП">
+                        Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (необходим MNP, на контроле)  - остается на прежних условиях,согласен с оптимизацией ТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (абонент указал, что желает обдумать возможность перехода на 3Р)  - остается на прежних условиях,согласен с оптимизацией ТП">
+                        Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (абонент указал, что желает обдумать возможность перехода на 3Р)  - остается на прежних условиях,согласен с оптимизацией ТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (дорого)  - остается на прежних условиях,согласен с оптимизацией ТП">
+                        Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (дорого)  - остается на прежних условиях,согласен с оптимизацией ТП
+                    </div> 
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (желает решать вопрос исключительно на ЦСТ)  - остается на прежних условиях,согласен с оптимизацией ТП">
+                        Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (желает решать вопрос исключительно на ЦСТ)  - остается на прежних условиях,согласен с оптимизацией ТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (нет неободимости в пердложенных услугах)  - остается на прежних условиях,согласен с оптимизацией ТП">
+                        Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (нет неободимости в пердложенных услугах)  - остается на прежних условиях,согласен с оптимизацией ТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (отказ назвать причину)  - остается на прежних условиях,согласен с оптимизацией ТП">
+                        Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (отказ назвать причину)  - остается на прежних условиях,согласен с оптимизацией ТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (условия мобильного оператора вполне устраивают)  - остается на прежних условиях,согласен с оптимизацией ТП">
+                        Churn Downer 2РАТВ -Отказ от перехода на 3Р причина (условия мобильного оператора вполне устраивают)  - остается на прежних условиях,согласен с оптимизацией ТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от услуг причина (указать)  - удержан (+ запрос по отказу)">
+                        Churn Downer 2РАТВ -Отказ от услуг причина (указать)  - удержан (+ запрос по отказу)
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от услуг причина (указать)  - не удержан (+ запрос по отказу)">
+                        Churn Downer 2РАТВ -Отказ от услуг причина (указать)  - не удержан (+ запрос по отказу)
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Отказ от разговора">
+                        Churn Downer 2РАТВ -Отказ от разговора
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Номер не пренадлежит абоненту">
+                        Churn Downer 2РАТВ -Номер не пренадлежит абоненту
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Договор рассторгнут ранее">
+                        Churn Downer 2РАТВ -Договор рассторгнут ранее
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Churn Downer 2РАТВ -Оформили подключение на 3Р">
+                        Churn Downer 2РАТВ -Оформили подключение на 3Р
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Welcome Call(Почему не пользуется?)</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="При подключении не настроена/не продемонстрирована работа услуги">
+                        При подключении не настроена/не продемонстрирована работа услуги
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Консультант не рассказал о интерактивных функциях/приложении Воля ТВ">
+                        Консультант не рассказал о интерактивных функциях/приложении Воля ТВ
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не разобрался как пользоваться">
+                        Не разобрался как пользоваться
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуется только Интернетом (подключил 2Р Mobile из-за выгодной акции)">
+                        Пользуется только Интернетом (подключил 2Р Mobile из-за выгодной акции)
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Нет телевизора">
+                        Нет телевизора
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Услуга работает некорректно/плохое качество">
+                        Услуга работает некорректно/плохое качество
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Нет интересует (смотрит только линейное ТВ)">
+                        Нет интересует (смотрит только линейное ТВ)
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не успел воспользоваться, планирует пользоваться">
+                        Не успел воспользоваться, планирует пользоваться
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Другое">
+                        Другое
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Welcome Call (Пожелания)</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Добавление каналов">
+                        Добавление каналов
+                    </div> 
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Больше каналов с поддержкой Архива">
+                        Больше каналов с поддержкой Архива
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Расширение функционала YouTube">
+                        Расширение функционала YouTube
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Улучшение существующих функций/изменения в интерфейсе">
+                        Улучшение существующих функций/изменения в интерфейсе
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Доступ в интернет через браузер в ОТТ боксе">
+                        Доступ в интернет через браузер в ОТТ боксе
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Расширение контента в Кинотеатре">
+                        Расширение контента в Кинотеатре
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Больше каналов с поддержкой Архива">
+                        Больше каналов с поддержкой Архива
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Возможность выбирать язык в моб приложении">
+                        Возможность выбирать язык в моб приложении
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Другое">
+                        Другое
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Churn Downer Воля+Lifecell</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – Доволен – Готов рекомендовать">
+                        Пользуюсь – Доволен – Готов рекомендовать
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – Доволен – НЕ готов рекомендовать">
+                        Пользуюсь – Доволен – НЕ готов рекомендовать
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – Доволен – но, слышал о лучших предложениях конкурентов – инфо о преимуществам">
+                        Пользуюсь – Доволен – но, слышал о лучших предложениях конкурентов – инфо о преимуществам
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен,  есть лучшие предложения  конкурентов – инфо по преимуществам">
+                        Пользуюсь – не доволен,  есть лучшие предложения  конкурентов – инфо по преимуществам
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен качеством  – настроили ч/з ТСС">
+                        Пользуюсь – не доволен качеством  – настроили ч/з ТСС
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен качеством  – передан на СТП">
+                        Пользуюсь – не доволен качеством  – передан на СТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен качеством  – отказ настроек и  переключения на СТП">
+                        Пользуюсь – не доволен качеством  – отказ настроек и  переключения на СТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен качеством – есть оформлено СО">
+                        Пользуюсь – не доволен качеством – есть оформлено СО
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен скоростью  – настроили ч/з ТСС">
+                        Пользуюсь – не доволен скоростью  – настроили ч/з ТСС
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен скоростью  – передан на СТП">
+                        Пользуюсь – не доволен скоростью  – передан на СТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен скоростью  – отказ от настроек переключения на СТП">
+                        Пользуюсь – не доволен скоростью  – отказ от настроек переключения на СТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен наполнением пакета ТВ – Промо-просмотр з ВОЛЯ+Lifecell">
+                        Пользуюсь – не доволен наполнением пакета ТВ – Промо-просмотр з ВОЛЯ+Lifecell
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен наполнением пакета ТВ – рекомендовано сменить ТП на больше">
+                        Пользуюсь – не доволен наполнением пакета ТВ – рекомендовано сменить ТП на больше
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен наполнением пакета ТВ – активирован доп. пакет">
+                        Пользуюсь – не доволен наполнением пакета ТВ – активирован доп. пакет
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен – отказ от услуг – удержан">
+                        Пользуюсь – не доволен – отказ от услуг – удержан
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Пользуюсь – не доволен – отказ от услуг – не удержан">
+                        Пользуюсь – не доволен – отказ от услуг – не удержан
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – Доволен – Готов рекомендовать">
+                        Не пользуюсь – Доволен – Готов рекомендовать
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – Доволен – НЕ готов рекомендовать">
+                        Не пользуюсь – Доволен – НЕ готов рекомендовать
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – Доволен – но, слышал о лучших предложениях конкурентов – инфо о преимуществам">
+                        Не пользуюсь – Доволен – но, слышал о лучших предложениях конкурентов – инфо о преимуществам
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен,  есть лучшие предложения  конкурентов – инфо по преимуществам">
+                        Не пользуюсь – не доволен,  есть лучшие предложения  конкурентов – инфо по преимуществам
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен ценой – инфо по преимуществам">
+                        Не пользуюсь – не доволен ценой – инфо по преимуществам
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен качеством  – настроили ч/з ТСС">
+                        Не пользуюсь – не доволен качеством  – настроили ч/з ТСС
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен качеством  – передан на СТП">
+                        Не пользуюсь – не доволен качеством  – передан на СТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен качеством  – отказ настроек и  переключения на СТП">
+                        Не пользуюсь – не доволен качеством  – отказ настроек и  переключения на СТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен качеством – есть оформлено СО">
+                        Не пользуюсь – не доволен качеством – есть оформлено СО
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен скоростью  – настроили ч/з ТСС">
+                        Не пользуюсь – не доволен скоростью  – настроили ч/з ТСС
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен скоростью  – передан на СТП">
+                        Не пользуюсь – не доволен скоростью  – передан на СТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен скоростью  – отказ от настроек переключения на СТП">
+                        Не пользуюсь – не доволен скоростью  – отказ от настроек переключения на СТП
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен наполнением пакета ТВ – Промо-просмотр з ВОЛЯ+Lifecell">
+                        Не пользуюсь – не доволен наполнением пакета ТВ – Промо-просмотр з ВОЛЯ+Lifecell
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен наполнением пакета ТВ – рекомендовано сменить ТП на больше">
+                        Не пользуюсь – не доволен наполнением пакета ТВ – рекомендовано сменить ТП на больше
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен наполнением пакета ТВ – активирован доп. пакет">
+                        Не пользуюсь – не доволен наполнением пакета ТВ – активирован доп. пакет
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен – отказ от услуг – удержан">
+                        Не пользуюсь – не доволен – отказ от услуг – удержан
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не пользуюсь – не доволен – отказ от услуг – не удержан">
+                        Не пользуюсь – не доволен – отказ от услуг – не удержан
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Договор расторгнут ранее">
+                        Договор расторгнут ранее
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Номер не принадлежит абоненту">
+                        Номер не принадлежит абоненту
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Отказ от разговора">
+                        Отказ от разговора
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Исходы Churn_LifeCell</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ChurnLifecell  Временно не пользуются">
+                        ChurnLifecell  Временно не пользуются
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ChurnLifecell  Договор закрыт ранее">
+                        ChurnLifecell  Договор закрыт ранее
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ChurnLifecell  Забыли оплатить, оплатят">
+                        ChurnLifecell  Забыли оплатить, оплатят
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ChurnLifecell  Не удержан">
+                        ChurnLifecell  Не удержан
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ChurnLifecell  Удержан">
+                        ChurnLifecell  Удержан
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ChurnLifecell  Уже оплатили">
+                        ChurnLifecell  Уже оплатили
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ChurnLifecell  Оплатит позже">
+                        ChurnLifecell  Оплатит позже
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ChurnLifecell  Отказ от разговора">
+                        ChurnLifecell  Отказ от разговора
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ChurnLifecell  Номер не принадлежит абоненту">
+                        ChurnLifecell  Номер не принадлежит абоненту
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Дорого</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Дорого. Предложено Lifecell – согласен. Оформлена заявка. Данные+">
+                        Удержан. Дорого. Предложено Lifecell – согласен. Оформлена заявка. Данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Дорого. Предложено Lifecell – отказ, смена ТП – согласен.  Данные+">
+                        Удержан. Дорого. Предложено Lifecell – отказ, смена ТП – согласен.  Данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Дорого. Предложено Lifecell – отказ, 10% - согласен. Оформлено, данные+">
+                        Удержан. Дорого. Предложено Lifecell – отказ, 10% - согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Дорого. Предложено Lifecell – отказ, 10%-отказ, 20%- согласен. Оформлено, данные+">
+                        Удержан. Дорого. Предложено Lifecell – отказ, 10%-отказ, 20%- согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Дорого. Предложено Lifecell – отказ, 10%,20%-отказ, 30%- согласен. Оформлено, данные+">
+                        Удержан. Дорого. Предложено Lifecell – отказ, 10%,20%-отказ, 30%- согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Дорого. Предложено Lifecell – отказ, 10%,20%,30%-отказ, 40%- согласен. Оформлено, данные+">
+                        Удержан. Дорого. Предложено Lifecell – отказ, 10%,20%,30%-отказ, 40%- согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Дорого. Предложено Lifecell – отказ, 10%,20%,30%,40%-отказ, 50%- согласен. Оформлено, данные+">
+                        Удержан. Дорого. Предложено Lifecell – отказ, 10%,20%,30%,40%-отказ, 50%- согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не удержан.  Дорого. Предложено Lifecell – отказ, 10%,20%,30%,40%-отказ, 50%- отказ от всех предложений. Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу. ">
+                        Не удержан.  Дорого. Предложено Lifecell – отказ, 10%,20%,30%,40%-отказ, 50%- отказ от всех предложений. Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу. 
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Переезд</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Переезд. Перенос – согласен. Оформлена заявка по адресу ____________________">
+                        Удержан. Переезд. Перенос – согласен. Оформлена заявка по адресу ____________________
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Переезд. Перенос – отказ, переоформления – согласен, обратится в ЦСТ.">
+                        Удержан. Переезд. Перенос – отказ, переоформления – согласен, обратится в ЦСТ.
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не удержан. Переезд. Перенос, переоформления отказ. Инфо о расторжении, рек ЦСТ/эл почта. Инфо по балансу. ">
+                        Не удержан. Переезд. Перенос, переоформления отказ. Инфо о расторжении, рек ЦСТ/эл почта. Инфо по балансу. 
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Качесто</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Не устраивает качество. Предложено СО 90 – согласен, оформлена заявка.">
+                        Удержан. Не устраивает качество. Предложено СО 90 – согласен, оформлена заявка.
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Не устраивает качество. Предложено СО 90 – отказ, предложено 9 грн – согласен, оформлена заявка. ">
+                        Удержан. Не устраивает качество. Предложено СО 90 – отказ, предложено 9 грн – согласен, оформлена заявка. 
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не удержан. Не устраивает качество. Предложено СО 90 – отказ, предложено 9 грн – отказ. Инфо о расторжении, рек ЦСТ/эл почта. Инфо по балансу. ">
+                        Не удержан. Не устраивает качество. Предложено СО 90 – отказ, предложено 9 грн – отказ. Инфо о расторжении, рек ЦСТ/эл почта. Инфо по балансу. 
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Наполнение</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Не устраивает наполнение. Предложено Lifecell – согласен. Оформлена заявка. Данные+">
+                        Удержан. Не устраивает наполнение. Предложено Lifecell – согласен. Оформлена заявка. Данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Не устраивает наполнение. Предложено Lifecell – отказ, смена ТП – согласен.  Данные+">
+                        Удержан. Не устраивает наполнение. Предложено Lifecell – отказ, смена ТП – согласен.  Данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Не устраивает наполнение. Предложено Lifecell, смена ТП – отказ, додай промо-перегляд – согласен, оформлено, данные+">
+                        Удержан. Не устраивает наполнение. Предложено Lifecell, смена ТП – отказ, додай промо-перегляд – согласен, оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Не устраивает наполнение. Предложено Lifecell, смена ТП, додай промо-перегляд  – отказ, промо перегляд  4(«Кіно на рік з «Воля Сінема+», • «Спробуй Мобільний додаток Воля TV»)– согласен, оформлено, данные+">
+                        Удержан. Не устраивает наполнение. Предложено Lifecell, смена ТП, додай промо-перегляд  – отказ, промо перегляд  4(«Кіно на рік з «Воля Сінема+», • «Спробуй Мобільний додаток Воля TV»)– согласен, оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не удержан. Не устраивает наполнение. Предложено Lifecell, смена ТП, додай промо-перегляд, промо перегляд  4(«Кіно на рік з «Воля Сінема+», • «Спробуй Мобільний додаток Воля TV»)– отказ. Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу. ">
+                        Не удержан. Не устраивает наполнение. Предложено Lifecell, смена ТП, додай промо-перегляд, промо перегляд  4(«Кіно на рік з «Воля Сінема+», • «Спробуй Мобільний додаток Воля TV»)– отказ. Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу. 
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Смерть абонента</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Смерть абонента. Предложено переоформления – согласен. Рекомендовано ЦСТ.">
+                        Удержан. Смерть абонента. Предложено переоформления – согласен. Рекомендовано ЦСТ.
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не удержан. Смерть абонента. Переоформления – отказ. Инфо о расторжении, рек ЦСТ/эл почта. ">
+                        Не удержан. Смерть абонента. Переоформления – отказ. Инфо о расторжении, рек ЦСТ/эл почта. 
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Отсутствие оборудования: Телевизор</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Нет телевизора. Предложено переоформления Lifecell – согласен. Оформлена заявка. ">
+                        Удержан. Нет телевизора. Предложено переоформления Lifecell – согласен. Оформлена заявка. 
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV – согласен. Оформлено, данные+">
+                        Удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV – согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV – отказ, 10%- согласен. Оформлено, данные+">
+                        Удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV – отказ, 10%- согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV, 10%-  – отказ, 20% - согласен. Оформлено, данные+">
+                        Удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV, 10%-  – отказ, 20% - согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV, 10%, 20%  – отказ, 30%  -согласен. Оформлено, данные+ Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу.">
+                        Удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV, 10%, 20%  – отказ, 30%  -согласен. Оформлено, данные+ Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу.
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV, 10%, 20%  – отказ, 30%  -отказ. Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу.">
+                        Не удержан. Нет телевизора. Предложено переоформления Lifecell  -отказ, предложено Воля TV, 10%, 20%  – отказ, 30%  -отказ. Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу.
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Отсутствие оборудования: Компьютер</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – согласен. Оформлено, данные+">
+                        Удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – отказ, 10% - согласен. Оформлено, данные+">
+                        Удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – отказ, 10% - согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – отказ, 10% - отказ, 20% -  согласен. Оформлено, данные+">
+                        Удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – отказ, 10% - отказ, 20% -  согласен. Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – отказ, 10%,20%  - отказ,30% - согласен.  Оформлено, данные+">
+                        Удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – отказ, 10%,20%  - отказ,30% - согласен.  Оформлено, данные+
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – отказ, 10%,20%  - отказ,30% - отказ. Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу.">
+                        Не удержан. Нет компьютера, предложено Максимум промо-перегляд (s discount) – отказ, 10%,20%  - отказ,30% - отказ. Инфо о расторжении, рек ЦСТ (эл почта, оформлена заявка на дому) Инфо по балансу.
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Deep Sleep</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Уезжает на длительный период, проинформирован о Deep Sleep(стоимость, период). Рек заявление в ЦСТ/эл почта">
+                        Уезжает на длительный период, проинформирован о Deep Sleep(стоимость, период). Рек заявление в ЦСТ/эл почта
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Приостановление до 30 дней</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="ВО, отпуск. О сроках, стоимости уведомлен. Данные+">
+                        ВО, отпуск. О сроках, стоимости уведомлен. Данные+
+                    </div>
+                </div>
+                <div class="useful_info-h_su" onclick="tog_hed(this)">Сервисные заявки</div>            
+                <div class="useful_info-copy_wrapper_su">
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не работает интернет. Проверить, восстановить работу услуги. Код    ; Под    ; Эт   ; Тел    . Выставить счет согласно прейскуранта.">
+                        Не работает интернет. Проверить, восстановить работу услуги. Код    ; Под    ; Эт   ; Тел    . Выставить счет согласно прейскуранта.
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="УДЕРЖАНИЕ! Не работает интернет. Проверить, восстановить работу услуги. Код    ; Под    ; Эт   ; Тел    . ">
+                        УДЕРЖАНИЕ! Не работает интернет. Проверить, восстановить работу услуги. Код    ; Под    ; Эт   ; Тел    . 
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не работает ЦТВ/АТВ. Проверить, восстановить работу услуги. Код    ; Под    ; Эт   ; Тел    . Выставить счет согласно прейскуранта.">
+                        Не работает ЦТВ/АТВ. Проверить, восстановить работу услуги. Код    ; Под    ; Эт   ; Тел    . Выставить счет согласно прейскуранта.
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="УДЕРЖАНИЕ! Не работает ЦТВ/АТВ. Проверить, восстановить работу услуги. Код    ; Под    ; Эт   ; Тел    . ">
+                        УДЕРЖАНИЕ! Не работает ЦТВ/АТВ. Проверить, восстановить работу услуги. Код    ; Под    ; Эт   ; Тел    . 
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не работает интернет, зависает модем.  Проверить, восстановить работу услуги, при необходимости заменить оборудование.  Код    ; Под    ; Эт   ; Тел    . Выставить счет согласно прейскуранта.">
+                        Не работает интернет, зависает модем.  Проверить, восстановить работу услуги, при необходимости заменить оборудование.  Код    ; Под    ; Эт   ; Тел    . Выставить счет согласно прейскуранта.
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="УДЕРЖАНИЕ! Не работает интернет, часто перезагружает модем.  Проверить, восстановить работу услуги, при необходимости заменить оборудование. Код    ; Под    ; Эт   ; Тел    . ">
+                        УДЕРЖАНИЕ! Не работает интернет, часто перезагружает модем.  Проверить, восстановить работу услуги, при необходимости заменить оборудование. Код    ; Под    ; Эт   ; Тел    . 
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="Не работает ЦТВ/АТВ, зависает тюнер. Проверить, восстановить работу услуги, при необходимости заменить оборудование. Код    ; Под    ; Эт   ; Тел    . Выставить счет согласно прейскуранта.">
+                        Не работает ЦТВ/АТВ, зависает тюнер. Проверить, восстановить работу услуги, при необходимости заменить оборудование. Код    ; Под    ; Эт   ; Тел    . Выставить счет согласно прейскуранта.
+                    </div>
+                    <div class="useful_info-copy_su" onclick="copy(this)" value="УДЕРЖАНИЕ! Не работает ЦТВ/АТВ, зависает тюнер. Проверить, восстановить работу услуги, при необходимости заменить оборудование. Код    ; Под    ; Эт   ; Тел    . ">
+                        УДЕРЖАНИЕ! Не работает ЦТВ/АТВ, зависает тюнер. Проверить, восстановить работу услуги, при необходимости заменить оборудование. Код    ; Под    ; Эт   ; Тел    . 
+                    </div>
+                </div>
+                <div class="useful_info-h">Фин вопросы</div>
+                <div class="useful_info-discount_wrapper">
+                    <div class="useful_info-discount_price">
+                        <span>Введите цену пакета:</span>
+                        <input type="number" class="useful_info-discount_input">
+                    </div>
+                    <div class="useful_info-discount_new_price">
+                        <span>Скидка 10%</span>
+                        <span>0</span>
+                    </div>
+                    <div class="useful_info-discount_new_price">
+                        <span>Скидка 20%</span>
+                        <span>0</span>
+                    </div>
+                    <div class="useful_info-discount_new_price">
+                        <span>Скидка 30%</span>
+                        <span>0</span>
+                    </div>
+                    <div class="useful_info-discount_new_price">
+                        <span>Скидка 40%</span>
+                        <span>0</span>
+                    </div>
+                    <div class="useful_info-discount_new_price">
+                        <span>Скидка 50%</span>
+                        <span>0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--
+<div class="break_down">
+<div class="break_down-item"></div>
+</div>
+-->
+        <script src="/break/script/jquery-3.3.1.min.js"></script>
+        <script src="/break/script/script.js"></script>
+        <script src="/break/script/_personal.js"></script>
+        <footer class="footer">
+            <div>&copy; 2019 <span class="footer_developers">Oleh Kykot</span> and <span class="footer_developers">Anton Netiukhailo</span></div>
+            <div> <img src="/break/image/logo.png" alt="logo" class="logo"></div>
+            <div>По всем неисправностям или улучшениям пишите на 
+                <p><span class="footer_developers">oleh.kykot@volia.com</span> или <span class="footer_developers">anton.netiukhailo@volia.com</span></p>
+            </div>
+        </footer>
+    </body>
+</html>

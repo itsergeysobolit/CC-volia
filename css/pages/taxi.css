@@ -1,0 +1,168 @@
+body {
+  background-image: url(/break/image/bg-taxi.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.taxi_table {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 25px 0;
+}
+
+.taxi_table-head {
+  display: flex;
+  flex-direction: row;
+}
+
+.taxi_table-head_td {
+  border: 1px solid black;
+  padding: 10px 30px;
+  background-color: #00a740;
+  width: 40%;
+}
+
+.taxi_table-head_td:nth-child(2) {
+  width: 150px;
+}
+
+.taxi_table-head_td:nth-child(4) {
+  width: 88px;
+}
+
+.taxi_table-head_td:nth-child(5) {
+  width: 73px;
+}
+
+.taxi_table-head_tdh {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #00a740;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.taxi_table-body {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: #fff;
+}
+
+.taxi_table-body:last-child {
+  border-bottom: 1px solid black;
+}
+
+.taxi_table-body:hover .btn-taxi-d {
+  display: inline-block;
+}
+
+.taxi_table-body_td {
+  border: 1px solid black;
+  padding: 10px 30px;
+  width: 40%;
+}
+
+.taxi_table-body_td:nth-child(2) {
+  width: 150px;
+}
+
+.taxi_table-body_td:nth-child(4) {
+  width: 88px;
+}
+
+.taxi_table-body_td:nth-child(5) {
+  width: 73px;
+}
+
+.taxi_table-body_td:hover {
+  background-color: #c6c6c6;
+}
+
+.taxi_table-num {
+  position: relative;
+  top: 11px;
+  left: 5px;
+  width: 0;
+  height: 0;
+  z-index: 1;
+}
+
+.taxi_table-num::after {
+  content: ")";
+}
+
+.taxi_table-car_color_1 {
+  background-color: #524c84;
+}
+
+.taxi_table-car_color_2 {
+  background-color: #f4e022;
+}
+
+.taxi_table-car_color_3 {
+  background-color: #92e6e6;
+}
+
+.taxi_table-car_color_4 {
+  background-color: #152744;
+}
+
+.taxi_table-car_color_5 {
+  background-color: #b72a67;
+}
+
+.taxi_table-car_color_6 {
+  background-color: #ea9085;
+}
+
+.btn-taxi-d {
+  display: none;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.btn-taxi-d:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.not_order {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.not_order_item {
+  padding: 10px 5px;
+  background: #ffaaaa;
+  border-radius: 5px;
+  margin: 5px 10px;
+  display: inline-block;
+  font-size: 13px;
+}
+
+.not_order_item:hover .not_order_del {
+  color: red;
+  cursor: pointer;
+}
+
+.not_order_wrapper {
+  width: 48%;
+}
+
+.not_order_wrapper_header {
+  padding: 10px;
+  background: #dcf7ff;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.not_order_del {
+  color: transparent;
+}

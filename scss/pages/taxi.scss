@@ -1,0 +1,139 @@
+body{
+    background-image: url(/break/image/bg-taxi.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.taxi_table{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 25px 0;
+    &-head{
+        display: flex;
+        flex-direction: row;
+        &_td{
+            border:1px solid black;
+            padding:10px 30px;
+            background-color: #00a740;
+            width: 40%;
+            &:nth-child(2){
+                width: 150px;
+            }
+            &:nth-child(4){
+                width: 88px;
+            }
+            &:nth-child(5){
+                width: 73px;
+            }
+            &h{
+                border:1px solid black;
+                padding:10px;
+                background-color: #00a740;
+                text-align: center;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+    &-body{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        background-color: #fff;
+        &:last-child{
+            border-bottom:1px solid black;
+        }
+        &:hover .btn-taxi-d{
+            display: inline-block;
+        }
+        &_td{
+            border:1px solid black;
+            padding:10px 30px;
+            width: 40%;
+            &:nth-child(2){
+                width: 150px;
+            }
+            &:nth-child(4){
+                width: 88px;
+            }
+            &:nth-child(5){
+                width: 73px;
+            }
+            &:hover{
+                background-color: #c6c6c6;
+            }
+        }
+    }
+    &-num{
+        position: relative;
+        top: 11px;
+        left: 5px;
+        width: 0;
+        height: 0;
+        z-index: 1;
+        &::after{
+            content: ")";
+        }
+    }
+    &-car_color_1{
+        background-color: #524c84;
+    }
+    &-car_color_2{
+        background-color: #f4e022;
+    }
+    &-car_color_3{
+        background-color: #92e6e6;
+    }
+    &-car_color_4{
+        background-color: #152744;
+    }
+    &-car_color_5{
+        background-color: #b72a67;
+    }
+    &-car_color_6{
+        background-color: #ea9085;
+    }
+}
+.btn-taxi-d{
+    display: none;
+    font-size: 16px;
+    margin:0 10px;
+    &:hover{
+        color:red;
+        cursor: pointer;
+    }
+}
+.not_order{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    &_item{
+        padding: 10px 5px;
+        background: #ffaaaa;
+        border-radius: 5px;
+        margin: 5px 10px;
+        display: inline-block;
+        font-size: 13px;
+        &:hover .not_order_del{
+            color: red;
+            cursor: pointer;
+        }
+    }
+    &_wrapper{
+        width: 48%;
+
+        &_header{
+            padding: 10px;
+            background: #dcf7ff;
+            font-size: 20px;
+            font-weight: bold;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    }
+    &_del{
+        color: transparent;
+
+    }
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="/break/image/favicon.ico">
+        <title>Запись на брейки</title>
+        <link rel="stylesheet" href="/break/css/main.css">
+        <link rel="stylesheet" href="/break/css/pages/break.css">
+    </head>
+    <body>
+        <div class="header">
+            <!--меню открывется -->
+            <nav class='nav-menu'> 
+                <a href="/break/index.html" class="nav-menu_logo_a">
+                    <img src="/break/image/logo.png" alt="logo" class="nav-menu_logo">
+                </a>
+                <a href="/break/pages/update.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="fas fa-sync-alt"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Обновление</div>
+                        <div class='nav-menu_f2'>Детали обновлений</div>
+                    </div>
+                </a>
+                <a href="/break/index.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="far fa-newspaper"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Главная</div>
+                        <div class='nav-menu_f2'>Новости и разное интересное</div>
+                    </div>
+                </a>
+                <span class='nav-menu_link dev_pos'>
+                    <div class="dev_wait"></div>
+                    <div class='nav-menu_small  dev_blur'><i class="far fa-comment-dots  dev_blur"></i></div>
+                    <div class='nav-menu_full  dev_blur'>
+                        <div class='nav-menu_f1'>Опросы</div>
+                        <div class='nav-menu_f2'>Обратная связь и голосования</div>
+                    </div>
+                </span>
+                <a href="/break/pages/break.html" class='nav-menu_link nav-menu_small-active'>
+                    <div class="smobef"></div>
+                    <div class='nav-menu_small'><i class="fas fa-coffee"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Break</div>
+                        <div class='nav-menu_f2'>Запишись и отдохни</div>
+                    </div>
+                    <div class="smoaft"></div>
+                </a>
+                <a href="/break/pages/taxi.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="fas fa-taxi"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Taxi</div>
+                        <div class='nav-menu_f2'>Надо ехать домой</div>
+                    </div>
+                </a>
+                <a href="/break/pages/admin.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="fas fa-tools"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Admin</div>
+                        <div class='nav-menu_f2'>Only VIP, sorry</div>
+                    </div>
+                </a>
+                <a href="/break/pages/personal.html" class='nav-menu_link'>
+                    <div class='nav-menu_small'><i class="far fa-address-card"></i></div>
+                    <div class='nav-menu_full'>
+                        <div class='nav-menu_f1'>Личный кабинет</div>
+                        <div class='nav-menu_f2'>Все самое полезное под рукой!</div>
+                    </div>
+                </a>
+            </nav>
+            <!--меню заканчивается-->
+            <div class="login">
+                <h1 class="header_main"> Брейки</h1>
+                <!--форма успешного логина начало-->
+                <div class="login_success">
+                    <img src="/break/image/avatars/no-avatar.jpg" alt="avatar" class="login_avatar">
+                    <span>Привет, <a href="/break/pages/personal.html"><span class="login_userName"></span></a></span>
+                    <a href="#" class="login_buttonOut"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+                <!-- конец-->
+            </div>
+        </div>
+        <!-- начало контента страницы брейков-->
+        <div class="wrapper">
+            <div class="break">
+                <div class="break-forecast">
+                    <input type="text" class="break-forecast_new" placeholder="6	2	2	2	2	2	3	7	13	20	23	23	26	26	28	27	28	29	25	22	23	18	13	9
+                                                                               ">
+                    <input type="button" class="break-forecast_button"value="Отправить загрузку" onclick="forecast()">
+                </div>
+                <div class="break-sv">
+                    <input type="button" onclick="break_sv(this.value)"class="break-sv_btn" value="Максим Бабич">
+                    <input type="button" onclick="break_sv(this.value)"class="break-sv_btn" value="Кирил Брага">
+                    <input type="button" onclick="break_sv(this.value)"class="break-sv_btn" value="Каськов Миша">
+                    <input type="button" onclick="break_sv(this.value)"class="break-sv_btn" value="Курочка Дима">
+                    <input type="button" onclick="break_sv(this.value)"class="break-sv_btn" value="Кикоть Олег">
+                    <input type="button" onclick="break_sv(this.value)"class="break-sv_btn" value="Хоптяр Вика">
+                    <input type="button" onclick="break_sv(this.value)"class="break-sv_btn" value="Михайловская Лиза">
+                    <input type="button" onclick="break_sv(this.value)"class="break-sv_btn" value="Нетюхайло Антон">
+                    <input type="button" onclick="break_sv(this.value)"class="break-sv_btn" value="Ментор">
+                </div>
+                <div class="break-group">
+                    <button value="1" onclick="get_group(this)">1st line</button>
+                    <button value="2" onclick="get_group(this)">Happy</button>
+                    <button value="3" onclick="get_group(this)">Cross</button>
+                </div>
+                <div class="break-interval_wrapper">
+                    <button class="break-interval_item" value="8" onclick="get_interval(this)">08</button>
+                    <button class="break-interval_item" value="9" onclick="get_interval(this)">09</button>
+                    <button class="break-interval_item" value="10" onclick="get_interval(this)">10</button>
+                    <button class="break-interval_item" value="11" onclick="get_interval(this)">11</button>
+                    <button class="break-interval_item" value="12" onclick="get_interval(this)">12</button>
+                    <button class="break-interval_item" value="13" onclick="get_interval(this)">13</button>
+                    <button class="break-interval_item" value="14" onclick="get_interval(this)">14</button>
+                    <button class="break-interval_item" value="15" onclick="get_interval(this)">15</button>
+                    <button class="break-interval_item" value="16" onclick="get_interval(this)">16</button>
+                    <button class="break-interval_item" value="17" onclick="get_interval(this)">17</button>
+                    <button class="break-interval_item" value="18" onclick="get_interval(this)">18</button>
+                    <button class="break-interval_item" value="19" onclick="get_interval(this)">19</button>
+                    <button class="break-interval_item" value="20" onclick="get_interval(this)">20</button>
+                    <button class="break-interval_item" value="21" onclick="get_interval(this)">21</button>
+                    <button class="break-interval_item" value="22" onclick="get_interval(this)">22</button>
+                    <button class="break-interval_item" value="23" onclick="get_interval(this)">23</button>
+                </div>
+                <div class="break-list_wrapper_1st">
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Lunch в
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="break-list_wrapper_cross">
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Lunch в
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="break-list_wrapper_happy">
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Lunch в
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                    <div class="break-list">
+                        <h2 class="break-list_h2">
+                            <i class="fas fa-arrow-down break-reduce_forecast" onclick="changes_forecast(this, 'down')"></i>
+                            Break в 
+                            <span class="break-list_time">
+
+                            </span>
+                            <i class="fas fa-arrow-up break-increase_forecast" onclick="changes_forecast(this, 'up')"></i>
+                            <p>Можно пауз:
+                                <span class="break-interval_forecast"></span>
+                            </p>
+                        </h2> 
+                        <div class="break-item_list">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message">
+                <textarea class="message_box" rows="5" maxlength="1000" placeholder="О чем информируем?"></textarea>
+                <input class="message_q" type="text" placeholder="Вопрос для проверки прочтения?">
+                <input class="message_a" type="text" placeholder="Ответ для проверки прочтения?">
+                <button class="message_btn" onclick="send_mess()">Проинформировать</button>
+            </div>
+        </div>
+        <!-- конец -->
+        <script src="/break/script/jquery-3.3.1.min.js"></script>
+        <script src="/break/script/script.js"></script>   
+        <script src="/break/script/_break_order.js"></script>   
+
+        <footer class="footer">
+            <div>&copy; 2019 <span class="footer_developers">Oleh Kykot</span> and <span class="footer_developers">Anton Netiukhailo</span></div>
+            <div> <img src="../image/logo.png" alt="logo" class="logo"></div>
+            <div>По всем неисправностям или улучшениям пишите на 
+                <p><span class="footer_developers">oleh.kykot@volia.com</span> или <span class="footer_developers">anton.netiukhailo@volia.com</span></p>
+            </div>
+        </footer>
+    </body>
+</html>
