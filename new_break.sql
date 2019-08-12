@@ -2,10 +2,10 @@
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Авг 12 2019 г., 12:35
--- Версия сервера: 5.7.18-0ubuntu0.16.04.1
--- Версия PHP: 5.6.30-7+deb.sury.org~xenial+1
+-- Host: localhost
+-- Generation Time: Aug 12, 2019 at 02:15 PM
+-- Server version: 5.7.18-0ubuntu0.16.04.1
+-- PHP Version: 5.6.30-7+deb.sury.org~xenial+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `new_break`
+-- Database: `new_break`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `break`
+-- Table structure for table `break`
 --
 
 CREATE TABLE `break` (
@@ -35,7 +35,7 @@ CREATE TABLE `break` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `break`
+-- Dumping data for table `break`
 --
 
 INSERT INTO `break` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
@@ -56,23 +56,23 @@ INSERT INTO `break` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 (15, 12, 40, 'a:3:{i:0;s:29:" Татьяна, Голбан";i:1;s:25:" Даниил, Яцков";i:2;s:29:" Оксана, Михалюк";}', 36),
 (16, 13, 0, 'a:2:{i:0;s:27:" Максим, Коляда";i:1;s:33:" Владимир, Марамон";}', 28),
 (17, 13, 30, 'a:3:{i:0;s:29:" Татьяна, Мамчур";i:1;s:27:" Дарья, Якимчук";i:2;s:32:"Мария, Щербанская";}', 36),
-(18, 13, 40, 'a:1:{i:0;s:32:"Сергей, Мельничук";}', 36),
+(18, 13, 40, 'a:2:{i:0;s:32:"Сергей, Мельничук";i:1;s:33:" Богдан, Нестерчук";}', 36),
 (19, 14, 0, 'a:3:{i:0;s:32:"Вадим, Гвоздецкий";i:1;s:29:" Ольга, Яворская";i:2;s:35:" Никита, Молдаванов";}', 37),
 (20, 14, 30, 'a:3:{i:0;s:33:" Светлана, Купрата";i:1;s:35:" Наталия, Леонтиева";i:2;s:27:" Виталий, Рыжак";}', 37),
-(21, 14, 40, 'a:2:{i:0;s:27:" Максим, Коляда";i:1;s:23:" Виктор, Фурс";}', 37),
+(21, 14, 40, 'a:3:{i:0;s:27:" Максим, Коляда";i:1;s:23:" Виктор, Фурс";i:2;s:31:" Владимир, Кедрун";}', 37),
 (22, 15, 0, 'a:3:{i:0;s:33:" Виктория, Багатая";i:1;s:25:" Андрей, Мазур";i:2;s:29:" Оксана, Михалюк";}', 38),
 (23, 15, 30, 'a:3:{i:0;s:29:" Татьяна, Мамчур";i:1;s:29:" Ольга, Яворская";i:2;s:35:" Василий, Кошельник";}', 38),
 (24, 15, 40, 's:34:"Анастасия, Шаховал";', 38),
-(25, 16, 0, 'a:2:{i:0;s:25:" Нина, Магаляс";i:1;s:27:" Виталий, Рыжак";}', 37),
+(25, 16, 0, 'a:3:{i:0;s:25:" Нина, Магаляс";i:1;s:27:" Виталий, Рыжак";i:2;s:36:"Володимир, Петришин";}', 37),
 (26, 16, 30, 'a:3:{i:0;s:35:" Наталия, Леонтиева";i:1;s:33:" Виктория, Багатая";i:2;s:25:" Андрей, Мазур";}', 37),
 (27, 16, 40, 's:0:""', 37),
 (28, 17, 0, 'a:4:{i:0;s:29:" Татьяна, Мамчур";i:1;s:23:" Виктор, Фурс";i:2;s:35:" Василий, Кошельник";i:3;s:32:"Сергей, Мельничук";}', 44),
 (29, 17, 30, 'a:3:{i:0;s:33:" Владимир, Марамон";i:1;s:25:" Нина, Магаляс";i:2;s:27:" Виталий, Рыжак";}', 44),
 (30, 17, 40, 's:0:""', 44),
-(31, 18, 0, 's:32:"Мария, Щербанская";', 43),
+(31, 18, 0, 'a:3:{i:0;s:32:"Мария, Щербанская";i:1;s:31:" Владимир, Кедрун";i:2;s:28:"Максим, Слипчук";}', 43),
 (32, 18, 30, 's:0:""', 43),
 (33, 18, 40, 's:0:""', 43),
-(34, 19, 0, 's:43:" Владислав, Завишальний";', 37),
+(34, 19, 0, 'a:2:{i:0;s:43:" Владислав, Завишальний";i:1;s:23:" Игорь, Рыкун";}', 37),
 (35, 19, 30, 's:0:""', 37),
 (36, 19, 40, 's:27:" Виталий, Рыжак";', 37),
 (37, 20, 0, 's:0:""', 36),
@@ -100,30 +100,30 @@ INSERT INTO `break` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 (62, 13, 20, 'a:3:{i:0;s:35:" Екатерина, Дацкова";i:1;s:26:"Виталина, Заец";i:2;s:33:" Виктория, Багатая";}', 36),
 (63, 13, 50, 'a:3:{i:0;s:23:" Роман, Кудин";i:1;s:23:" Ольга, Купко";i:2;s:30:"Александр, Рунов";}', 36),
 (64, 14, 50, 'a:2:{i:0;s:25:" Даниил, Яцков";i:1;s:29:" Татьяна, Голбан";}', 37),
-(65, 14, 20, 'a:2:{i:0;s:25:" Нина, Магаляс";i:1;s:43:" Владислав, Завишальний";}', 37),
-(66, 15, 20, 'a:2:{i:0;s:32:"Мария, Щербанская";i:1;s:32:"Сергей, Мельничук";}', 38),
+(65, 14, 20, 'a:3:{i:0;s:25:" Нина, Магаляс";i:1;s:43:" Владислав, Завишальний";i:2;s:36:"Володимир, Петришин";}', 37),
+(66, 15, 20, 'a:3:{i:0;s:32:"Мария, Щербанская";i:1;s:32:"Сергей, Мельничук";i:2;s:23:" Игорь, Рыкун";}', 38),
 (67, 15, 50, 'a:3:{i:0;s:33:" Владимир, Марамон";i:1;s:23:" Ольга, Купко";i:2;s:43:" Владислав, Завишальний";}', 38),
-(68, 16, 20, 's:35:" Никита, Молдаванов";', 37),
+(68, 16, 20, 'a:3:{i:0;s:35:" Никита, Молдаванов";i:1;s:31:" Владимир, Кедрун";i:2;s:28:"Максим, Слипчук";}', 37),
 (69, 16, 50, 's:0:""', 37),
-(70, 17, 20, 's:43:" Владислав, Завишальний";', 44),
+(70, 17, 20, 'a:3:{i:0;s:43:" Владислав, Завишальний";i:1;s:29:" Оксана, Михалюк";i:2;s:23:" Игорь, Рыкун";}', 44),
 (71, 17, 50, 's:23:" Ольга, Купко";', 44),
 (72, 18, 20, 's:25:" Андрей, Мазур";', 43),
 (73, 18, 50, 'a:2:{i:0;s:29:" Татьяна, Мамчур";i:1;s:35:" Василий, Кошельник";}', 43),
-(74, 19, 20, 'a:2:{i:0;s:31:" Василий, Кравчук";i:1;s:35:" Никита, Молдаванов";}', 37),
-(75, 19, 50, 's:32:"Сергей, Мельничук";', 37),
-(76, 20, 20, 's:25:" Андрей, Мазур";', 36),
+(74, 19, 20, 'a:3:{i:0;s:31:" Василий, Кравчук";i:1;s:35:" Никита, Молдаванов";i:2;s:29:" Оксана, Михалюк";}', 37),
+(75, 19, 50, 'a:2:{i:0;s:32:"Сергей, Мельничук";i:1;s:31:" Владимир, Кедрун";}', 37),
+(76, 20, 20, 'a:2:{i:0;s:25:" Андрей, Мазур";i:1;s:28:"Максим, Слипчук";}', 36),
 (77, 20, 50, 'a:2:{i:0;s:31:" Василий, Кравчук";i:1;s:35:" Никита, Молдаванов";}', 36),
-(78, 21, 20, 's:0:""', 33),
+(78, 21, 20, 'a:2:{i:0;s:29:" Оксана, Михалюк";i:1;s:23:" Игорь, Рыкун";}', 33),
 (79, 21, 50, 's:25:" Андрей, Мазур";', 33),
 (80, 22, 20, 's:31:" Василий, Кравчук";', 25),
 (81, 22, 50, 's:0:""', 25),
 (84, 23, 50, 's:0:""', 15),
-(85, 23, 20, 's:0:""', 15);
+(85, 23, 20, 's:23:" Игорь, Рыкун";', 15);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `break_cross`
+-- Table structure for table `break_cross`
 --
 
 CREATE TABLE `break_cross` (
@@ -135,7 +135,7 @@ CREATE TABLE `break_cross` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `break_cross`
+-- Dumping data for table `break_cross`
 --
 
 INSERT INTO `break_cross` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
@@ -223,7 +223,7 @@ INSERT INTO `break_cross` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `break_happy`
+-- Table structure for table `break_happy`
 --
 
 CREATE TABLE `break_happy` (
@@ -235,7 +235,7 @@ CREATE TABLE `break_happy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `break_happy`
+-- Dumping data for table `break_happy`
 --
 
 INSERT INTO `break_happy` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
@@ -257,14 +257,14 @@ INSERT INTO `break_happy` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 (16, 13, 0, 's:29:" Сергей, Матвиюк";', 10),
 (17, 13, 30, 's:29:" Илона, Горбатюк";', 10),
 (18, 13, 40, 's:0:""', 10),
-(19, 14, 0, 's:0:""', 10),
+(19, 14, 0, 's:31:" Виктория, Шевчук";', 10),
 (20, 14, 30, 's:30:"Максим, Крыжовий";', 10),
 (21, 14, 40, 's:32:"Наталия, Марценюк";', 10),
 (22, 15, 0, 's:29:" Илона, Горбатюк";', 10),
 (23, 15, 30, 's:29:" Сергей, Матвиюк";', 10),
 (24, 15, 40, 's:0:""', 10),
 (25, 16, 0, 's:30:"Максим, Крыжовий";', 10),
-(26, 16, 30, 's:0:""', 10),
+(26, 16, 30, 's:28:"Юлия, Столярчук";', 10),
 (27, 16, 40, 's:29:" Илона, Горбатюк";', 10),
 (28, 17, 0, 's:32:"Наталия, Марценюк";', 10),
 (29, 17, 30, 's:0:""', 10),
@@ -272,7 +272,7 @@ INSERT INTO `break_happy` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 (31, 18, 0, 's:0:""', 10),
 (32, 18, 30, 's:0:""', 10),
 (33, 18, 40, 's:32:"Наталия, Марценюк";', 10),
-(34, 19, 0, 's:0:""', 10),
+(34, 19, 0, 's:28:"Юлия, Столярчук";', 10),
 (35, 19, 30, 's:0:""', 10),
 (36, 19, 40, 's:0:""', 10),
 (37, 20, 0, 's:0:""', 10),
@@ -299,7 +299,7 @@ INSERT INTO `break_happy` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 (61, 12, 50, 's:0:""', 10),
 (62, 13, 20, 's:0:""', 10),
 (63, 13, 50, 's:0:""', 10),
-(64, 14, 50, 's:0:""', 10),
+(64, 14, 50, 's:28:"Юлия, Столярчук";', 10),
 (65, 14, 20, 's:0:""', 10),
 (66, 15, 20, 's:0:""', 10),
 (67, 15, 50, 's:0:""', 10),
@@ -323,7 +323,7 @@ INSERT INTO `break_happy` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `forecast`
+-- Table structure for table `forecast`
 --
 
 CREATE TABLE `forecast` (
@@ -333,7 +333,7 @@ CREATE TABLE `forecast` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `forecast`
+-- Dumping data for table `forecast`
 --
 
 INSERT INTO `forecast` (`id`, `name`, `time`) VALUES
@@ -344,7 +344,7 @@ INSERT INTO `forecast` (`id`, `name`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `log_login`
+-- Table structure for table `log_login`
 --
 
 CREATE TABLE `log_login` (
@@ -355,7 +355,7 @@ CREATE TABLE `log_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `log_login`
+-- Dumping data for table `log_login`
 --
 
 INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
@@ -7911,7 +7911,63 @@ INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `other`
+-- Table structure for table `operators_cc`
+--
+
+CREATE TABLE `operators_cc` (
+  `ID_Cisco` int(10) NOT NULL,
+  `FIO` varchar(50) NOT NULL,
+  `Team` varchar(50) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Number` int(12) NOT NULL,
+  `FTE` int(4) NOT NULL,
+  `Group` int(10) NOT NULL,
+  `01` varchar(10) DEFAULT NULL,
+  `02` varchar(10) DEFAULT NULL,
+  `03` varchar(10) DEFAULT NULL,
+  `04` varchar(10) DEFAULT NULL,
+  `05` varchar(10) DEFAULT NULL,
+  `06` varchar(10) DEFAULT NULL,
+  `07` varchar(10) DEFAULT NULL,
+  `08` varchar(10) DEFAULT NULL,
+  `09` varchar(10) DEFAULT NULL,
+  `10` varchar(10) DEFAULT NULL,
+  `11` varchar(10) DEFAULT NULL,
+  `12` varchar(10) DEFAULT NULL,
+  `13` varchar(10) DEFAULT NULL,
+  `14` varchar(10) DEFAULT NULL,
+  `15` varchar(10) DEFAULT NULL,
+  `16` varchar(10) DEFAULT NULL,
+  `17` varchar(10) DEFAULT NULL,
+  `18` varchar(10) DEFAULT NULL,
+  `19` varchar(10) DEFAULT NULL,
+  `20` varchar(10) DEFAULT NULL,
+  `21` varchar(10) DEFAULT NULL,
+  `22` varchar(10) DEFAULT NULL,
+  `23` varchar(10) DEFAULT NULL,
+  `24` varchar(10) DEFAULT NULL,
+  `25` varchar(10) DEFAULT NULL,
+  `26` varchar(10) DEFAULT NULL,
+  `27` varchar(10) DEFAULT NULL,
+  `28` varchar(10) DEFAULT NULL,
+  `29` varchar(10) DEFAULT NULL,
+  `30` varchar(10) DEFAULT NULL,
+  `31` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `operators_cc`
+--
+
+INSERT INTO `operators_cc` (`ID_Cisco`, `FIO`, `Team`, `Email`, `Number`, `FTE`, `Group`, `01`, `02`, `03`, `04`, `05`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`) VALUES
+(1, 'арпо', 'арпр', 'апрапр', 380, 1, 1, '06-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '19-01', NULL, NULL, '13-21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '20-8', NULL, NULL, NULL, NULL, NULL, '05-16', NULL),
+(5, 'ждло', 'одлд', 'шщг', 3806, 50, 2, '10-20', NULL, NULL, NULL, NULL, NULL, '12-23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '10-11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '17-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9874, 'йцукцук', 'екуцу', 'цук', 380, 75, 3, NULL, NULL, NULL, '15-20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '10-16', NULL, NULL, NULL, '10-16', NULL, NULL, NULL, NULL, '10-16', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '15-23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `other`
 --
 
 CREATE TABLE `other` (
@@ -7920,7 +7976,7 @@ CREATE TABLE `other` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `other`
+-- Dumping data for table `other`
 --
 
 INSERT INTO `other` (`var`, `val`) VALUES
@@ -7932,7 +7988,7 @@ INSERT INTO `other` (`var`, `val`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `taxi_order`
+-- Table structure for table `taxi_order`
 --
 
 CREATE TABLE `taxi_order` (
@@ -7947,7 +8003,7 @@ CREATE TABLE `taxi_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `taxi_order`
+-- Dumping data for table `taxi_order`
 --
 
 INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `car_num`, `date`) VALUES
@@ -8880,68 +8936,13 @@ INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `
 (1323, '2288493', ' Диана, Рыжук', '22', 'Институтская', 'Інституцька 6', '1', '11.08.2019'),
 (1324, '0523453', 'Анастасия, Шаховал', '1', 'Тернопольская', 'Тернопольска42', '2', '11.08.2019'),
 (1325, '2309521', 'Максим, Слипчук', '', '', '', '0', '11.08.2019'),
-(1326, '8978853', ' Иван, Марчук', '', '', '', '0', '11.08.2019');
+(1326, '8978853', ' Иван, Марчук', '', '', '', '0', '11.08.2019'),
+(1327, '6015388', ' Оксана, Михалюк', '23', 'Озерная', 'Садова 1/1', '0', '12.08.2019');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Test`
---
-
-CREATE TABLE `Test` (
-  `ID_Cisco` int(10) NOT NULL,
-  `FIO` varchar(50) NOT NULL,
-  `Team` varchar(50) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Number` int(12) NOT NULL,
-  `FTE` int(4) NOT NULL,
-  `Group` int(10) NOT NULL,
-  `01` varchar(10) DEFAULT NULL,
-  `02` varchar(10) DEFAULT NULL,
-  `03` varchar(10) DEFAULT NULL,
-  `04` varchar(10) DEFAULT NULL,
-  `05` varchar(10) DEFAULT NULL,
-  `06` varchar(10) DEFAULT NULL,
-  `07` varchar(10) DEFAULT NULL,
-  `08` varchar(10) DEFAULT NULL,
-  `09` varchar(10) DEFAULT NULL,
-  `10` varchar(10) DEFAULT NULL,
-  `11` varchar(10) DEFAULT NULL,
-  `12` varchar(10) DEFAULT NULL,
-  `13` varchar(10) DEFAULT NULL,
-  `14` varchar(10) DEFAULT NULL,
-  `15` varchar(10) DEFAULT NULL,
-  `16` varchar(10) DEFAULT NULL,
-  `17` varchar(10) DEFAULT NULL,
-  `18` varchar(10) DEFAULT NULL,
-  `19` varchar(10) DEFAULT NULL,
-  `20` varchar(10) DEFAULT NULL,
-  `21` varchar(10) DEFAULT NULL,
-  `22` varchar(10) DEFAULT NULL,
-  `23` varchar(10) DEFAULT NULL,
-  `24` varchar(10) DEFAULT NULL,
-  `25` varchar(10) DEFAULT NULL,
-  `26` varchar(10) DEFAULT NULL,
-  `27` varchar(10) DEFAULT NULL,
-  `28` varchar(10) DEFAULT NULL,
-  `29` varchar(10) DEFAULT NULL,
-  `30` varchar(10) DEFAULT NULL,
-  `31` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `Test`
---
-
-INSERT INTO `Test` (`ID_Cisco`, `FIO`, `Team`, `Email`, `Number`, `FTE`, `Group`, `01`, `02`, `03`, `04`, `05`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`) VALUES
-(1, 'арпо', 'арпр', 'апрапр', 380, 1, 1, '06-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '19-01', NULL, NULL, '13-21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '20-8', NULL, NULL, NULL, NULL, NULL, '05-16', NULL),
-(5, 'ждло', 'одлд', 'шщг', 3806, 50, 2, '10-20', NULL, NULL, NULL, NULL, NULL, '12-23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '10-11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '17-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9874, 'йцукцук', 'екуцу', 'цук', 380, 75, 3, NULL, NULL, NULL, '15-20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '10-16', NULL, NULL, NULL, '10-16', NULL, NULL, NULL, NULL, '10-16', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '15-23');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -8959,7 +8960,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `access`, `photo`, `Lastlogin`, `session`, `message`) VALUES
@@ -8995,7 +8996,7 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `ac
 ('2133593', 'Наталия', 'Марценюк', '0', 'nataliia.martseniuk', 'Pingvin2018!!!', 3, '2133593.jpg', '12.08.19', 1, 0),
 ('2194064', ' Назарий', 'Гранатович', '0', 'nazarii.hranatovych', 'Nazar2015', 4, '2194064.jpg', '10.08.19', 0, 0),
 ('2288493', ' Диана', 'Рыжук', '0', 'diana.ryzhuk', 'JpnqYZ', 1, '2288493.jpg', '11.08.19', 0, 0),
-('2309521', 'Максим', 'Слипчук', '0', 'maksym.slipchuk', 'Qwerty', 1, '2309521.jpg', '11.08.19', 0, 0),
+('2309521', 'Максим', 'Слипчук', '0', 'maksym.slipchuk', 'Qwerty', 1, '2309521.jpg', '12.08.19', 1, 0),
 ('2448808', ' Дмитрий', 'Войнаровский', '0', 'dmytro.voinarovskyi', '4vwyW', 1, '2448808.jpg', '11.08.19', 0, 0),
 ('2510060', ' Екатерина', 'Галузинская', '0', 'kateryna.haluzinska', 'u3oZH', 4, '5210060.jpg', '12.08.19', 1, 0),
 ('2577184', ' Елена', 'Янюк', '0', 'olena.yaniuk', 'Paris1996', 3, '2577184.jpg', '19.07.19', 0, 0),
@@ -9008,19 +9009,19 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `ac
 ('3462602', ' Владислав', 'Лисовый', '0', 'vladyslav.lisovyi', 'Fuckblad01', 4, '3462602.jpg', '10.08.19', 0, 0),
 ('3483894', ' Илона', 'Горбатюк', '0', 'ilona.horbatiuk', 'Ilona.2211', 3, '3483894.jpg', '12.08.19', 1, 0),
 ('3487077', ' Ольга', 'Купко', '0', 'olha.kupko', 'ljvdcrb,ytdj777', 1, '3487077.jpg', '12.08.19', 1, 0),
-('3539276', ' Виталий', 'Возняковский', '0', 'vitalii.vozniakivskyi', 'TiD6X', 1, '3539276.jpg', '12.08.19', 1, 0),
+('3539276', ' Виталий', 'Возняковский', '0', 'vitalii.vozniakivskyi', 'TiD6X', 1, '3539276.jpg', '12.08.19', 0, 0),
 ('3713217', ' Анастасия', 'Ковцун', '0', 'anastasiia.kovtsun', 'Kowzun20', 4, '3713217.jpg', '04.08.19', 0, 0),
 ('3825329', ' Александр', 'Нетреба', '0', 'oleksandr.netreba', 'OYZUg', 1, '3825329.jpg', '11.08.19', 0, 0),
-('3833589', ' Александра', 'Орищук', '0', 'oleksandra.oryshchuk', 'Volia123', 1, '3833589.jpg', '12.08.19', 1, 0),
+('3833589', ' Александра', 'Орищук', '0', 'oleksandra.oryshchuk', 'Volia123', 1, '3833589.jpg', '12.08.19', 0, 0),
 ('3846985', ' Анастасия', 'Троян', '0', 'anastasiia.troian', 'mama1996mama', 3, '3846985.jpg', '08.08.19', 0, 0),
 ('3874067', 'Карина', 'Репяхова', '0', 'karina.repiakhova', 'karinar0', 1, '3874067.jpg', '11.08.19', 0, 0),
 ('3881211', 'Назарий', 'Кочмарський', '0', 'nazarii.kochmarskyi', 'nazarnazar!1997', 1, '3881211.jpg', '11.08.19', 0, 0),
 ('4', ' Виктория', 'Хоптяр', '380960732146', 'viktoriia.khoptiar', '22', 2, '4.jpg', '09.08.19', 0, 0),
 ('4000053', ' Елена', 'Панасюк', '0', 'olena.panasiuk', 'Lena123', 1, '4000053.jpg', '08.08.19', 0, 0),
 ('4095322', 'Вадим', 'Юркив', '0', 'vadym.yurkiv', 'Vadym734GHJ', 1, '4095322.jpg', '11.08.19', 0, 0),
-('4193566', 'Юлия', 'Таравская', '0', 'yuliia.taravska', 'kH5zC', 1, '4193566.jpg', '12.08.19', 1, 0),
-('4345148', ' Роман', 'Тищук', '0', 'roman.tyshchuk', 'Helahe48', 1, '4345148.jpg', '12.08.19', 1, 0),
-('4350516', 'Александр', 'Рунов', '0', 'oleksandr.runov', 'Op3wyC', 1, '4350516.jpg', '12.08.19', 1, 0),
+('4193566', 'Юлия', 'Таравская', '0', 'yuliia.taravska', 'kH5zC', 1, '4193566.jpg', '12.08.19', 0, 0),
+('4345148', ' Роман', 'Тищук', '0', 'roman.tyshchuk', 'Helahe48', 1, '4345148.jpg', '12.08.19', 0, 0),
+('4350516', 'Александр', 'Рунов', '0', 'oleksandr.runov', 'Op3wyC', 1, '4350516.jpg', '12.08.19', 0, 0),
 ('4360674', ' Елена', 'Матвийчук', '0', 'olena.v.matviichuk', 'RKOf7', 1, '4360674.jpg', '11.08.19', 0, 0),
 ('4508945', ' Елена', 'Иванюк', '0', 'olena.ivaniuk', 'Ivanyuk19!!!', 3, '4508945.jpg', '09.08.19', 0, 0),
 ('4528179', 'Владислав', 'Рокицкий', '0', 'vladyslav.rokytskyi', 'Vladdota04101999', 1, '4528179.jpg', '11.08.19', 0, 0),
@@ -9040,12 +9041,12 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `ac
 ('5621698', ' Ярослав', 'Скрыпытула', '0', 'yaroslav.skrypytula', '6Wojs', 1, '5621698.jpg', '31.07.19', 0, 0),
 ('5641651', 'Юрий', 'Кашперский', '0', 'yurii.kashperskyi', 'Gagarina60kv12v', 1, '5641651.jpg', '10.08.19', 0, 0),
 ('5690604', ' Ирина', 'Стражир', '0', 'iryna.strazhyr', 'ZogxU', 1, '5690604.jpg', '02.08.19', 0, 0),
-('5737049', 'Юлия', 'Столярчук', '0', 'yuliia.stoliarchuk', 'drEet', 3, '5737049.jpg', '11.08.19', 0, 0),
-('5756174', 'Володимир', 'Петришин', '0', 'volodymyr.petryshyn', 'Elshaarawy1999', 1, '5756174.jpg', '11.08.19', 0, 0),
+('5737049', 'Юлия', 'Столярчук', '0', 'yuliia.stoliarchuk', 'drEet', 3, '5737049.jpg', '12.08.19', 1, 0),
+('5756174', 'Володимир', 'Петришин', '0', 'volodymyr.petryshyn', 'Elshaarawy1999', 1, '5756174.jpg', '12.08.19', 1, 0),
 ('5827732', ' Василий', 'Кошельник', '0', 'vasyl.koshelnyk', '1qZwK', 1, '5827732.jpg', '12.08.19', 1, 0),
 ('5928326', ' Валентин', 'Романов', '0', 'valentyn.romanov', '1111', 1, '5928326.jpg', '09.08.19', 0, 0),
 ('5977953', ' Галина', 'Гнатюк', '0', 'halyna.hnatiuk', '9mV4v', 1, '5977953.jpg', '12.08.19', 1, 0),
-('6', 'Олег', 'Кикоть', '380973189935', 'oleh.kykot', '11', 2, '6.jpg', '11.08.19', 0, 0),
+('6', 'Олег', 'Кикоть', '380973189935', 'oleh.kykot', '11', 5, '6.jpg', '12.08.19', 1, 0),
 ('6015388', ' Оксана', 'Михалюк', '0', 'oksana.mykhaliuk', 'Volia123456', 1, '6015388.jpg', '12.08.19', 1, 0),
 ('6235955', ' Руслан', 'Осацкий', '0', 'ruslan.osatskyi', 'Volia123', 4, '6235955.jpg', '10.08.19', 0, 0),
 ('6369606', 'Анастасия', 'Дзебчук', '0', 'anastasiia.dzebchuk', 'Dzebchuk12345!', 1, '6369606.jpg\n', '10.08.19', 0, 0),
@@ -9063,14 +9064,14 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `ac
 ('7908277', ' Сергей', 'Дзяворук', '0', 'serhii.dziavoruk', '1234', 1, '7908277.jpg', '24.07.19', 0, 0),
 ('7952184', ' Ксения', 'Пастернак', '0', 'oksana.v.pasternak', '16119533Pas', 1, '7952184.jpg', '09.08.19', 0, 0),
 ('7989476', 'Максим', 'Добродомов', '0', 'maksym.dobrodomov', 'b97v33', 1, 'no-avatar.jpg', '11.08.19', 0, 0),
-('8', ' Михаил', 'Каськов', '380989478847', 'mykhailo.kaskov', 'Hatamoto21#8600', 2, '8.jpg', '11.08.19', 0, 0),
+('8', ' Михаил', 'Каськов', '380989478847', 'mykhailo.kaskov', 'Hatamoto21#8600', 2, '8.jpg', '12.08.19', 0, 0),
 ('8073640', ' Анастасия', 'Карпачова', '0', 'anastasiia.karpachova', 'Djhjyjxrf1', 1, '8073640.jpg', '09.08.19', 0, 0),
 ('8092261', ' Ирина', 'Белкина', '0', 'iryna.bielkina', '1111', 3, '8092261.jpg', '09.08.19', 0, 0),
 ('8139945', ' Виталий', 'Бабий', '0', 'vitalii.babii', 'NV22w', 1, '8139945.jpg', '10.08.19', 0, 0),
 ('8186221', ' Владислав', 'Завишальний', '0', 'vladyslav.zavishalnyi', '2cA7kc', 1, '8186221.jpg', '12.08.19', 1, 0),
 ('8248725', ' Назарий', 'Троян', '0', 'nazarii.troian', 'UWi1q', 1, '8248725.jpg', '09.08.19', 0, 0),
 ('8413846', ' Илья', 'Пайонк', '0', 'illia.paionk', 'u0Mz9', 3, '8413846.jpg', '10.08.19', 0, 0),
-('8516333', ' Владимир', 'Кедрун', '0', 'volodymyr.kedrun', 'Kedr95Vov4ik', 1, '8516333.jpg', '24.07.19', 0, 0),
+('8516333', ' Владимир', 'Кедрун', '0', 'volodymyr.kedrun', 'Kedr95Vov4ik', 1, '8516333.jpg', '12.08.19', 1, 0),
 ('8709978', ' Марьяна', 'Багрийчук', '0', 'mariana.bahriichuk', 'Mariana22', 1, '8709978.jpg', '03.08.19', 0, 0),
 ('874579', 'Максим', 'Крыжовий', '0', 'maksym.kryzhovyi', '71amahiv123WOW', 3, '874579.jpg', '12.08.19', 1, 0),
 ('8798045', ' Анна', 'Коберник', '0', 'anna.kobernik', '1111', 1, '8798045.jpg', '09.08.19', 0, 0),
@@ -9082,7 +9083,7 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `ac
 ('8798067', ' Екатерина', 'Дацкова', '0', 'kateryna.datskova', '1111', 1, '8798067.jpg', '12.08.19', 1, 0),
 ('8798084', ' Татьяна', 'Мамчур', '0', 'tetiana.mamchur', 'Volia123', 1, '8798084.jpg', '12.08.19', 1, 0),
 ('8798085', ' Нина', 'Остапина', '0', 'nina.ostapyna', 'Volia123', 1, '8798085.jpg', '07.08.19', 0, 0),
-('8798098', ' Игорь', 'Рыкун', '0', 'ihor.rykun', 'igorok1234567890=1', 1, '8798098.jpg', '11.08.19', 0, 0),
+('8798098', ' Игорь', 'Рыкун', '0', 'ihor.rykun', 'igorok1234567890=1', 1, '8798098.jpg', '12.08.19', 1, 0),
 ('8798114', ' Лариса', 'Щуцька', '0', 'larysa.shchutska', '88LL88nn', 1, '8798114.jpg', '10.08.19', 0, 0),
 ('8798116', ' Дмитрий', 'Ткачук', '0', 'dmytro.tkachuk', '303036949', 1, '8798116.jpg', '30.07.19', 0, 0),
 ('8798124', ' Максим', 'Коляда', '0', 'maksym.kolyada', 'Z3SnZ', 1, '8798124.jpg', '12.08.19', 1, 0),
@@ -9094,7 +9095,7 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `ac
 ('9031263', ' Виктория', 'Бурдельная', '0', 'viktoriia.o.melnyk', 'Viktoriia06.03?', 1, '9031263.jpg', '11.08.19', 0, 0),
 ('9138026', 'Иван', 'Андреев', '0', 'ivan.andrieiev', '123123qwert', 1, '9138026.jpg', '11.08.19', 0, 0),
 ('9181419', ' Андрей', 'Бузина', '0', 'andrii.buzyna', 'Volia123', 1, '9181419.jpg', '10.08.19', 0, 0),
-('9191413', 'Никита', 'Подгурский', '0', 'nikita.podhurskyi', 'samsung20', 1, '9191413.jpg', '08.08.19', 0, 0),
+('9191413', 'Никита', 'Подгурский', '0', 'nikita.podhurskyi', 'samsung20', 1, '9191413.jpg', '12.08.19', 1, 0),
 ('9485404', ' Диана', 'Козяр', '0', 'diana.koziar', 'Volia123', 3, '9485404.jpg', '08.08.19', 0, 0),
 ('9502201', 'Богдан', 'Ванюра', '0', 'bohdan.vaniura', 'Flashpoint', 1, '9502201.jpg', '10.08.19', 0, 0),
 ('9573433', ' Илья', 'Олейник', '0', 'illia.oliinyk', 'Oleyn1_k', 1, '9573433.jpg', '11.08.19', 0, 0),
@@ -9108,7 +9109,7 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `ac
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users_indicators`
+-- Table structure for table `users_indicators`
 --
 
 CREATE TABLE `users_indicators` (
@@ -9136,7 +9137,7 @@ CREATE TABLE `users_indicators` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `users_indicators`
+-- Dumping data for table `users_indicators`
 --
 
 INSERT INTO `users_indicators` (`id`, `date_of_issue`, `logged_time`, `work_break`, `csat`, `klk`, `aht`, `sr`, `tss`, `sts`, `rft`, `phone`, `email`, `work_`, `klk_happy`, `nps`, `reg`, `plan_hours`, `exp`, `rank`, `sales_coef`) VALUES
@@ -9259,111 +9260,111 @@ INSERT INTO `users_indicators` (`id`, `date_of_issue`, `logged_time`, `work_brea
 ('date', '12.08.2019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `break`
+-- Indexes for table `break`
 --
 ALTER TABLE `break`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `break_cross`
+-- Indexes for table `break_cross`
 --
 ALTER TABLE `break_cross`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `break_happy`
+-- Indexes for table `break_happy`
 --
 ALTER TABLE `break_happy`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `forecast`
+-- Indexes for table `forecast`
 --
 ALTER TABLE `forecast`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `log_login`
+-- Indexes for table `log_login`
 --
 ALTER TABLE `log_login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `other`
+-- Indexes for table `operators_cc`
+--
+ALTER TABLE `operators_cc`
+  ADD PRIMARY KEY (`ID_Cisco`);
+
+--
+-- Indexes for table `other`
 --
 ALTER TABLE `other`
   ADD PRIMARY KEY (`var`);
 
 --
--- Индексы таблицы `taxi_order`
+-- Indexes for table `taxi_order`
 --
 ALTER TABLE `taxi_order`
   ADD PRIMARY KEY (`id_people`);
 
 --
--- Индексы таблицы `Test`
---
-ALTER TABLE `Test`
-  ADD PRIMARY KEY (`ID_Cisco`);
-
---
--- Индексы таблицы `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `users_indicators`
+-- Indexes for table `users_indicators`
 --
 ALTER TABLE `users_indicators`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `break`
+-- AUTO_INCREMENT for table `break`
 --
 ALTER TABLE `break`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
--- AUTO_INCREMENT для таблицы `break_cross`
+-- AUTO_INCREMENT for table `break_cross`
 --
 ALTER TABLE `break_cross`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
--- AUTO_INCREMENT для таблицы `break_happy`
+-- AUTO_INCREMENT for table `break_happy`
 --
 ALTER TABLE `break_happy`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
--- AUTO_INCREMENT для таблицы `forecast`
+-- AUTO_INCREMENT for table `forecast`
 --
 ALTER TABLE `forecast`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT для таблицы `log_login`
+-- AUTO_INCREMENT for table `log_login`
 --
 ALTER TABLE `log_login`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7540;
 --
--- AUTO_INCREMENT для таблицы `taxi_order`
+-- AUTO_INCREMENT for table `operators_cc`
+--
+ALTER TABLE `operators_cc`
+  MODIFY `ID_Cisco` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9875;
+--
+-- AUTO_INCREMENT for table `taxi_order`
 --
 ALTER TABLE `taxi_order`
-  MODIFY `id_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1327;
---
--- AUTO_INCREMENT для таблицы `Test`
---
-ALTER TABLE `Test`
-  MODIFY `ID_Cisco` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9875;
+  MODIFY `id_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 DELIMITER $$
 --
--- События
+-- Events
 --
 CREATE DEFINER=`root`@`localhost` EVENT `reset_people_happy` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE new_break.break_happy SET peoples ='s:0:""'$$
 
