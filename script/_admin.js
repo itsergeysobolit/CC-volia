@@ -32,7 +32,7 @@ function user_list() {
                         group_class = "user-item_mentor";
                     }
                     app_access = ' <div class="user-item_access user-item_block">' + group + '<i class="far fa-edit user-item_edit" onclick="item_edit(this)" value="access"></i></div>';
-                    app_trash = '<div class="user-item_trash"><i class="fas fa-trash-alt user-item_delete" onclick="item_edit(this)" value="delete" title="Пока-пока:)"></i></div>';
+                    app_trash = '<div class="user-item_trash"><i class="fas fa-trash-alt user-item_devare" onclick="item_edit(this)" value="devare" title="Пока-пока:)"></i></div>';
                     app = app + '<div class="user-item ' + group_class + '">' + app_photo + app_name + app_login + app_password + app_id + app_access + app_trash + '</div>';
                 }
                 wrapper.append(app + "</div>");
@@ -49,7 +49,7 @@ function item_edit(item) {
     var item_text = item.parent().text();
     var item_id = item.parent().parent().find(".user-item_id").text();
     var user_text = null;
-    if (item.attr("value") == "delete") {
+    if (item.attr("value") == "devare") {
         var del = confirm("Сотрудник действительно уволен?");
     } else {
         if (item.attr("value") == "access") {
@@ -77,7 +77,7 @@ function item_edit(item) {
             },
             success: function (data) {
                 if (data == "Update") {
-                    if (item.attr("value") == "delete") {
+                    if (item.attr("value") == "devare") {
                         alert("Бачек уволен. *юху-ху-ху*")
                         item.parent().parent().remove();
                     } else {
@@ -238,13 +238,12 @@ function update_indicators() {
                 kpi: kpi
             },
             success: function (respons) {
-                if (respons == "not delete") {
+                if (respons == "not devare") {
                     alert("Не удалось удалить таблицу. Обновите страницу и попробуйте позже.");
                 } else if (respons == "not update") {
                     alert("Не удалось обновить таблицу. Обновите страницу и попробуйте позже.");
                 } else {
                     alert("Показатели обновлены.");
-
                 }
             }
         });
@@ -254,11 +253,13 @@ function update_indicators() {
 function showTable() {
     var wrapper = $(".user");
     wrapper.empty();
-    var app = " <table class='taxi'>\
+    // Шапка таблицы
+    var app = " <input id='button-a' class='taxi-btn' type='button' value='Выгрузить отчет'><table class='taxi'>\
                     <tr class='taxi-history_head'>\
-                        <td class='taxi-history'>FIO</td>\
-                        <td class='taxi-history'>GROUP</td>\
+                        <td class='taxi-history'>ФИО</td>\
+                        <td class='taxi-history'>Группа</td>\
                         <td class='taxi-history'>01</td>\
+                        <td class='taxi-history'>02</td>\
                     </tr>";
     $.ajax({
         type: "POST",
@@ -266,9 +267,10 @@ function showTable() {
         url: "/break/modules/getUsers.php",
         success: function (data) {
             for (var i = 0; i < data.length; i++) {
+                // Ячейки таблицы
                 app = app + "\
                     <tr class='taxi-history_tr'>\
-                        <td class='taxi-history'>"+ data[i]['fio'] + "</td>\
+                        <td class='taxi-history' contenteditable='true'>"+ data[i]['fio'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['group'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['01'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['02'] + "</td>\
@@ -297,7 +299,7 @@ function showTable() {
 
             }
             $("#button-a").click(function () {
-                saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'taxi.xlsx');
+                saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'showTable.xlsx');
             });
 
 
