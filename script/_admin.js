@@ -256,10 +256,11 @@ function showTable() {
     // Шапка таблицы
     var app = " <input id='button-a' class='taxi-btn' type='button' value='Выгрузить отчет'><table class='taxi'>\
                     <tr class='taxi-history_head'>\
+                        <td class='taxi-history'>id</td>\
                         <td class='taxi-history'>ФИО</td>\
-                        <td class='taxi-history'>Группа</td>\
-                        <td class='taxi-history'>01</td>\
-                        <td class='taxi-history'>02</td>\
+                        <td class='taxi-history'>Team</td>\
+                        <td class='taxi-history'>День</td>\
+                        <td class='taxi-history'>Часы работы</td>\
                     </tr>";
     $.ajax({
         type: "POST",
@@ -270,10 +271,11 @@ function showTable() {
                 // Ячейки таблицы
                 app = app + "\
                     <tr class='taxi-history_tr'>\
-                        <td class='taxi-history' contenteditable='true'>"+ data[i]['fio'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['group'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['01'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['02'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['id'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['fio'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['team'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['smena'] + "</td>\
                     </tr>";
 
             }
@@ -296,13 +298,57 @@ function showTable() {
                 var view = new Uint8Array(buf);
                 for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
                 return buf;
-
             }
             $("#button-a").click(function () {
                 saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'showTable.xlsx');
             });
-
-
         }
     });
+}
+
+function editUsersValue(td) {
+    var obj = $(td);
+    var obj_val = obj.attr("value");
+    var obj_ind = obj.index();
+    // if (obj_ind == 3) {
+    //     $(".taxi_table").find('input').remove();
+    //     $(".taxi_table").find('span').show();
+    //     var app_btn_car = '<input type="button" value="1" id="car1" onclick="edit_car(this)" class="taxi_table-car_num">\
+    //         <input type = "button" value = "2" id = "car2" onclick = "edit_car(this)" class="taxi_table-car_num" >\
+    //         <input type="button" value="3" id="car3" onclick="edit_car(this)" class="taxi_table-car_num">\
+    //         <input type="button" value="4" id="car4" onclick="edit_car(this)" class="taxi_table-car_num">\
+    //         <input type="button" value="5" id="car5" onclick="edit_car(this)" class="taxi_table-car_num">\
+    //         <input type="button" value="6" id="car6" onclick="edit_car(this)" class="taxi_table-car_num">';
+    //     obj.find("span").hide();
+    //     obj.append(app_btn_car);
+    // } else {
+    var val_user = prompt("Введите новое значение:");
+    var obj_name = obj.parent().find(".taxi_table-body_td").eq(0).text();
+    if (val_user !== null) {
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/break/modules/taxi_edit.php",
+            data: {
+                index: obj_ind,
+                index_val: val_user,
+                index_name: obj_name
+            },
+            success: function (respons) {
+                if (respons == true) {
+                    obj.empty();
+                    if (obj_ind == 4) {
+                        obj.text(val_user + ":00");
+                    } else {
+                        obj.text(val_user);
+                    }
+                } else {
+                    alert("Что-то пошло не так! Обратитесь к Рыкуну.");
+                }
+            },
+            error: function (respons) {
+                alert("К сожалению, проблемы с обработчиком. Перезагрузите страницу и попробуйте еще раз.")
+            }
+        });
+    }
 }
