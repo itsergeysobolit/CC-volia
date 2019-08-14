@@ -5,19 +5,13 @@ session_set_cookie_params(0);
 session_start();
 include 'connect.php';
 
-
-$query ="SELECT * FROM schedule WHERE id = 0";
+$query = "SELECT * FROM schedule WHERE id = 0";
 $result = mysqli_query($link, $query);
 // $schedule = mysqli_fetch_row($result);
 
-
-
-
-if (empty($_SESSION['login']) or empty($_SESSION['id'])){
+if (empty($_SESSION['login']) or empty($_SESSION['id'])) {
     echo 0;
 } else {
-    $respons = array("name"=> $_SESSION['fio'], "login" => $_SESSION['login'], "photo" => $_SESSION['photo'], "access" => $_SESSION['access']);
+    $respons = array("name" => $_SESSION['fio'], "login" => $_SESSION['login'], "photo" => $_SESSION['photo'], "access" => $_SESSION['access'], "team" => $_SESSION['team']);
     echo json_encode($respons);
 }
-
-?>

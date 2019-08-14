@@ -254,50 +254,179 @@ function schedule() {
     var wrapper = $(".user");
     wrapper.empty();
     // Шапка таблицы
-    var app = " <input id='button-a' class='taxi-btn' type='button' value='Выгрузить отчет'><table class='taxi'>\
-                    <tr class='taxi-history_head'>\
-                        <td class='taxi-history' style='display:none;'>id</td>\
-                        <td class='taxi-history'>ФИО</td>\
-                        <td class='taxi-history'>Team</td>\
-                        <td class='taxi-history'>01.08 чт</td>\
-                        <td class='taxi-history'>02.08 пт</td>\
-                        <td class='taxi-history'>03.08 сб</td>\
-                        <td class='taxi-history'>04.08 вс</td>\
-                        <td class='taxi-history'>05.08 пн</td>\
-                        <td class='taxi-history'>06.08 вт</td>\
-                        <td class='taxi-history'>07.08 ср</td>\
-                        <td class='taxi-history'>08.08 чт</td>\
-                        <td class='taxi-history'>09.08 пт</td>\
-                        <td class='taxi-history'>10.08 сб</td>\
-                        <td class='taxi-history'>11.08 вс</td>\
-                        <td class='taxi-history'>12.08 пн</td>\
-                        <td class='taxi-history'>13.08 вт</td>\
-                        <td class='taxi-history'>14.08 ср</td>\
-                        <td class='taxi-history'>15.08 чт</td>\
-                        <td class='taxi-history'>16.08 пт</td>\
-                        <td class='taxi-history'>17.08 сб</td>\
-                        <td class='taxi-history'>18.08 вс</td>\
-                        <td class='taxi-history'>19.08 пн</td>\
-                        <td class='taxi-history'>20.08 вт</td>\
-                        <td class='taxi-history'>21.08 ср</td>\
-                        <td class='taxi-history'>22.08 чт</td>\
-                        <td class='taxi-history'>23.08 пт</td>\
-                        <td class='taxi-history'>24.08 сб</td>\
-                        <td class='taxi-history'>25.08 вс</td>\
-                        <td class='taxi-history'>26.08 пн</td>\
-                        <td class='taxi-history'>27.08 вт</td>\
-                        <td class='taxi-history'>28.08 ср</td>\
-                        <td class='taxi-history'>29.08 чт</td>\
-                        <td class='taxi-history'>30.08 пт</td>\
-                        <td class='taxi-history'>31.08 сб</td>\
-                    </tr>";
+    var app = '<button class="button" value="SOIP_Khmelnitsky_Netiukhailo"\
+                    onclick="clickTeam(this.value)">SOIP_Khmelnitsky_Netiukhailo</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Braha"\
+                    onclick="clickTeam(this.value)">SOIP_Khmelnitsky_Braha</button>\
+                <button class="button" value="3" onclick="clickTeam(this.value)">3</button>\
+                <button class="button" value="4" onclick="clickTeam(this.value)">4</button>\
+                <button class="button" value="5" onclick="clickTeam(this.value)">5</button>\
+                <button class="button" value="6" onclick="clickTeam(this.value)">6</button>\
+                <button class="button" value="7" onclick="clickTeam(this.value)">7</button>\
+                <button class="button" value="8" onclick="clickTeam(this.value)">8</button>\
+                <div class="wrapper_shadow">';
+    // <table class="taxi">
+    // <tr class="taxi-history_head">\
+    //     <td class="taxi-history" style="display:none;">id</td>\
+    //     <td class="taxi-history">ФИО</td>\
+    //     <td class="taxi-history">Team</td>\
+    //     <td class="taxi-history">01.08 чт</td>\
+    //     <td class="taxi-history">02.08 пт</td>\
+    //     <td class="taxi-history">03.08 сб</td>\
+    //     <td class="taxi-history">04.08 вс</td>\
+    //     <td class="taxi-history">05.08 пн</td>\
+    //     <td class="taxi-history">06.08 вт</td>\
+    //     <td class="taxi-history">07.08 ср</td>\
+    //     <td class="taxi-history">08.08 чт</td>\
+    //     <td class="taxi-history">09.08 пт</td>\
+    //     <td class="taxi-history">10.08 сб</td>\
+    //     <td class="taxi-history">11.08 вс</td>\
+    //     <td class="taxi-history">12.08 пн</td>\
+    //     <td class="taxi-history">13.08 вт</td>\
+    //     <td class="taxi-history">14.08 ср</td>\
+    //     <td class="taxi-history">15.08 чт</td>\
+    //     <td class="taxi-history">16.08 пт</td>\
+    //     <td class="taxi-history">17.08 сб</td>\
+    //     <td class="taxi-history">18.08 вс</td>\
+    //     <td class="taxi-history">19.08 пн</td>\
+    //     <td class="taxi-history">20.08 вт</td>\
+    //     <td class="taxi-history">21.08 ср</td>\
+    //     <td class="taxi-history">22.08 чт</td>\
+    //     <td class="taxi-history">23.08 пт</td>\
+    //     <td class="taxi-history">24.08 сб</td>\
+    //     <td class="taxi-history">25.08 вс</td>\
+    //     <td class="taxi-history">26.08 пн</td>\
+    //     <td class="taxi-history">27.08 вт</td>\
+    //     <td class="taxi-history">28.08 ср</td>\
+    //     <td class="taxi-history">29.08 чт</td>\
+    //     <td class="taxi-history">30.08 пт</td>\
+    //     <td class="taxi-history">31.08 сб</td>\
+    // </tr>';
+    // $.ajax({
+    //     type: "POST",
+    //     dataType: "json",
+    //     url: "/break/modules/getUsers.php",
+    //     success: function (data) {
+    //         for (var i = 0; i < data.length; i++) {
+    //             // Ячейки таблицы
+    //             app = app + "\
+    //                 <tr class='taxi-history_tr'>\
+    //                     <td class='taxi-history' style='display:none;'>"+ data[i]['id'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['fio'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['team'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['01.08 чт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['02.08 пт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['03.08 сб'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['04.08 вс'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['05.08 пн'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['06.08 вт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['07.08 ср'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['08.08 чт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['09.08 пт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['10.08 сб'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['11.08 вс'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['12.08 пн'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['13.08 вт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['14.08 ср'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['15.08 чт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['16.08 пт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['17.08 сб'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['18.08 вс'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['19.08 пн'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['20.08 вт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['21.08 ср'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['22.08 чт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['23.08 пт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['24.08 сб'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['25.08 вс'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['26.08 пн'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['27.08 вт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['28.08 ср'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['29.08 чт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['30.08 пт'] + "</td>\
+    //                     <td class='taxi-history'>"+ data[i]['31.08 сб'] + "</td>\
+    //                 </tr>";
+    //         }
+    //         wrapper.append(app + "</table></div>");
+    //         var wb = XLSX.utils.book_new();
+    //         wb.Props = {
+    //             Title: "Taxi_report",
+    //             Subject: "Taxi",
+    //             Author: "Red Stapler",
+    //             CreatedDate: new Date()
+    //         };
+    //         wb.SheetNames.push("Taxi_Report");
+    //         //                var ws_data = [['hello' , 'world']];
+    //         var ws = XLSX.utils.json_to_sheet(data);
+    //         wb.Sheets["Taxi_Report"] = ws;
+    //         var wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+    //         function s2ab(s) {
+
+    //             var buf = new ArrayBuffer(s.length);
+    //             var view = new Uint8Array(buf);
+    //             for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+    //             return buf;
+    //         }
+    //         $("#button-a").click(function () {
+    //             saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'schedule.xlsx');
+    //         });
+    //     }
+    // });
+    wrapper.append(app);
+    clickTeam(localStorage.getItem('team'));
+}
+
+function clickTeam(team) {
+    var wrapper = $(".wrapper_shadow");
+    var users = $(".user");
+    wrapper.remove();
+    var app = '<div class="wrapper_shadow">\
+                    <table class="taxi">\
+                    <tr class="taxi-history_head">\
+                        <td class="taxi-history" style="display:none;">id</td>\
+                        <td class="taxi-history">ФИО</td>\
+                        <td class="taxi-history">Team</td>\
+                        <td class="taxi-history">01.08 чт</td>\
+                        <td class="taxi-history">02.08 пт</td>\
+                        <td class="taxi-history">03.08 сб</td>\
+                        <td class="taxi-history">04.08 вс</td>\
+                        <td class="taxi-history">05.08 пн</td>\
+                        <td class="taxi-history">06.08 вт</td>\
+                        <td class="taxi-history">07.08 ср</td>\
+                        <td class="taxi-history">08.08 чт</td>\
+                        <td class="taxi-history">09.08 пт</td>\
+                        <td class="taxi-history">10.08 сб</td>\
+                        <td class="taxi-history">11.08 вс</td>\
+                        <td class="taxi-history">12.08 пн</td>\
+                        <td class="taxi-history">13.08 вт</td>\
+                        <td class="taxi-history">14.08 ср</td>\
+                        <td class="taxi-history">15.08 чт</td>\
+                        <td class="taxi-history">16.08 пт</td>\
+                        <td class="taxi-history">17.08 сб</td>\
+                        <td class="taxi-history">18.08 вс</td>\
+                        <td class="taxi-history">19.08 пн</td>\
+                        <td class="taxi-history">20.08 вт</td>\
+                        <td class="taxi-history">21.08 ср</td>\
+                        <td class="taxi-history">22.08 чт</td>\
+                        <td class="taxi-history">23.08 пт</td>\
+                        <td class="taxi-history">24.08 сб</td>\
+                        <td class="taxi-history">25.08 вс</td>\
+                        <td class="taxi-history">26.08 пн</td>\
+                        <td class="taxi-history">27.08 вт</td>\
+                        <td class="taxi-history">28.08 ср</td>\
+                        <td class="taxi-history">29.08 чт</td>\
+                        <td class="taxi-history">30.08 пт</td>\
+                        <td class="taxi-history">31.08 сб</td>\
+                    </tr>';
     $.ajax({
         type: "POST",
         dataType: "json",
         url: "/break/modules/getUsers.php",
+        data: {
+            team: team
+        },
         success: function (data) {
-            for (var i = 0; i < data.length; i++) {
-                // Ячейки таблицы
+            for (let i = 0; i < data.length; i++) {
                 app = app + "\
                     <tr class='taxi-history_tr'>\
                         <td class='taxi-history' style='display:none;'>"+ data[i]['id'] + "</td>\
@@ -335,31 +464,10 @@ function schedule() {
                         <td class='taxi-history'>"+ data[i]['30.08 пт'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['31.08 сб'] + "</td>\
                     </tr>";
-
             }
-            wrapper.append(app + "</table>");
-            var wb = XLSX.utils.book_new();
-            wb.Props = {
-                Title: "Taxi_report",
-                Subject: "Taxi",
-                Author: "Red Stapler",
-                CreatedDate: new Date()
-            };
-            wb.SheetNames.push("Taxi_Report");
-            //                var ws_data = [['hello' , 'world']];
-            var ws = XLSX.utils.json_to_sheet(data);
-            wb.Sheets["Taxi_Report"] = ws;
-            var wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
-            function s2ab(s) {
-
-                var buf = new ArrayBuffer(s.length);
-                var view = new Uint8Array(buf);
-                for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-                return buf;
-            }
-            $("#button-a").click(function () {
-                saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'schedule.xlsx');
-            });
+            app = app + "</table></div>";
+            console.log(app);
+            users.append(app);
         }
     });
 }

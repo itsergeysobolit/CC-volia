@@ -1,26 +1,22 @@
 <?php
-include "connect.php";
+ini_set('session.gc_maxlifetime', 86400);
+ini_set('session.cookie_lifetime', 0);
+session_set_cookie_params(0);
+session_start();
+include 'connect.php';
+
 $team = $_REQUEST['team'];
 $query = "SELECT * FROM operators_cc WHERE team = '$team'";
 $result = mysqli_query($link, $query);
-$sql_2 = "SELECT CONCAT( users.lastname,  ' ', users.name ) AS fio, operators_cc.id
-FROM operators_cc, users
-WHERE operators_cc.id = users.id";
-$userName = mysqli_query($link, $sql_2);
-if ($userName) {
-    $rows = mysqli_num_rows($userName);
-    for ($i = 0; $i < $rows; ++$i) {
-        $row = mysqli_fetch_row($userName);
-        $getFio_array[$i]["fio"] = $row[0];
-        $getFio_array[$i]["id"] = $row[1];
-    }
-}
+// $schedule = mysqli_fetch_row($result);
+
 if ($result) {
     $rows = mysqli_num_rows($result);
     for ($i = 0; $i < $rows; ++$i) {
         $row = mysqli_fetch_row($result);
         $getUsers_array[$i]["id"] = $row[0];
         $getUsers_array[$i]["team"] = $row[1];
+        $getUsers_array[$i]["fio"] = $row[1];
         $getUsers_array[$i]['01.08 чт'] = $row[3];
         $getUsers_array[$i]['02.08 пт'] = $row[4];
         $getUsers_array[$i]['03.08 сб'] = $row[5];
@@ -52,13 +48,6 @@ if ($result) {
         $getUsers_array[$i]['29.08 чт'] = $row[31];
         $getUsers_array[$i]['30.08 пт'] = $row[32];
         $getUsers_array[$i]['31.08 сб'] = $row[33];
-    }
-    for ($y = 0; $y < count($getFio_array); $y++) {
-        for ($j = 0; $j < count($getUsers_array); $j++) {
-            if ($getFio_array[$y]["id"] == $getUsers_array[$j]["id"]) {
-                $getUsers_array[$j]["fio"] = $getFio_array[$y]["fio"];
-            }
-        }
     }
     echo json_encode($getUsers_array);
 } else {
