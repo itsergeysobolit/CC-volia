@@ -250,7 +250,7 @@ function update_indicators() {
     }
 }
 
-function showTable() {
+function schedule() {
     var wrapper = $(".user");
     wrapper.empty();
     // Шапка таблицы
@@ -259,8 +259,37 @@ function showTable() {
                         <td class='taxi-history'>id</td>\
                         <td class='taxi-history'>ФИО</td>\
                         <td class='taxi-history'>Team</td>\
-                        <td class='taxi-history'>День</td>\
-                        <td class='taxi-history'>Часы работы</td>\
+                        <td class='taxi-history'>01.08 чт</td>\
+                        <td class='taxi-history'>02.08 пт</td>\
+                        <td class='taxi-history'>03.08 сб</td>\
+                        <td class='taxi-history'>04.08 вс</td>\
+                        <td class='taxi-history'>05.08 пн</td>\
+                        <td class='taxi-history'>06.08 вт</td>\
+                        <td class='taxi-history'>07.08 ср</td>\
+                        <td class='taxi-history'>08.08 чт</td>\
+                        <td class='taxi-history'>09.08 пт</td>\
+                        <td class='taxi-history'>10.08 сб</td>\
+                        <td class='taxi-history'>11.08 вс</td>\
+                        <td class='taxi-history'>12.08 пн</td>\
+                        <td class='taxi-history'>13.08 вт</td>\
+                        <td class='taxi-history'>14.08 ср</td>\
+                        <td class='taxi-history'>15.08 чт</td>\
+                        <td class='taxi-history'>16.08 пт</td>\
+                        <td class='taxi-history'>17.08 сб</td>\
+                        <td class='taxi-history'>18.08 вс</td>\
+                        <td class='taxi-history'>19.08 пн</td>\
+                        <td class='taxi-history'>20.08 вт</td>\
+                        <td class='taxi-history'>21.08 ср</td>\
+                        <td class='taxi-history'>22.08 чт</td>\
+                        <td class='taxi-history'>23.08 пт</td>\
+                        <td class='taxi-history'>24.08 сб</td>\
+                        <td class='taxi-history'>25.08 вс</td>\
+                        <td class='taxi-history'>26.08 пн</td>\
+                        <td class='taxi-history'>27.08 вт</td>\
+                        <td class='taxi-history'>28.08 ср</td>\
+                        <td class='taxi-history'>29.08 чт</td>\
+                        <td class='taxi-history'>30.08 пт</td>\
+                        <td class='taxi-history'>31.08 сб</td>\
                     </tr>";
     $.ajax({
         type: "POST",
@@ -274,6 +303,11 @@ function showTable() {
                         <td class='taxi-history'>"+ data[i]['id'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['fio'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['team'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['day'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['smena'] + "</td>\
                     </tr>";
@@ -300,7 +334,7 @@ function showTable() {
                 return buf;
             }
             $("#button-a").click(function () {
-                saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'showTable.xlsx');
+                saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'schedule.xlsx');
             });
         }
     });

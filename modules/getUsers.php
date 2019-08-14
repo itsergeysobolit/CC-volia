@@ -20,10 +20,8 @@ if ($result) {
     for ($i = 0; $i < $rows; ++$i) {
         $row = mysqli_fetch_row($result);
         $getUsers_array[$i]["id"] = $row[0];
-        $getUsers_array[$i]["team"] = $row[2];
-        $getUsers_array[$i]["fte"] = $row[3];
-        $getUsers_array[$i]["day"] = $row[5];
-        $getUsers_array[$i]["smena"] = $row[4];
+        $getUsers_array[$i]["team"] = $row[1];
+        // $getUsers_array[$i]["01.08] = $row[3];
     }
     for ($y = 0; $y < count($getFio_array); $y++) {
         for ($j = 0; $j < count($getUsers_array); $j++) {
