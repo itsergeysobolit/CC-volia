@@ -33,14 +33,22 @@ if (empty($myrow['password'])) {
         $_SESSION['access'] = $myrow['access'];
         $_SESSION['photo'] = $myrow['photo'];
         $_SESSION['lastlogin'] = $myrow['Lastlogin'];
+        // team
         $sql = mysqli_query($link, "SELECT team FROM operators_cc WHERE id ='" . $myrow['id'] . "'");
         if ($sql) {
             $teamSql = mysqli_fetch_array($sql);
             $team = $teamSql['team'];
         }
         $_SESSION['team'] = $team;
-        $response = array("name" => $_SESSION['fio'], "id" => $myrow['id'], "last" => $myrow['Lastlogin'], "team" => $_SESSION['team']);
+        // priority
+        $sql_2 = mysqli_query($link, "SELECT priority FROM operators_cc WHERE id ='" . $myrow['id'] . "'");
+        if ($sql_2) {
+            $prioritySql = mysqli_fetch_array($sql_2);
+            $priority = $prioritySql['priority'];
+        }
+        $_SESSION['priority'] = $priority;
 
+        $response = array("name" => $_SESSION['fio'], "id" => $myrow['id'], "last" => $myrow['Lastlogin'], "team" => $_SESSION['team'], "priority" => $_SESSION['priority']);
         $today = date("d.m.y");
 
         $lastLogin = "UPDATE users SET Lastlogin = '$today' WHERE id=" . $myrow['id'];

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 ini_set('session.gc_maxlifetime', 86400);
 ini_set('session.cookie_lifetime', 0);
 session_set_cookie_params(0);
@@ -52,4 +52,4 @@ if ($result) {
     echo json_encode($getUsers_array);
 } else {
     echo "<script>alert('Что-то не так');</script>";
-}
+} -->

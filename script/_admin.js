@@ -518,3 +518,5 @@ function editUsersValue(td) {
         });
     }
 }
+
+console.log(localStorage.getItem('priority'));

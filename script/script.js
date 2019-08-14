@@ -20,6 +20,7 @@ $(document).ready(function () {
         success: function (respons) {
             var access = respons["access"];
             localStorage.setItem('team', respons['team']);
+            localStorage.setItem('priority', respons['priority']);
             localStorage.setItem('access', access); // передаем уровень допуска в файл _personal js чтобы построить правильно сетку кпэ
             if (respons == 0) {
                 if (path.toLowerCase() != '/break/pages/login.html') {

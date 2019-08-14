@@ -12,6 +12,13 @@ $result = mysqli_query($link, $query);
 if (empty($_SESSION['login']) or empty($_SESSION['id'])) {
     echo 0;
 } else {
-    $respons = array("name" => $_SESSION['fio'], "login" => $_SESSION['login'], "photo" => $_SESSION['photo'], "access" => $_SESSION['access'], "team" => $_SESSION['team']);
+    $respons = array(
+        "name" => $_SESSION['fio'],
+        "login" => $_SESSION['login'],
+        "photo" => $_SESSION['photo'],
+        "access" => $_SESSION['access'],
+        "team" => $_SESSION['team'],
+        "priority" => $_SESSION['priority']
+    );
     echo json_encode($respons);
 }
