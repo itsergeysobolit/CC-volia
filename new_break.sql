@@ -1,41 +1,42 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Aug 13, 2019 at 11:18 AM
--- Server version: 5.7.18-0ubuntu0.16.04.1
--- PHP Version: 5.6.30-7+deb.sury.org~xenial+1
+-- Хост: 127.0.0.1
+-- Время создания: Авг 14 2019 г., 11:55
+-- Версия сервера: 5.5.25
+-- Версия PHP: 5.3.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `new_break`
+-- База данных: `new_break`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `break`
+-- Структура таблицы `break`
 --
 
-CREATE TABLE `break` (
-  `id` int(2) NOT NULL,
+CREATE TABLE IF NOT EXISTS `break` (
+  `id` int(2) NOT NULL AUTO_INCREMENT,
   `hours` int(2) NOT NULL,
   `minutes` int(2) NOT NULL,
   `peoples` text NOT NULL,
-  `amount` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `amount` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
 
 --
--- Dumping data for table `break`
+-- Дамп данных таблицы `break`
 --
 
 INSERT INTO `break` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
@@ -123,19 +124,20 @@ INSERT INTO `break` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `break_cross`
+-- Структура таблицы `break_cross`
 --
 
-CREATE TABLE `break_cross` (
-  `id` int(2) NOT NULL,
+CREATE TABLE IF NOT EXISTS `break_cross` (
+  `id` int(2) NOT NULL AUTO_INCREMENT,
   `hours` int(2) NOT NULL,
   `minutes` int(2) NOT NULL,
   `peoples` text NOT NULL,
-  `amount` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `amount` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
 
 --
--- Dumping data for table `break_cross`
+-- Дамп данных таблицы `break_cross`
 --
 
 INSERT INTO `break_cross` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
@@ -223,19 +225,20 @@ INSERT INTO `break_cross` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `break_happy`
+-- Структура таблицы `break_happy`
 --
 
-CREATE TABLE `break_happy` (
-  `id` int(2) NOT NULL,
+CREATE TABLE IF NOT EXISTS `break_happy` (
+  `id` int(2) NOT NULL AUTO_INCREMENT,
   `hours` int(2) NOT NULL,
   `minutes` int(2) NOT NULL,
   `peoples` text NOT NULL,
-  `amount` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `amount` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
 
 --
--- Dumping data for table `break_happy`
+-- Дамп данных таблицы `break_happy`
 --
 
 INSERT INTO `break_happy` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
@@ -323,17 +326,18 @@ INSERT INTO `break_happy` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `forecast`
+-- Структура таблицы `forecast`
 --
 
-CREATE TABLE `forecast` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `forecast` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
-  `time` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `time` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `forecast`
+-- Дамп данных таблицы `forecast`
 --
 
 INSERT INTO `forecast` (`id`, `name`, `time`) VALUES
@@ -344,10 +348,10 @@ INSERT INTO `forecast` (`id`, `name`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `frcst fte`
+-- Структура таблицы `frcst fte`
 --
 
-CREATE TABLE `frcst fte` (
+CREATE TABLE IF NOT EXISTS `frcst fte` (
   `day` int(10) NOT NULL,
   `month` int(10) NOT NULL,
   `year` int(10) NOT NULL,
@@ -356,7 +360,7 @@ CREATE TABLE `frcst fte` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `frcst fte`
+-- Дамп данных таблицы `frcst fte`
 --
 
 INSERT INTO `frcst fte` (`day`, `month`, `year`, `hours`, `fte`) VALUES
@@ -532,18 +536,19 @@ INSERT INTO `frcst fte` (`day`, `month`, `year`, `hours`, `fte`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_login`
+-- Структура таблицы `log_login`
 --
 
-CREATE TABLE `log_login` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `log_login` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `user` text NOT NULL,
   `date` text NOT NULL,
-  `ip` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ip` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7540 ;
 
 --
--- Dumping data for table `log_login`
+-- Дамп данных таблицы `log_login`
 --
 
 INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
@@ -8099,11 +8104,11 @@ INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `operators_cc`
+-- Структура таблицы `operators_cc`
 --
 
-CREATE TABLE `operators_cc` (
-  `ID_Cisco` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `operators_cc` (
+  `ID_Cisco` int(10) NOT NULL AUTO_INCREMENT,
   `FIO` varchar(50) NOT NULL,
   `Team` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
@@ -8140,11 +8145,12 @@ CREATE TABLE `operators_cc` (
   `28` varchar(10) DEFAULT NULL,
   `29` varchar(10) DEFAULT NULL,
   `30` varchar(10) DEFAULT NULL,
-  `31` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `31` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`ID_Cisco`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9875 ;
 
 --
--- Dumping data for table `operators_cc`
+-- Дамп данных таблицы `operators_cc`
 --
 
 INSERT INTO `operators_cc` (`ID_Cisco`, `FIO`, `Team`, `Email`, `Number`, `FTE`, `Group`, `01`, `02`, `03`, `04`, `05`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`) VALUES
@@ -8155,10 +8161,10 @@ INSERT INTO `operators_cc` (`ID_Cisco`, `FIO`, `Team`, `Email`, `Number`, `FTE`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `operators_cc2`
+-- Структура таблицы `operators_cc2`
 --
 
-CREATE TABLE `operators_cc2` (
+CREATE TABLE IF NOT EXISTS `operators_cc2` (
   `id` varchar(20) NOT NULL,
   `Team` varchar(55) NOT NULL,
   `FTE` varchar(3) NOT NULL,
@@ -8167,73 +8173,90 @@ CREATE TABLE `operators_cc2` (
   `Month` int(10) NOT NULL,
   `Year` int(10) NOT NULL,
   `Start` varchar(10) NOT NULL,
-  `Stop` varchar(10) NOT NULL
+  `Stop` varchar(10) NOT NULL,
+  `01.08 ЧТ` varchar(10) DEFAULT NULL,
+  `02.08 ПТ` varchar(10) DEFAULT NULL,
+  `03.08 СБ` varchar(10) DEFAULT NULL,
+  `04.08 ВС` varchar(10) DEFAULT NULL,
+  `05.08 ПН` varchar(10) DEFAULT NULL,
+  `06.08 ВТ` varchar(10) DEFAULT NULL,
+  `07.08 СР` varchar(10) DEFAULT NULL,
+  `08.08 ЧТ` varchar(10) DEFAULT NULL,
+  `09.08 ПТ` varchar(10) DEFAULT NULL,
+  `10.08 СБ` varchar(10) DEFAULT NULL,
+  `12.08 ПН` varchar(10) DEFAULT NULL,
+  `13.08 ВТ` varchar(10) DEFAULT NULL,
+  `14.08 СР` varchar(10) DEFAULT NULL,
+  `15.08 ЧТ` varchar(10) DEFAULT NULL,
+  `16.08 ПТ` varchar(10) DEFAULT NULL,
+  `11.08 ВС` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `operators_cc2`
+-- Дамп данных таблицы `operators_cc2`
 --
 
-INSERT INTO `operators_cc2` (`id`, `Team`, `FTE`, `Smena`, `Day`, `Month`, `Year`, `Start`, `Stop`) VALUES
-('9138026', 'SOIP_Khmelnitsky_Braha', '100', '14-23', 12, 8, 2019, '14', '23'),
-('9138026', 'SOIP_Khmelnitsky_Braha', '100', '14-23', 13, 8, 2019, '14', '23'),
-('9138026', 'SOIP_Khmelnitsky_Braha', '100', '14-23', 14, 8, 2019, '14', '23'),
-('9138026', 'SOIP_Khmelnitsky_Braha', '100', '13-22', 15, 8, 2019, '13', '22'),
-('9138026', 'SOIP_Khmelnitsky_Braha', '100', '14-23', 18, 8, 2019, '14', '23'),
-('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', '17-0', 12, 8, 2019, '17', '0'),
-('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', '17-1', 13, 8, 2019, '17', '1'),
-('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', '17-1', 14, 8, 2019, '17', '1'),
-('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', 'o', 16, 8, 2019, '', ''),
-('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', 'o', 17, 8, 2019, '', ''),
-('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', 'o', 18, 8, 2019, '', ''),
-('0627193', 'SOIP_Khmelnitsky_Braha', '75', '16-22', 12, 8, 2019, '16', '22'),
-('0627193', 'SOIP_Khmelnitsky_Braha', '75', '18-23', 13, 8, 2019, '18', '23'),
-('0627193', 'SOIP_Khmelnitsky_Braha', '75', '13-23', 14, 8, 2019, '13', '23'),
-('0627193', 'SOIP_Khmelnitsky_Braha', '75', '13-23', 15, 8, 2019, '13', '23'),
-('0627193', 'SOIP_Khmelnitsky_Braha', '75', '12-22', 18, 8, 2019, '12', '22'),
-('8709978', 'SOIP_Khmelnitsky_Braha', '75', 'о', 12, 8, 2019, '', ''),
-('8709978', 'SOIP_Khmelnitsky_Braha', '75', 'о', 13, 8, 2019, '', ''),
-('8709978', 'SOIP_Khmelnitsky_Braha', '75', 'о', 14, 8, 2019, '', ''),
-('8709978', 'SOIP_Khmelnitsky_Braha', '75', '8-16', 15, 8, 2019, '8', '16'),
-('8709978', 'SOIP_Khmelnitsky_Braha', '75', '15-22', 16, 8, 2019, '15', '22'),
-('8709978', 'SOIP_Khmelnitsky_Braha', '75', '15-22', 17, 8, 2019, '15', '22'),
-('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 12, 8, 2019, '', ''),
-('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 13, 8, 2019, '', ''),
-('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 14, 8, 2019, '', ''),
-('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 15, 8, 2019, '', ''),
-('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 16, 8, 2019, '', ''),
-('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 17, 8, 2019, '', ''),
-('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 18, 8, 2019, '', ''),
-('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '8-20', 12, 8, 2019, '8', '20'),
-('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '16-0', 13, 8, 2019, '16', '0'),
-('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '14-23', 14, 8, 2019, '14', '23'),
-('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '13-22', 15, 8, 2019, '13', '22'),
-('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '8-17', 18, 8, 2019, '8', '17'),
-('9031263', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '17-1', 14, 8, 2019, '17', '1'),
-('9031263', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '17-1', 15, 8, 2019, '17', '1'),
-('9031263', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '13-1', 18, 8, 2019, '13', '1'),
-('9502201', 'SOIP_Khmelnitsky_Babich', '100', '15-23', 12, 8, 2019, '15', '23'),
-('9502201', 'SOIP_Khmelnitsky_Babich', '100', '15-22', 13, 8, 2019, '15', '22'),
-('9502201', 'SOIP_Khmelnitsky_Babich', '100', '9-18', 14, 8, 2019, '9', '18'),
-('9502201', 'SOIP_Khmelnitsky_Babich', '100', '14-22', 17, 8, 2019, '14', '22'),
-('9502201', 'SOIP_Khmelnitsky_Babich', '100', '15-23', 18, 8, 2019, '15', '23'),
-('9702349', 'SOIP_Khmelnitsky_Kaskov', '100', '9-21', 13, 8, 2019, '9', '21'),
-('9702349', 'SOIP_Khmelnitsky_Kaskov', '100', '9-21', 14, 8, 2019, '9', '21'),
-('9702349', 'SOIP_Khmelnitsky_Kaskov', '100', '9-21', 15, 8, 2019, '9', '21');
+INSERT INTO `operators_cc2` (`id`, `Team`, `FTE`, `Smena`, `Day`, `Month`, `Year`, `Start`, `Stop`, `01.08 ЧТ`, `02.08 ПТ`, `03.08 СБ`, `04.08 ВС`, `05.08 ПН`, `06.08 ВТ`, `07.08 СР`, `08.08 ЧТ`, `09.08 ПТ`, `10.08 СБ`, `12.08 ПН`, `13.08 ВТ`, `14.08 СР`, `15.08 ЧТ`, `16.08 ПТ`, `11.08 ВС`) VALUES
+('9138026', 'SOIP_Khmelnitsky_Braha', '100', '14-23', 12, 8, 2019, '14', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9138026', 'SOIP_Khmelnitsky_Braha', '100', '14-23', 13, 8, 2019, '14', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9138026', 'SOIP_Khmelnitsky_Braha', '100', '14-23', 14, 8, 2019, '14', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9138026', 'SOIP_Khmelnitsky_Braha', '100', '13-22', 15, 8, 2019, '13', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9138026', 'SOIP_Khmelnitsky_Braha', '100', '14-23', 18, 8, 2019, '14', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', '17-0', 12, 8, 2019, '17', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', '17-1', 13, 8, 2019, '17', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', '17-1', 14, 8, 2019, '17', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', 'o', 16, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', 'o', 17, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', 'o', 18, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('0627193', 'SOIP_Khmelnitsky_Braha', '75', '16-22', 12, 8, 2019, '16', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('0627193', 'SOIP_Khmelnitsky_Braha', '75', '18-23', 13, 8, 2019, '18', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('0627193', 'SOIP_Khmelnitsky_Braha', '75', '13-23', 14, 8, 2019, '13', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('0627193', 'SOIP_Khmelnitsky_Braha', '75', '13-23', 15, 8, 2019, '13', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('0627193', 'SOIP_Khmelnitsky_Braha', '75', '12-22', 18, 8, 2019, '12', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8709978', 'SOIP_Khmelnitsky_Braha', '75', 'о', 12, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8709978', 'SOIP_Khmelnitsky_Braha', '75', 'о', 13, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8709978', 'SOIP_Khmelnitsky_Braha', '75', 'о', 14, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8709978', 'SOIP_Khmelnitsky_Braha', '75', '8-16', 15, 8, 2019, '8', '16', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8709978', 'SOIP_Khmelnitsky_Braha', '75', '15-22', 16, 8, 2019, '15', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8709978', 'SOIP_Khmelnitsky_Braha', '75', '15-22', 17, 8, 2019, '15', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 12, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 13, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 14, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 15, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 16, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 17, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9943346', 'SOIP_Khmelnitsky_Kurochka', '100', 'б', 18, 8, 2019, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '8-20', 12, 8, 2019, '8', '20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '16-0', 13, 8, 2019, '16', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '14-23', 14, 8, 2019, '14', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '13-22', 15, 8, 2019, '13', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('4786116', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '8-17', 18, 8, 2019, '8', '17', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9031263', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '17-1', 14, 8, 2019, '17', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9031263', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '17-1', 15, 8, 2019, '17', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9031263', 'SOIP_Khmelnitsky_Kaskov', 'гпх', '13-1', 18, 8, 2019, '13', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9502201', 'SOIP_Khmelnitsky_Babich', '100', '15-23', 12, 8, 2019, '15', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9502201', 'SOIP_Khmelnitsky_Babich', '100', '15-22', 13, 8, 2019, '15', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9502201', 'SOIP_Khmelnitsky_Babich', '100', '9-18', 14, 8, 2019, '9', '18', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9502201', 'SOIP_Khmelnitsky_Babich', '100', '14-22', 17, 8, 2019, '14', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9502201', 'SOIP_Khmelnitsky_Babich', '100', '15-23', 18, 8, 2019, '15', '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9702349', 'SOIP_Khmelnitsky_Kaskov', '100', '9-21', 13, 8, 2019, '9', '21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9702349', 'SOIP_Khmelnitsky_Kaskov', '100', '9-21', 14, 8, 2019, '9', '21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9702349', 'SOIP_Khmelnitsky_Kaskov', '100', '9-21', 15, 8, 2019, '9', '21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `other`
+-- Структура таблицы `other`
 --
 
-CREATE TABLE `other` (
+CREATE TABLE IF NOT EXISTS `other` (
   `var` varchar(100) NOT NULL,
-  `val` text NOT NULL
+  `val` text NOT NULL,
+  PRIMARY KEY (`var`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `other`
+-- Дамп данных таблицы `other`
 --
 
 INSERT INTO `other` (`var`, `val`) VALUES
@@ -8245,18 +8268,19 @@ INSERT INTO `other` (`var`, `val`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `su_discount`
+-- Структура таблицы `su_discount`
 --
 
-CREATE TABLE `su_discount` (
-  `id` int(6) NOT NULL,
+CREATE TABLE IF NOT EXISTS `su_discount` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
   `tp` text NOT NULL,
   `kod` text NOT NULL,
-  `discount` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `discount` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7584 ;
 
 --
--- Dumping data for table `su_discount`
+-- Дамп данных таблицы `su_discount`
 --
 
 INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
@@ -8892,7 +8916,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (630, 'Україна і світ + Планета знань + Стиль життя + Спорт + Кіно (ZP_708/2)', 'ZP_708/2', '20'),
 (631, 'Україна і світ + Планета знань + Стиль життя + Кіно (ZP_709/2)', 'ZP_709/2', '20'),
 (632, 'Україна і світ + Планета знань + Спорт (ZP_710/2)', 'ZP_710/2', '20'),
-(633, 'Україна і світ + Планета знань + Спорт + Кіно (ZP_711/2)', 'ZP_711/2', '20'),
+(633, 'Україна і світ + Планета знань + Спорт + Кіно (ZP_711/2)', 'ZP_711/2', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (634, 'Україна і світ + Планета знань + Кіно (ZP_712/2)', 'ZP_712/2', '20'),
 (635, 'Україна і світ + Меломан (ZP_713/2)', 'ZP_713/2', '20'),
 (636, 'Україна і світ + Меломан + Стиль життя (ZP_714/2)', 'ZP_714/2', '20'),
@@ -9027,8 +9052,7 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (765, 'Пакет Україна і світ+Меломан+Стиль життя+Кіно+Воля Extra HD (ZP_782/3)', 'ZP_782/3', '20'),
 (766, 'Пакет Україна і світ+Меломан+Спорт+Воля Extra HD (ZP_783/3)', 'ZP_783/3', '20'),
 (767, 'Пакет Україна і світ+Меломан+Спорт+Кіно+Воля Extra HD (ZP_784/3)', 'ZP_784/3', '20'),
-(768, 'Пакет Україна і світ+Меломан+Кіно+Воля Extra HD (ZP_785/3)', 'ZP_785/3', '20');
-INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
+(768, 'Пакет Україна і світ+Меломан+Кіно+Воля Extra HD (ZP_785/3)', 'ZP_785/3', '20'),
 (769, 'Пакет Україна і світ+Стиль життя+Воля Extra HD (ZP_786/3)', 'ZP_786/3', '20'),
 (770, 'Пакет Україна і світ+Стиль життя+Спорт+Воля Extra HD (ZP_787/3)', 'ZP_787/3', '20'),
 (771, 'Пакет Україна і світ+Стиль життя+Спорт+Кіно+Воля Extra HD (ZP_788/3)', 'ZP_788/3', '20'),
@@ -9455,7 +9479,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (1192, 'Киев: Пакет Україна і світ+Меломан+Дитячий+Воля Extra HD (2465/2)', '2465/2', '20'),
 (1193, 'Киев: Пакет Україна і світ+Меломан+Стиль життя+Дитячий+Воля Extra HD (2466/2)', '2466/2', '20'),
 (1194, 'Киев: Пакет Україна і світ+Меломан+Стиль життя+пакетСпорт+Дитячий+Воля Extra HD (2467/2)', '2467/2', '20'),
-(1195, 'Киев: Пакет Україна і світ+Меломан+Стиль життя+пакетСпорт+Кино+Дитячий+Воля Extra HD (2468/2)', '2468/2', '20'),
+(1195, 'Киев: Пакет Україна і світ+Меломан+Стиль життя+пакетСпорт+Кино+Дитячий+Воля Extra HD (2468/2)', '2468/2', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (1196, 'Киев: Пакет Україна і світ+Меломан+Стиль життя+Кино+Дитячий+Воля Extra HD (2469/2)', '2469/2', '20'),
 (1197, 'Киев: Пакет Україна і світ+Меломан+пакетСпорт+Дитячий+Воля Extra HD (2470/2)', '2470/2', '20'),
 (1198, 'Киев: Пакет Україна і світ+Меломан+пакетСпорт+пакетКино+Дитячий+Воля Extra HD (2471/2)', '2471/2', '20'),
@@ -9742,8 +9767,7 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (1479, 'Україна і світ + Меломан + Стиль життя + Спорт (361/3)', '361/3', '20'),
 (1480, 'Україна і світ + Меломан + Стиль життя + Спорт + Кіно (362/3)', '362/3', '20'),
 (1481, 'ЗАКРЫТ Україна і світ + Меломан + Стиль життя + Спорт + Кіно (363/3)', '363/3', '20'),
-(1482, 'ЗАКРЫТ Україна і світ + Меломан + Стиль життя + Спорт  (364/3)', '364/3', '20');
-INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
+(1482, 'ЗАКРЫТ Україна і світ + Меломан + Стиль життя + Спорт  (364/3)', '364/3', '20'),
 (1483, 'Україна і світ + Меломан + Стиль життя + Кіно (365/3)', '365/3', '20'),
 (1484, 'ЗАКРЫТ Україна і світ + Меломан + Стиль життя + Кіно (366/3)', '366/3', '20'),
 (1485, 'ЗАКРЫТ Україна і світ + Меломан + Стиль життя (367/3)', '367/3', '20'),
@@ -9879,7 +9903,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (1615, 'Киев: Розширений пакет Всесвіт+ пакетКино+ Дитячий (2451)', '2451', '0'),
 (1616, 'Киев: Розширений пакет Всесвіт+ Дитячий (2448/2)', '2448/2', '0'),
 (1617, 'Киев: Розширений пакет Всесвіт+ пакетСпорт+ Дитячий (2449/2)', '2449/2', '0'),
-(1618, 'Киев: Розширений пакет Всесвіт+ пакетСпорт+ пакетКино+ Дитячий (2450/2)', '2450/2', '0'),
+(1618, 'Киев: Розширений пакет Всесвіт+ пакетСпорт+ пакетКино+ Дитячий (2450/2)', '2450/2', '0');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (1619, 'Киев: Розширений пакет Всесвіт+ пакетКино+ Дитячий (2451/2)', '2451/2', '0'),
 (1620, 'Киев: Розширений пакет Всесвіт+Дитячий+Воля Extra HD (2480)', '2480', '0'),
 (1621, 'Киев: Розширений пакет Всесвіт+пакетСпорт+Дитячий+Воля Extra HD (2481)', '2481', '0'),
@@ -10544,8 +10569,7 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (2280, 'Львів: Buzz Максимум (L390)', 'L390', '0'),
 (2281, 'Львів: Boom Максимум (L391)', 'L391', '0'),
 (2282, 'Львів: Драйв Максимум (L392)', 'L392', '0'),
-(2283, 'Львів: Драйв Тест D3 (L393)', 'L393', '0');
-INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
+(2283, 'Львів: Драйв Тест D3 (L393)', 'L393', '0'),
 (2284, 'Львів: Всесвіт (П-306)', 'П-306', '0'),
 (2285, 'Львів: Бізнес Стартовий (L_2271)', 'L_2271', '0'),
 (2286, 'Львів: Стартовий (L1143)', 'L1143', '20'),
@@ -10557,7 +10581,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (2292, 'Львів: Україна і світ+Кіно (5053)', '5053', '20'),
 (2293, 'Львів: Україна і світ+Кіно (5053/2)', '5053/2', '20'),
 (2294, 'Львів: Україна і світ+Кіно (5053/3)', '5053/3', '20'),
-(2295, 'Львів: Україна і світ+ Спорт (5049)', '5049', '20'),
+(2295, 'Львів: Україна і світ+ Спорт (5049)', '5049', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (2296, 'Львів: Україна і світ+ Спорт (5049/2)', '5049/2', '20'),
 (2297, 'Львів: Україна і світ+ Спорт (5049/3)', '5049/3', '20'),
 (2298, 'Львів: Україна і світ+ Спорт+Кіно (5050)', '5050', '20'),
@@ -11043,7 +11068,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (2778, 'Обухів: Безлімітний 2048(Ек)(Docsis) (Ov_116)', 'Ov_116', '20'),
 (2779, 'Обухів: Безлімітний 25 (Дм)(Ethernet) (Ov_105)', 'Ov_105', '20'),
 (2780, 'Обухів: Трафік 30(Ек)(Docsis) (Ov_119)', 'Ov_119', '20'),
-(2781, 'Обухів: Безлімітний 50 (Ек)(Ethernet) (Ov_102)', 'Ov_102', '20'),
+(2781, 'Обухів: Безлімітний 50 (Ек)(Ethernet) (Ov_102)', 'Ov_102', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (2782, 'Обухів: Трафік 70(Ек)(Ethernet) (Ov_113)', 'Ov_113', '20'),
 (2783, 'Обухів: Трафік 50(Ек)(Docsis) (Ov_120)', 'Ov_120', '20'),
 (2784, 'Обухів: Легкий 5(Ethernet) (Ov_001)', 'Ov_001', '20'),
@@ -11247,8 +11273,7 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (2982, 'Полтава: Всесвіт + Спорт (P_401/3)', 'P_401/3', '0'),
 (2983, 'Полтава: Всесвіт + Спорт + Кіно (P_402)', 'P_402', '0'),
 (2984, 'Полтава: Всесвіт + Спорт + Кіно (P_402/2)', 'P_402/2', '0'),
-(2985, 'Полтава: Всесвіт + Спорт + Кіно (P_402/3)', 'P_402/3', '0');
-INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
+(2985, 'Полтава: Всесвіт + Спорт + Кіно (P_402/3)', 'P_402/3', '0'),
 (2986, 'Полтава: Всесвіт + Кіно (P_405)', 'P_405', '0'),
 (2987, 'Полтава: Всесвіт + Кіно (P_405/2)', 'P_405/2', '0'),
 (2988, 'Полтава: Всесвіт + Кіно (P_405/3)', 'P_405/3', '0'),
@@ -11515,7 +11540,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (3249, 'Пакет Україна і світ+Меломан+VIP-кіно+Кіно+Воля Extra HD (P_872/3)', 'P_872/3', '0'),
 (3250, 'Оптимальний (IP) (IP_002)', 'IP_002', '0'),
 (3251, 'Оптимальний HD (IP) (IP_003)', 'IP_003', '0'),
-(3252, 'Оптимальний (IP) (PP_002)', 'PP_002', '0'),
+(3252, 'Оптимальний (IP) (PP_002)', 'PP_002', '0');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (3253, 'Оптимальний HD (IP) (PP_003)', 'PP_003', '0'),
 (3254, 'Optimal HD (IP) (IP_382)', 'IP_382', '0'),
 (3255, 'Super HD (IP) (IP_383)', 'IP_383', '50'),
@@ -11899,8 +11925,7 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (3633, 'Mobile Start (PP) (PP_030)', 'PP_030', '20'),
 (3634, 'Солоницівка: Преміальний HD (SOL_809)', 'SOL_809', '0'),
 (3635, 'Солоницівка: Оптимальний HD (SOL_432)', 'SOL_432', '0'),
-(3636, 'Солоницівка: Оптимальний (SOL_306)', 'SOL_306', '30');
-INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
+(3636, 'Солоницівка: Оптимальний (SOL_306)', 'SOL_306', '30'),
 (3637, 'Mobile Optimal (PP) (PP_031)', 'PP_031', '0'),
 (3638, 'Lifecell Mobile Optimal (PP_031_test)', 'PP_031_test', '0'),
 (3639, 'Spec_Dinamo (ІР) (IP_432)', 'IP_432', '0'),
@@ -12082,7 +12107,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (3815, 'Пакет Україна і світ +  Планета знань (SU_301/3)', 'SU_301/3', '20'),
 (3816, 'Пакет Україна і світ +  Планета знань +  Меломан (SU_302/3)', 'SU_302/3', '20'),
 (3817, 'Пакет Україна і світ +  Планета знань +  Меломан +  Спорт (SU_303/3)', 'SU_303/3', '20'),
-(3818, 'Пакет Україна і світ +  Планета знань +  Меломан +  Спорт +  Кіно (SU_304/3)', 'SU_304/3', '20'),
+(3818, 'Пакет Україна і світ +  Планета знань +  Меломан +  Спорт +  Кіно (SU_304/3)', 'SU_304/3', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (3819, 'Пакет Україна і світ +  Планета знань +  Меломан +  Кіно (SU_305/3)', 'SU_305/3', '20'),
 (3820, 'Пакет Україна і світ +  Планета знань +  Стиль життя (SU_306/3)', 'SU_306/3', '20'),
 (3821, 'Пакет Україна і світ +  Планета знань +  Стиль життя +  Спорт (SU_307/3)', 'SU_307/3', '20'),
@@ -12657,9 +12683,9 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (4390, 'Пакет Україна і світ+Планета знань+Спорт+Воля Extra HD (HV_812)', 'HV_812', '20'),
 (4391, 'Пакет Україна і світ+Планета знань+Спорт+Кіно+Воля Extra HD (HV_813)', 'HV_813', '20'),
 (4392, 'Пакет Україна і світ+Планета знань+Кіно+Воля Extra HD (HV_814)', 'HV_814', '20'),
-(4393, 'Пакет Україна і світ+Стиль життя+Воля Extra HD (HV_815)', 'HV_815', '20');
+(4393, 'Пакет Україна і світ+Стиль життя+Воля Extra HD (HV_815)', 'HV_815', '20'),
+(4394, 'Пакет Україна і світ+Стиль життя+Спорт+Воля Extra HD (HV_816)', 'HV_816', '20');
 INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
-(4394, 'Пакет Україна і світ+Стиль життя+Спорт+Воля Extra HD (HV_816)', 'HV_816', '20'),
 (4395, 'Пакет Україна і світ+Стиль життя+Спорт+Кіно+Воля Extra HD (HV_817)', 'HV_817', '20'),
 (4396, 'Пакет Україна і світ+Стиль життя+Кіно+Воля Extra HD (HV_818)', 'HV_818', '20'),
 (4397, 'Пакет Україна і світ+Спорт+Воля Extra HD (HV_819)', 'HV_819', '20'),
@@ -13206,7 +13232,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (4938, 'ЗАКРЫТ Черкаси: Україна і світ + Планета знань + Спорт (CK_821/2)', 'CK_821/2', '20'),
 (4939, 'Черкаси: Україна і світ + Планета знань + Кіно (CK_822/2)', 'CK_822/2', '20'),
 (4940, 'ЗАКРЫТ Черкаси: Україна і світ + Планета знань + Кіно (CK_823/2)', 'CK_823/2', '20'),
-(4941, 'ЗАКРЫТ Черкаси: Україна і світ + Планета знань (CK_824/2)', 'CK_824/2', '20'),
+(4941, 'ЗАКРЫТ Черкаси: Україна і світ + Планета знань (CK_824/2)', 'CK_824/2', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (4942, 'Черкаси: Україна і світ + Меломан (CK_825/2)', 'CK_825/2', '20'),
 (4943, 'Черкаси: Україна і світ + Меломан + Стиль життя (CK_826/2)', 'CK_826/2', '20'),
 (4944, 'Черкаси: Україна і світ + Меломан + Стиль життя + Спорт (CK_827/2)', 'CK_827/2', '20'),
@@ -13355,8 +13382,7 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (5087, 'ЗАКРЫТ Черкаси: Всесвіт (CK_863/3)', 'CK_863/3', '0'),
 (5088, 'Spec_Dinamo (ІР) (IP_432)', 'IP_432', '0'),
 (5089, 'FILMUADRAMA (IP_ FILMUA_1)', 'IP_ FILMUA_1', '0'),
-(5090, 'БІЗНЕС Стартовий 2 (IP) (IP_1232)', 'IP_1232', '0');
-INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
+(5090, 'БІЗНЕС Стартовий 2 (IP) (IP_1232)', 'IP_1232', '0'),
 (5091, 'БІЗНЕС Оптимальний 2 (IP) (IP_1233)', 'IP_1233', '0'),
 (5092, 'БІЗНЕС Оптимальний HD 2 (IP) (IP_1234)', 'IP_1234', '0'),
 (5093, 'Стартовий (IP) (IP_001)', 'IP_001', '0'),
@@ -13757,7 +13783,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (5488, 'Super HD (IP) + 100(Ethernet) (IP_386)', 'IP_386', '10'),
 (5489, 'Стартовий ТБ (ІР)+20 Мбіт/с (Ethernet) (IP_004)', 'IP_004', '20'),
 (5490, 'Стартовий ТБ (ІР)+20 Мбіт/с (Ethernet+АТБ) (IP_004/1)', 'IP_004/1', '20'),
-(5491, 'Стартовий ТБ (ІР)+60 Мбіт/с  (Ethernet) (IP_005)', 'IP_005', '20'),
+(5491, 'Стартовий ТБ (ІР)+60 Мбіт/с  (Ethernet) (IP_005)', 'IP_005', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (5492, 'Стартовий ТБ (ІР)+60 Мбіт/с (Ethernet+АТБ) (IP_005/1)', 'IP_005/1', '20'),
 (5493, 'Стартовий ТБ (ІР)+100 Мбіт/с  (Ethernet) (IP_006)', 'IP_006', '20'),
 (5494, 'Стартовий ТБ (ІР)+100 Мбіт/с (Ethernet+АТБ) (IP_006/1)', 'IP_006/1', '20'),
@@ -14087,8 +14114,7 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (5818, 'Кременец: Базовий ТБ + 5 Мбiт/с (CZ_020)', 'CZ_020', '20'),
 (5819, 'Кременец: Базовий ТБ + 20 Мбiт/с (CZ_021)', 'CZ_021', '20'),
 (5820, 'Кременец: Базовий ТБ + 30 Мбiт/с (CZ_022)', 'CZ_022', '20'),
-(5821, 'Стартовий ТБ (ІР)+20 Мбіт/с (Docsis) (IP_013)', 'IP_013', '20');
-INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
+(5821, 'Стартовий ТБ (ІР)+20 Мбіт/с (Docsis) (IP_013)', 'IP_013', '20'),
 (5822, 'Стартовий ТБ (ІР)+60 Мбіт/с (Docsis) (IP_014)', 'IP_014', '20'),
 (5823, 'Стартовий ТБ (ІР)+100 Мбіт/с (Docsis) (IP_015)', 'IP_015', '20'),
 (5824, 'Оптимальний ТБ (ІР)+20 Мбіт/с (Docsis) (IP_016)', 'IP_016', '10'),
@@ -14317,7 +14343,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (6047, 'Стартовий ТБ (ІР)+60 Мбіт/с  (Ethernet) (IP_005)', 'IP_005', '20'),
 (6048, 'Стартовий ТБ (ІР)+60 Мбіт/с (Ethernet+АТБ) (IP_005/1)', 'IP_005/1', '20'),
 (6049, 'Стартовий ТБ (ІР)+100 Мбіт/с  (Ethernet) (IP_006)', 'IP_006', '20'),
-(6050, 'Стартовий ТБ (ІР)+100 Мбіт/с (Ethernet+АТБ) (IP_006/1)', 'IP_006/1', '20'),
+(6050, 'Стартовий ТБ (ІР)+100 Мбіт/с (Ethernet+АТБ) (IP_006/1)', 'IP_006/1', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (6051, 'Оптимальний ТБ (ІР)+20 Мбіт/с (Ethernet) (IP_007)', 'IP_007', '10'),
 (6052, 'Оптимальний ТБ (ІР)+20 Мбіт/с (Ethernet+АТБ) IP_007/1)', 'IP_007/1', '10'),
 (6053, 'Оптимальний ТБ (ІР)+60 Мбіт/с (Ethernet) (IP_008)', 'IP_008', '10'),
@@ -14782,8 +14809,7 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (6512, 'Оптимальний HD ТБ (ІР)+100 Мбіт/с (Ethernet) (IP_012)', 'IP_012', '10'),
 (6513, 'Оптимальний HD ТБ (ІР)+100 Мбіт/с (Ethernet+АТБ)(IP_012/1)', 'IP_012/1', '10'),
 (6514, 'Воля TV Start HD + 100(Ethernet)(2 пристрої) (IP_1441)', 'IP_1441', '20'),
-(6515, 'Воля TV Super HD + 100(Ethernet)(3 пристрої) (IP_1442)', 'IP_1442', '10');
-INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
+(6515, 'Воля TV Super HD + 100(Ethernet)(3 пристрої) (IP_1442)', 'IP_1442', '10'),
 (6516, 'Воля Power Time(IP) 500(Ethernet) (IP_1479)', 'IP_1479', '10'),
 (6517, 'Воля Power Time(IP) 500(Ethernet+АТБ) (IP_1479/1)', 'IP_1479/1', '10'),
 (6518, 'Воля Turbo HD(IP) 250(Ethernet) (IP_1480)', 'IP_1480', '10'),
@@ -14893,7 +14919,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (6622, 'Воля HD (ІР)+100 Мбіт/с (Ethernet) (IP_354)', 'IP_354', '10'),
 (6623, 'Воля HD (ІР)+100 Мбіт/с (Ethernet+АТБ) (IP_354/1)', 'IP_354/1', '10'),
 (6624, 'Start (ІР)+20 Мбіт/с (Ethernet) (IP_360)', 'IP_360', '20'),
-(6625, 'Start (ІР)+20 Мбіт/с (Ethernet+АТБ) (IP_360/1)', 'IP_360/1', '20'),
+(6625, 'Start (ІР)+20 Мбіт/с (Ethernet+АТБ) (IP_360/1)', 'IP_360/1', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (6626, 'Start (ІР)+60 Мбіт/с (Ethernet) (IP_361)', 'IP_361', '20'),
 (6627, 'Start (ІР)+60 Мбіт/с (Ethernet+АТБ) (IP_361/1)', 'IP_361/1', '20'),
 (6628, 'Start (ІР)+100 Мбіт/с (Ethernet) (IP_362)', 'IP_362', '20'),
@@ -15455,7 +15482,8 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (7184, 'Херсон:  Легкий ТБ + 20 Мбiт/с(HN_200)', 'HN_200', '20'),
 (7185, 'Херсон: Пакет: Малий бізнес 5 (ЦТВ + 5 Мбіт/с) (HN_20081)', 'HN_20081', '0'),
 (7186, 'Херсон:Легкий ТБ + 60 Мбiт/с(HN_201)', 'HN_201', '20'),
-(7187, 'Херсон: Легкий ТБ + 100 Мбiт/с (HN_202)', 'HN_202', '20'),
+(7187, 'Херсон: Легкий ТБ + 100 Мбiт/с (HN_202)', 'HN_202', '20');
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (7188, 'Херсон:  Базовий ТБ (АТВ)+ 10 Мбiт/с(HN_203)', 'HN_203', '20'),
 (7189, 'Херсон:  Базовий ТБ (АТВ)+ 60 Мбiт/с (HN_204)', 'HN_204', '20'),
 (7190, 'Херсон:  Базовий ТБ (АТВ)+ 100 Мбiт/с (HN_205)', 'HN_205', '20'),
@@ -15480,8 +15508,7 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (7209, 'Херсон: Легкий ТБ + Інтернет день (HN_283)', 'HN_283', '20'),
 (7210, 'Херсон: Базовий ТБ + Інтернет день (HN_284)', 'HN_284', '20'),
 (7211, 'Херсон: Стартовий ТБ + Інтернет день (HN_285)', 'HN_285', '30'),
-(7212, 'Херсон: Оптимальний ТБ + Інтернет день (HN_286)', 'HN_286', '10');
-INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
+(7212, 'Херсон: Оптимальний ТБ + Інтернет день (HN_286)', 'HN_286', '10'),
 (7213, 'Херсон: Оптимальний HD ТБ + Інтернет день (HN_287)', 'HN_287', '10'),
 (7214, 'Воля Power Time old (HN_3210)', 'HN_3210', '10'),
 (7215, 'Стартовий ТБ + 60 Мбiт/с old (HN_600)', 'HN_600', '30'),
@@ -15857,18 +15884,19 @@ INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `su_mega`
+-- Структура таблицы `su_mega`
 --
 
-CREATE TABLE `su_mega` (
-  `id` int(6) NOT NULL,
+CREATE TABLE IF NOT EXISTS `su_mega` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
   `tp` text NOT NULL,
   `kod` text NOT NULL,
-  `discount` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `discount` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=453 ;
 
 --
--- Dumping data for table `su_mega`
+-- Дамп данных таблицы `su_mega`
 --
 
 INSERT INTO `su_mega` (`id`, `tp`, `kod`, `discount`) VALUES
@@ -16318,7 +16346,7 @@ INSERT INTO `su_mega` (`id`, `tp`, `kod`, `discount`) VALUES
 (444, 'Воля HD (ІР)+60 Мбіт/с (Ethernet) (IP_353)', 'IP_353', '50'),
 (445, 'Воля TV Start HD + 100(Ethernet)(2 пристрої) (IP_1441)', 'IP_1441', '50'),
 (446, 'Воля TV Super HD + 100(Ethernet)(3 пристрої) (IP_1442)', 'IP_1442', '50'),
-(447, 'Базовий ТБ  \'Україна\'(АТВ) + 100 Мбiт/с (Docsis)(L168)', 'L168', '50'),
+(447, 'Базовий ТБ  ''Україна''(АТВ) + 100 Мбiт/с (Docsis)(L168)', 'L168', '50'),
 (448, 'Базовий ТБ  Україна(АТВ) + 100 Мбiт/с (V446)', 'V446', '50'),
 (449, 'Базовий ТБ  Україна(АТВ) + 20 Мбiт/с (V444)', 'V444', '50'),
 (450, 'Базовий ТБ  Україна+ 5Мбiт/с  (CK_698)', 'CK_698', '50'),
@@ -16328,22 +16356,23 @@ INSERT INTO `su_mega` (`id`, `tp`, `kod`, `discount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `taxi_order`
+-- Структура таблицы `taxi_order`
 --
 
-CREATE TABLE `taxi_order` (
-  `id_people` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `taxi_order` (
+  `id_people` int(11) NOT NULL AUTO_INCREMENT,
   `id` varchar(100) NOT NULL,
   `name` varchar(30) NOT NULL,
   `time` varchar(2) NOT NULL,
   `area` varchar(30) NOT NULL,
   `street` varchar(30) NOT NULL,
   `car_num` varchar(2) NOT NULL,
-  `date` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `date` varchar(10) NOT NULL,
+  PRIMARY KEY (`id_people`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1369 ;
 
 --
--- Dumping data for table `taxi_order`
+-- Дамп данных таблицы `taxi_order`
 --
 
 INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `car_num`, `date`) VALUES
@@ -16790,7 +16819,8 @@ INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `
 (769, '2288493', ' Диана, Рыжук', '22', 'Институтская', 'Інституцька 6', '1', '29.07.2019'),
 (770, '5756174', 'Володимир, Петришин', '24', 'Прибугская', 'прибузька 44', '2', '29.07.2019'),
 (774, '6', 'Олег, Кикоть', '', '', '', '0', '29.07.2019'),
-(775, '6235955', ' Руслан, Осацкий', '22', 'Центр', 'шестакова, 46', '2', '29.07.2019'),
+(775, '6235955', ' Руслан, Осацкий', '22', 'Центр', 'шестакова, 46', '2', '29.07.2019');
+INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `car_num`, `date`) VALUES
 (777, '6277597', ' Юлия, Подгурская', '22', 'Гречаны', 'проскурівське підпілля 161', '2', '29.07.2019'),
 (779, '9885209', ' Богдан, Нестерчук', '22', 'Раково', 'Собкофф', '3', '29.07.2019'),
 (780, '7853892', ' Диана, Довга', '23', 'Институтская', 'Інститутська, 6', '1', '29.07.2019'),
@@ -16933,8 +16963,7 @@ INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `
 (962, '1804055', 'Владислав, Попсуй', '', '', '', '1', '02.08.2019'),
 (963, '5977953', ' Галина, Гнатюк', '24', 'Институтская', 'Інститутська 14/2', '1', '02.08.2019'),
 (964, '4528179', 'Владислав, Рокицкий', '23', 'Заречанская', 'Заречанская,8', '2', '02.08.2019'),
-(965, '5554691', 'Олександра, Папирна', '23', 'Гречаны', 'залізнична 19', '1', '02.08.2019');
-INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `car_num`, `date`) VALUES
+(965, '5554691', 'Олександра, Папирна', '23', 'Гречаны', 'залізнична 19', '1', '02.08.2019'),
 (966, '5690604', ' Ирина, Стражир', '21', 'Институтская', '6в', '2', '02.08.2019'),
 (967, '0593135', ' Анна, Хмельницька', '21', 'Електроника', 'бандери 10/3', '2', '02.08.2019'),
 (968, '8799080', ' Владимир, Марамон', '', '', '', '0', '03.08.2019'),
@@ -17226,7 +17255,8 @@ INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `
 (1308, '1356699', ' Никита, Молдаванов', '22', 'Центр', 'завадського 7', '2', '11.08.2019'),
 (1309, '5737049', 'Юлия, Столярчук', '21', 'Гречаны', 'Волочиська 5', '1', '11.08.2019'),
 (1310, '6926520', ' Анна, Кривонос', '1', 'Катион', 'Тернопільська', '1', '11.08.2019'),
-(1311, '9031263', ' Виктория, Бурдельная', '1', 'Подолька', 'Шевченка 49', '1', '11.08.2019'),
+(1311, '9031263', ' Виктория, Бурдельная', '1', 'Подолька', 'Шевченка 49', '1', '11.08.2019');
+INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `car_num`, `date`) VALUES
 (1312, '9138026', 'Иван, Андреев', '23', 'Проспект', '68', '1', '11.08.2019'),
 (1314, '3825329', ' Александр, Нетреба', '21', 'Центр', 'плаза', '1', '11.08.2019'),
 (1315, '4360674', ' Елена, Матвийчук', '1', 'Гречаны', 'Курчатова 4/2 ', '1', '11.08.2019'),
@@ -17285,10 +17315,10 @@ INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура таблицы `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` varchar(20) NOT NULL,
   `name` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
@@ -17299,11 +17329,12 @@ CREATE TABLE `users` (
   `photo` varchar(100) NOT NULL DEFAULT 'no-avatar.jpg',
   `Lastlogin` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_mysql500_ci NOT NULL DEFAULT '0',
   `session` int(1) NOT NULL DEFAULT '0',
-  `message` int(2) NOT NULL DEFAULT '0'
+  `message` int(2) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `access`, `photo`, `Lastlogin`, `session`, `message`) VALUES
@@ -17329,7 +17360,7 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `ac
 ('15', 'Светлана', 'Хыцюк', '0', 'svetlana.khytsiuk', '02513641', 2, '15.jpg', '12.08.19', 0, 0),
 ('1504240', 'Виталина', 'Заец', '0', 'vitalina.zaiets', '20092000', 1, '1504240.jpg', '13.08.19', 1, 0),
 ('1508403', 'Елена', 'Коваль', '0', 'olena.koval', 'Olena1971koval', 3, '1508403.jpg', '13.08.19', 1, 0),
-('16', 'Никита', 'Шевердов', '0', 'mykyta.sheverdov', '1', 2, '16.jpg', '12.08.19', 0, 0),
+('16', 'Никита', 'Шевердов', '0', 'mykyta.sheverdov', '1', 2, '16.jpg', '12.08.19', 1, 0),
 ('17', 'Юрий', 'Гопченко', '0', 'yurii.gopchenko', 'Volia123', 2, '17.jpg', '06.08.19', 0, 0),
 ('1755034', ' Владислав', 'Куприйчук', '0', 'vladyslav.kupriichuk', '09119777wsd', 1, '1755034.jpg', '12.08.19', 0, 0),
 ('18', 'Николай', 'Уманец', '0', 'nikolay.umanets', 'Achiev70', 1, '18.jpg', '08.08.19', 0, 0),
@@ -17453,10 +17484,10 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `phone`, `login`, `password`, `ac
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_indicators`
+-- Структура таблицы `users_indicators`
 --
 
-CREATE TABLE `users_indicators` (
+CREATE TABLE IF NOT EXISTS `users_indicators` (
   `id` varchar(20) NOT NULL,
   `date_of_issue` varchar(20) NOT NULL DEFAULT '0',
   `logged_time` varchar(10) NOT NULL DEFAULT '0',
@@ -17477,11 +17508,12 @@ CREATE TABLE `users_indicators` (
   `plan_hours` varchar(10) NOT NULL DEFAULT '',
   `exp` varchar(10) NOT NULL DEFAULT '0',
   `rank` varchar(30) NOT NULL,
-  `sales_coef` varchar(10) NOT NULL DEFAULT '0'
+  `sales_coef` varchar(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users_indicators`
+-- Дамп данных таблицы `users_indicators`
 --
 
 INSERT INTO `users_indicators` (`id`, `date_of_issue`, `logged_time`, `work_break`, `csat`, `klk`, `aht`, `sr`, `tss`, `sts`, `rft`, `phone`, `email`, `work_`, `klk_happy`, `nps`, `reg`, `plan_hours`, `exp`, `rank`, `sales_coef`) VALUES
@@ -17603,135 +17635,12 @@ INSERT INTO `users_indicators` (`id`, `date_of_issue`, `logged_time`, `work_brea
 ('9943346', '25.09.2017', '49,69', '16', '30,79', '82,16', '340,99', '67,23', '81,46', '', '78,87', '33,33', '4,82', '57,22', '0', '22,22', '91,03', '84', '2805', 'Избранный (Chosen)', '0'),
 ('date', '12.08.2019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `break`
---
-ALTER TABLE `break`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `break_cross`
---
-ALTER TABLE `break_cross`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `break_happy`
---
-ALTER TABLE `break_happy`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `forecast`
---
-ALTER TABLE `forecast`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `log_login`
---
-ALTER TABLE `log_login`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `operators_cc`
---
-ALTER TABLE `operators_cc`
-  ADD PRIMARY KEY (`ID_Cisco`);
-
---
--- Indexes for table `other`
---
-ALTER TABLE `other`
-  ADD PRIMARY KEY (`var`);
-
---
--- Indexes for table `su_discount`
---
-ALTER TABLE `su_discount`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `su_mega`
---
-ALTER TABLE `su_mega`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `taxi_order`
---
-ALTER TABLE `taxi_order`
-  ADD PRIMARY KEY (`id_people`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users_indicators`
---
-ALTER TABLE `users_indicators`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `break`
---
-ALTER TABLE `break`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
---
--- AUTO_INCREMENT for table `break_cross`
---
-ALTER TABLE `break_cross`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
---
--- AUTO_INCREMENT for table `break_happy`
---
-ALTER TABLE `break_happy`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
---
--- AUTO_INCREMENT for table `forecast`
---
-ALTER TABLE `forecast`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `log_login`
---
-ALTER TABLE `log_login`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7540;
---
--- AUTO_INCREMENT for table `operators_cc`
---
-ALTER TABLE `operators_cc`
-  MODIFY `ID_Cisco` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9875;
---
--- AUTO_INCREMENT for table `su_discount`
---
-ALTER TABLE `su_discount`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7584;
---
--- AUTO_INCREMENT for table `su_mega`
---
-ALTER TABLE `su_mega`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=453;
---
--- AUTO_INCREMENT for table `taxi_order`
---
-ALTER TABLE `taxi_order`
-  MODIFY `id_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1369;
 DELIMITER $$
 --
--- Events
+-- События
 --
+CREATE DEFINER=`root`@`localhost` EVENT `reset_people_cross` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE new_break.break_cross SET peoples ='s:0:""'$$
+
 CREATE DEFINER=`root`@`localhost` EVENT `reset_people_happy` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE new_break.break_happy SET peoples ='s:0:""'$$
 
 CREATE DEFINER=`root`@`localhost` EVENT `mentor_reset` ON SCHEDULE EVERY 1 DAY STARTS '2019-07-15 03:00:00' ON COMPLETION NOT PRESERVE ENABLE COMMENT 'Обнуляем ментора' DO UPDATE users SET access = '1' WHERE access = '5'$$
@@ -17758,8 +17667,6 @@ WHEN `hours`='21' THEN '38'
 WHEN `hours`='22' THEN '26'
 WHEN `hours`='23' THEN '15'
 END$$
-
-CREATE DEFINER=`root`@`localhost` EVENT `reset_people_cross` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE new_break.break_cross SET peoples ='s:0:""'$$
 
 DELIMITER ;
 
