@@ -256,7 +256,7 @@ function schedule() {
     // Шапка таблицы
     var app = " <input id='button-a' class='taxi-btn' type='button' value='Выгрузить отчет'><table class='taxi'>\
                     <tr class='taxi-history_head'>\
-                        <td class='taxi-history'>id</td>\
+                        <td class='taxi-history' style='display:none;'>id</td>\
                         <td class='taxi-history'>ФИО</td>\
                         <td class='taxi-history'>Team</td>\
                         <td class='taxi-history'>01.08 чт</td>\
@@ -300,16 +300,40 @@ function schedule() {
                 // Ячейки таблицы
                 app = app + "\
                     <tr class='taxi-history_tr'>\
-                        <td class='taxi-history'>"+ data[i]['id'] + "</td>\
+                        <td class='taxi-history' style='display:none;'>"+ data[i]['id'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['fio'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['team'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['day'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['smena'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['01.08 чт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['02.08 пт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['03.08 сб'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['04.08 вс'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['05.08 пн'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['06.08 вт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['07.08 ср'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['08.08 чт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['09.08 пт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['10.08 сб'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['11.08 вс'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['12.08 пн'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['13.08 вт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['14.08 ср'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['15.08 чт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['16.08 пт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['17.08 сб'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['18.08 вс'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['19.08 пн'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['20.08 вт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['21.08 ср'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['22.08 чт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['23.08 пт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['24.08 сб'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['25.08 вс'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['26.08 пн'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['27.08 вт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['28.08 ср'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['29.08 чт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['30.08 пт'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['31.08 сб'] + "</td>\
                     </tr>";
 
             }
