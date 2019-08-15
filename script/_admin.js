@@ -392,6 +392,7 @@ function clickTeam(team) {
                         <td class="taxi-history" style="display:none;">id</td>\
                         <td class="taxi-history">ФИО</td>\
                         <td class="taxi-history">Team</td>\
+                        <td class="taxi-history">fte</td>\
                         <td class="taxi-history">01.08 чт</td>\
                         <td class="taxi-history">02.08 пт</td>\
                         <td class="taxi-history">03.08 сб</td>\
@@ -438,6 +439,7 @@ function clickTeam(team) {
                         <td class='taxi-history' style='display:none;'>"+ data[i]['id'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['fio'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['team'] + "</td>\
+                        <td class='taxi-history'>"+ data[i]['fte'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['01.08 чт'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['02.08 пт'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['03.08 сб'] + "</td>\
