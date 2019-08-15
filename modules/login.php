@@ -41,7 +41,7 @@ if (empty($myrow['password'])) {
         }
         $_SESSION['team'] = $team;
         // priority
-        $sql_2 = mysqli_query($link, "SELECT priority FROM operators_cc WHERE id ='" . $myrow['id'] . "'");
+        $sql_2 = mysqli_query($link, "SELECT priority FROM users WHERE id ='" . $myrow['id'] . "'");
         if ($sql_2) {
             $prioritySql = mysqli_fetch_array($sql_2);
             $priority = $prioritySql['priority'];
