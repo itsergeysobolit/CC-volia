@@ -255,15 +255,21 @@ function schedule() {
     wrapper.empty();
     // Шапка таблицы
     var app = '<button class="button" value="SOIP_Khmelnitsky_Netiukhailo"\
-                    onclick="clickTeam(this.value)">SOIP_Khmelnitsky_Netiukhailo</button>\
+                    onclick="clickTeam(this.value)">Team Netiukhailo</button>\
                 <button class="button" value="SOIP_Khmelnitsky_Braha"\
-                    onclick="clickTeam(this.value)">SOIP_Khmelnitsky_Braha</button>\
-                <button class="button" value="3" onclick="clickTeam(this.value)">3</button>\
-                <button class="button" value="4" onclick="clickTeam(this.value)">4</button>\
-                <button class="button" value="5" onclick="clickTeam(this.value)">5</button>\
-                <button class="button" value="6" onclick="clickTeam(this.value)">6</button>\
-                <button class="button" value="7" onclick="clickTeam(this.value)">7</button>\
-                <button class="button" value="8" onclick="clickTeam(this.value)">8</button>\
+                    onclick="clickTeam(this.value)">Team Braha</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Mikhailovskaya"\
+                    onclick="clickTeam(this.value)">Team Mikhailovskaya</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Kurochka"\
+                    onclick="clickTeam(this.value)">Team Kurochka</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Kaskov"\
+                    onclick="clickTeam(this.value)">Team Kaskov</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Babich"\
+                    onclick="clickTeam(this.value)">Team Babich</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Khoptiar"\
+                    onclick="clickTeam(this.value)">Team Khoptiar</button>\
+                <button class="button" value="I_Cross"\
+                    onclick="clickTeam(this.value)">Team I_Cross</button>\
                 <div class="wrapper_shadow">';
     // <table class="taxi">
     // <tr class="taxi-history_head">\
