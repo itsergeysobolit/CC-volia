@@ -271,113 +271,6 @@ function schedule() {
                 <button class="button" value="I_Cross"\
                     onclick="clickTeam(this.value)">Team I_Cross</button>\
                 <div class="wrapper_shadow">';
-    // <table class="taxi">
-    // <tr class="taxi-history_head">\
-    //     <td class="taxi-history" style="display:none;">id</td>\
-    //     <td class="taxi-history">ФИО</td>\
-    //     <td class="taxi-history">Team</td>\
-    //     <td class="taxi-history">01.08 чт</td>\
-    //     <td class="taxi-history">02.08 пт</td>\
-    //     <td class="taxi-history">03.08 сб</td>\
-    //     <td class="taxi-history">04.08 вс</td>\
-    //     <td class="taxi-history">05.08 пн</td>\
-    //     <td class="taxi-history">06.08 вт</td>\
-    //     <td class="taxi-history">07.08 ср</td>\
-    //     <td class="taxi-history">08.08 чт</td>\
-    //     <td class="taxi-history">09.08 пт</td>\
-    //     <td class="taxi-history">10.08 сб</td>\
-    //     <td class="taxi-history">11.08 вс</td>\
-    //     <td class="taxi-history">12.08 пн</td>\
-    //     <td class="taxi-history">13.08 вт</td>\
-    //     <td class="taxi-history">14.08 ср</td>\
-    //     <td class="taxi-history">15.08 чт</td>\
-    //     <td class="taxi-history">16.08 пт</td>\
-    //     <td class="taxi-history">17.08 сб</td>\
-    //     <td class="taxi-history">18.08 вс</td>\
-    //     <td class="taxi-history">19.08 пн</td>\
-    //     <td class="taxi-history">20.08 вт</td>\
-    //     <td class="taxi-history">21.08 ср</td>\
-    //     <td class="taxi-history">22.08 чт</td>\
-    //     <td class="taxi-history">23.08 пт</td>\
-    //     <td class="taxi-history">24.08 сб</td>\
-    //     <td class="taxi-history">25.08 вс</td>\
-    //     <td class="taxi-history">26.08 пн</td>\
-    //     <td class="taxi-history">27.08 вт</td>\
-    //     <td class="taxi-history">28.08 ср</td>\
-    //     <td class="taxi-history">29.08 чт</td>\
-    //     <td class="taxi-history">30.08 пт</td>\
-    //     <td class="taxi-history">31.08 сб</td>\
-    // </tr>';
-    // $.ajax({
-    //     type: "POST",
-    //     dataType: "json",
-    //     url: "/break/modules/getUsers.php",
-    //     success: function (data) {
-    //         for (var i = 0; i < data.length; i++) {
-    //             // Ячейки таблицы
-    //             app = app + "\
-    //                 <tr class='taxi-history_tr'>\
-    //                     <td class='taxi-history' style='display:none;'>"+ data[i]['id'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['fio'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['team'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['01.08 чт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['02.08 пт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['03.08 сб'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['04.08 вс'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['05.08 пн'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['06.08 вт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['07.08 ср'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['08.08 чт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['09.08 пт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['10.08 сб'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['11.08 вс'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['12.08 пн'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['13.08 вт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['14.08 ср'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['15.08 чт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['16.08 пт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['17.08 сб'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['18.08 вс'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['19.08 пн'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['20.08 вт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['21.08 ср'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['22.08 чт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['23.08 пт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['24.08 сб'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['25.08 вс'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['26.08 пн'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['27.08 вт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['28.08 ср'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['29.08 чт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['30.08 пт'] + "</td>\
-    //                     <td class='taxi-history'>"+ data[i]['31.08 сб'] + "</td>\
-    //                 </tr>";
-    //         }
-    //         wrapper.append(app + "</table></div>");
-    //         var wb = XLSX.utils.book_new();
-    //         wb.Props = {
-    //             Title: "Taxi_report",
-    //             Subject: "Taxi",
-    //             Author: "Red Stapler",
-    //             CreatedDate: new Date()
-    //         };
-    //         wb.SheetNames.push("Taxi_Report");
-    //         //                var ws_data = [['hello' , 'world']];
-    //         var ws = XLSX.utils.json_to_sheet(data);
-    //         wb.Sheets["Taxi_Report"] = ws;
-    //         var wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
-    //         function s2ab(s) {
-
-    //             var buf = new ArrayBuffer(s.length);
-    //             var view = new Uint8Array(buf);
-    //             for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-    //             return buf;
-    //         }
-    //         $("#button-a").click(function () {
-    //             saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'schedule.xlsx');
-    //         });
-    //     }
-    // });
     wrapper.append(app);
     clickTeam(localStorage.getItem('team'));
 }
@@ -387,43 +280,43 @@ function clickTeam(team) {
     var users = $(".user");
     wrapper.remove();
     var app = '<div class="wrapper_shadow">\
-                    <table class="taxi">\
+                    <table class="taxi" id="tableID">\
                     <tr class="taxi-history_head">\
-                        <td class="taxi-history" style="display:none;">id</td>\
-                        <td class="taxi-history">ФИО</td>\
-                        <td class="taxi-history">Team</td>\
-                        <td class="taxi-history">fte</td>\
-                        <td class="taxi-history">01.08 чт</td>\
-                        <td class="taxi-history">02.08 пт</td>\
-                        <td class="taxi-history">03.08 сб</td>\
-                        <td class="taxi-history">04.08 вс</td>\
-                        <td class="taxi-history">05.08 пн</td>\
-                        <td class="taxi-history">06.08 вт</td>\
-                        <td class="taxi-history">07.08 ср</td>\
-                        <td class="taxi-history">08.08 чт</td>\
-                        <td class="taxi-history">09.08 пт</td>\
-                        <td class="taxi-history">10.08 сб</td>\
-                        <td class="taxi-history">11.08 вс</td>\
-                        <td class="taxi-history">12.08 пн</td>\
-                        <td class="taxi-history">13.08 вт</td>\
-                        <td class="taxi-history">14.08 ср</td>\
-                        <td class="taxi-history">15.08 чт</td>\
-                        <td class="taxi-history">16.08 пт</td>\
-                        <td class="taxi-history">17.08 сб</td>\
-                        <td class="taxi-history">18.08 вс</td>\
-                        <td class="taxi-history">19.08 пн</td>\
-                        <td class="taxi-history">20.08 вт</td>\
-                        <td class="taxi-history">21.08 ср</td>\
-                        <td class="taxi-history">22.08 чт</td>\
-                        <td class="taxi-history">23.08 пт</td>\
-                        <td class="taxi-history">24.08 сб</td>\
-                        <td class="taxi-history">25.08 вс</td>\
-                        <td class="taxi-history">26.08 пн</td>\
-                        <td class="taxi-history">27.08 вт</td>\
-                        <td class="taxi-history">28.08 ср</td>\
-                        <td class="taxi-history">29.08 чт</td>\
-                        <td class="taxi-history">30.08 пт</td>\
-                        <td class="taxi-history">31.08 сб</td>\
+                        <th class="taxi-history" style="display:none;">id</td>\
+                        <th class="taxi-history">ФИО</td>\
+                        <th class="taxi-history">Team</td>\
+                        <th class="taxi-history">Отработано<br>часов</td>\
+                        <th class="taxi-history">01.08 чт</td>\
+                        <th class="taxi-history">02.08 пт</td>\
+                        <th class="taxi-history">03.08 сб</td>\
+                        <th class="taxi-history">04.08 вс</td>\
+                        <th class="taxi-history">05.08 пн</td>\
+                        <th class="taxi-history">06.08 вт</td>\
+                        <th class="taxi-history">07.08 ср</td>\
+                        <th class="taxi-history">08.08 чт</td>\
+                        <th class="taxi-history">09.08 пт</td>\
+                        <th class="taxi-history">10.08 сб</td>\
+                        <th class="taxi-history">11.08 вс</td>\
+                        <th class="taxi-history">12.08 пн</td>\
+                        <th class="taxi-history">13.08 вт</td>\
+                        <th class="taxi-history">14.08 ср</td>\
+                        <th class="taxi-history">15.08 чт</td>\
+                        <th class="taxi-history">16.08 пт</td>\
+                        <th class="taxi-history">17.08 сб</td>\
+                        <th class="taxi-history">18.08 вс</td>\
+                        <th class="taxi-history">19.08 пн</td>\
+                        <th class="taxi-history">20.08 вт</td>\
+                        <th class="taxi-history">21.08 ср</td>\
+                        <th class="taxi-history">22.08 чт</td>\
+                        <th class="taxi-history">23.08 пт</td>\
+                        <th class="taxi-history">24.08 сб</td>\
+                        <th class="taxi-history">25.08 вс</td>\
+                        <th class="taxi-history">26.08 пн</td>\
+                        <th class="taxi-history">27.08 вт</td>\
+                        <th class="taxi-history">28.08 ср</td>\
+                        <th class="taxi-history">29.08 чт</td>\
+                        <th class="taxi-history">30.08 пт</td>\
+                        <th class="taxi-history">31.08 сб</td>\
                     </tr>';
     $.ajax({
         type: "POST",
@@ -472,10 +365,67 @@ function clickTeam(team) {
                         <td class='taxi-history'>"+ data[i]['30.08 пт'] + "</td>\
                         <td class='taxi-history'>"+ data[i]['31.08 сб'] + "</td>\
                     </tr>";
+
+                // function countFte() {
+                //     let number1 = parseInt(data[0]['01.08 чт'].replace(/\D+/g, ""));
+                //     let number2 = parseInt(data[0]['03.08 сб'].replace(/\D+/g, ""));
+                //     let hours = 24;
+                //     let start1 = Math.floor(number1 / 100);
+                //     let start2 = Math.floor(number2 / 100);
+                //     let end1 = number1 % 100;
+                //     let end2 = number2 % 100;
+                //     let sum1 = 0;
+                //     let sum2 = 0;
+                //     if (end1 < start1) {
+                //         sum1 = end1 - start1 + hours;
+                //     } else {
+                //         sum1 = end1 - start1;
+                //     }
+                //     if (end2 < start2) {
+                //         sum1 = end2 - start2 + hours;
+                //     } else {
+                //         sum2 = end2 - start2;
+                //     }
+                //     console.log(sum1 + sum2);
+                //     // let USER = document.getElementById('user');
+                //     // let WRAPPER_SHADOW = USER.getElementById('wrapper_shadow');
+                //     // let TABLE = WRAPPER_SHADOW.getElementById('taxi');
+                //     // let TR = TABLE.getElementById('taxi-history_tr');
+                //     // let TD = TR.getElementtById('taxi-history-td');
+                //     // console.log(TD);
+                //     // console.log(valueFte1);
+                //     // valueFte1.innerHTML = sum1;
+                // }
+                // countFte();
+                // // function countFte() {
+                //     let table = document.getElementById('tableID'),
+                //         cellsColection = table.getElementsByTagName('td');
+
+                //     let cellArr = Array.prototype.slice.call(cellsColection, 0);
+                //     let cell = cellArr[0].innerHTML;
+                //     let number = parseInt(cell.replace(/\D+/g, ""))
+                //     let hours = 24;
+                //     let start = Math.floor(number / 100);
+                //     let end = number % 100;
+                //     let sum = 0;
+                //     if (end < start) {
+                //         sum = end - start + hours;
+                //     } else {
+                //         sum = end - start;
+                //     }
+                //     // let result = cell.split(/(?=(?:\d{3})+(?!\d))/); // ['12-02']
+
+                //     console.log(sum);
+                // }
             }
             app = app + "</table></div>";
-            console.log(app);
             users.append(app);
+            // let value = data[0]['01.08 чт'];
+            // let where = data[0]['fte'];
+            // where = value;
+            // // let where = document.getElementById('')
+            // console.log(value);
+            // console.log(where);
         }
     });
 }
@@ -527,4 +477,32 @@ function editUsersValue(td) {
     }
 }
 
-console.log(localStorage.getItem('priority'));
+// function error() {
+//     let cellsColection = table.getElementById('cellid');
+//     let cellArr = Array.prototype.slice.call(cellsColection, 0);
+//     let cell = cellArr[0].value;
+//     let number = parseInt(cell.replace(/\D+/g, ""))
+//     let hours = 24;
+//     let start = Math.floor(number / 100);
+//     let end = number % 100;
+//     let sum = 0;
+//     if (end < start) {
+//         sum = end - start + hours;
+//     } else {
+//         sum = end - start;
+//     }
+//     // let result = cell.split(/(?=(?:\d{3})+(?!\d))/); // ['12-02']
+
+//     console.log(sum);
+// }
+
+// window.onload = (function func() {
+//     let cellsColection = document.getElementById('cellid');
+//     console.log(cellsColection);
+//     let cellArr = Array.prototype.slice.call(cellsColection, 0);
+//     console.log(cellArr);
+//     let cell = cellArr[0].value;
+//     console.log(cell);
+// });
+
+// console.log(localStorage.getItem('priority'));
