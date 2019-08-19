@@ -73,6 +73,8 @@ $(document).ready(function () {
 function edit(td) {
     var obj = $(td);
     var obj_val = obj.attr("value");
+    console.log(obj_val);
+    console.log(obj_val);
     var obj_ind = obj.index();
     if (obj_ind == 3) {
         $(".taxi_table").find('input').remove();

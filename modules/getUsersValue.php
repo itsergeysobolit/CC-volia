@@ -2,17 +2,17 @@
 include 'connect.php';
 $index = $_REQUEST['index'];
 $index_val = $_REQUEST['index_val'];
-$index_name = $_REQUEST['index_name'];
-if ($index == 1) {
-    $index = "area";
-} else if ($index == 2) {
-    $index = "street";
-} else if ($index == 3) {
-    $index = "car_num";
+$index_id = $_REQUEST['index_id'];
+
+
+if ($index == 3) {
+    $index = "01.08 чт";
 } else if ($index == 4) {
-    $index = "time";
+    $index = "02.08 пт";
 }
-$sql = "UPDATE taxi_order SET $index = '$index_val' WHERE name = '$index_name'";
+
+$sql = "UPDATE operators_cc SET `$index` = '$index_val' WHERE id = '$index_id'";
+
 $result = mysqli_query($link, $sql);
 if ($result) {
     echo json_encode(true);

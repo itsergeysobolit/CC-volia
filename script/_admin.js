@@ -258,20 +258,39 @@ function schedule() {
                     onclick="clickTeam(this.value)">Team Netiukhailo</button>\
                 <button class="button" value="SOIP_Khmelnitsky_Braha"\
                     onclick="clickTeam(this.value)">Team Braha</button>\
-                <button class="button" value="SOIP_Khmelnitsky_Mikhailovskaya"\
-                    onclick="clickTeam(this.value)">Team Mikhailovskaya</button>\
-                <button class="button" value="SOIP_Khmelnitsky_Kurochka"\
-                    onclick="clickTeam(this.value)">Team Kurochka</button>\
-                <button class="button" value="SOIP_Khmelnitsky_Kaskov"\
-                    onclick="clickTeam(this.value)">Team Kaskov</button>\
-                <button class="button" value="SOIP_Khmelnitsky_Babich"\
-                    onclick="clickTeam(this.value)">Team Babich</button>\
-                <button class="button" value="SOIP_Khmelnitsky_Khoptiar"\
-                    onclick="clickTeam(this.value)">Team Khoptiar</button>\
-                <button class="button" value="I_Cross"\
-                    onclick="clickTeam(this.value)">Team I_Cross</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Kaskov" onclick="clickTeam(this.value)">Team Kaskov</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Khoptiar" onclick="clickTeam(this.value)">Team Khoptiar</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Kurochka" onclick="clickTeam(this.value)">Team Kurochka</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Kykot" onclick="clickTeam(this.value)">Team Kykot</button>\
+                <button class="button" value="SOIP_Khmelnitsky_Mikhailovskaya" onclick="clickTeam(this.value)">Team Mikhailovskaya</button>\
+                <button class="button" value="I_Cross" onclick="clickTeam(this.value)">Team I_Cross</button>\
+                <button class="filterShifts" onclick="FilterShifts()">Есть/нет смены</button>\
+                <input type="text" id="mySearch" placeholder="Пошук.." onkeyup="mySearchFunction()" title="Type in a category">\
                 <div class="wrapper_shadow">';
     wrapper.append(app);
+    // var wb = XLSX.utils.book_new();
+    // wb.Props = {
+    //     Title: "Taxi_report",
+    //     Subject: "Taxi",
+    //     Author: "Red Stapler",
+    //     CreatedDate: new Date()
+    // };
+    // wb.SheetNames.push("Taxi_Report");
+    // //                var ws_data = [['hello' , 'world']];
+    // // var ws = XLSX.utils.json_to_sheet(data);
+    // wb.Sheets["Taxi_Report"] = ws;
+    // var wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+    // function s2ab(s) {
+
+    //     var buf = new ArrayBuffer(s.length);
+    //     var view = new Uint8Array(buf);
+    //     for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+    //     return buf;
+    // }
+    // $("#button-a").click(function () {
+    //     saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'schedule.xlsx');
+    // });
+
     clickTeam(localStorage.getItem('team'));
 }
 
@@ -280,43 +299,42 @@ function clickTeam(team) {
     var users = $(".user");
     wrapper.remove();
     var app = '<div class="wrapper_shadow">\
-                    <table class="taxi" id="tableID">\
-                    <tr class="taxi-history_head">\
-                        <th class="taxi-history" style="display:none;">id</td>\
-                        <th class="taxi-history">ФИО</td>\
-                        <th class="taxi-history">Team</td>\
-                        <th class="taxi-history">Отработано<br>часов</td>\
-                        <th class="taxi-history">01.08 чт</td>\
-                        <th class="taxi-history">02.08 пт</td>\
-                        <th class="taxi-history">03.08 сб</td>\
-                        <th class="taxi-history">04.08 вс</td>\
-                        <th class="taxi-history">05.08 пн</td>\
-                        <th class="taxi-history">06.08 вт</td>\
-                        <th class="taxi-history">07.08 ср</td>\
-                        <th class="taxi-history">08.08 чт</td>\
-                        <th class="taxi-history">09.08 пт</td>\
-                        <th class="taxi-history">10.08 сб</td>\
-                        <th class="taxi-history">11.08 вс</td>\
-                        <th class="taxi-history">12.08 пн</td>\
-                        <th class="taxi-history">13.08 вт</td>\
-                        <th class="taxi-history">14.08 ср</td>\
-                        <th class="taxi-history">15.08 чт</td>\
-                        <th class="taxi-history">16.08 пт</td>\
-                        <th class="taxi-history">17.08 сб</td>\
-                        <th class="taxi-history">18.08 вс</td>\
-                        <th class="taxi-history">19.08 пн</td>\
-                        <th class="taxi-history">20.08 вт</td>\
-                        <th class="taxi-history">21.08 ср</td>\
-                        <th class="taxi-history">22.08 чт</td>\
-                        <th class="taxi-history">23.08 пт</td>\
-                        <th class="taxi-history">24.08 сб</td>\
-                        <th class="taxi-history">25.08 вс</td>\
-                        <th class="taxi-history">26.08 пн</td>\
-                        <th class="taxi-history">27.08 вт</td>\
-                        <th class="taxi-history">28.08 ср</td>\
-                        <th class="taxi-history">29.08 чт</td>\
-                        <th class="taxi-history">30.08 пт</td>\
-                        <th class="taxi-history">31.08 сб</td>\
+                    <table class="schedule_table" id="schedule_table">\
+                    <tr class="schedule_table_head">\
+                        <th class="schedule_table_cell " style="display:none;">id</th>\
+                        <th class="schedule_table_cell ">ФИО</th>\
+                        <th class="schedule_table_cell ">Team</th>\
+                        <th class="schedule_table_cell ">01.08 чт</th>\
+                        <th class="schedule_table_cell ">02.08 пт</th>\
+                        <th class="schedule_table_cell ">03.08 сб</th>\
+                        <th class="schedule_table_cell ">04.08 вс</th>\
+                        <th class="schedule_table_cell ">05.08 пн</th>\
+                        <th class="schedule_table_cell ">06.08 вт</th>\
+                        <th class="schedule_table_cell ">07.08 ср</th>\
+                        <th class="schedule_table_cell ">08.08 чт</th>\
+                        <th class="schedule_table_cell ">09.08 пт</th>\
+                        <th class="schedule_table_cell ">10.08 сб</th>\
+                        <th class="schedule_table_cell ">11.08 вс</th>\
+                        <th class="schedule_table_cell ">12.08 пн</th>\
+                        <th class="schedule_table_cell ">13.08 вт</th>\
+                        <th class="schedule_table_cell ">14.08 ср</th>\
+                        <th class="schedule_table_cell ">15.08 чт</th>\
+                        <th class="schedule_table_cell ">16.08 пт</th>\
+                        <th class="schedule_table_cell ">17.08 сб</th>\
+                        <th class="schedule_table_cell ">18.08 вс</th>\
+                        <th class="schedule_table_cell ">19.08 пн</th>\
+                        <th class="schedule_table_cell ">20.08 вт</th>\
+                        <th class="schedule_table_cell ">21.08 ср</th>\
+                        <th class="schedule_table_cell ">22.08 чт</th>\
+                        <th class="schedule_table_cell ">23.08 пт</th>\
+                        <th class="schedule_table_cell ">24.08 сб</th>\
+                        <th class="schedule_table_cell ">25.08 вс</th>\
+                        <th class="schedule_table_cell ">26.08 пн</th>\
+                        <th class="schedule_table_cell ">27.08 вт</th>\
+                        <th class="schedule_table_cell ">28.08 ср</th>\
+                        <th class="schedule_table_cell ">29.08 чт</th>\
+                        <th class="schedule_table_cell ">30.08 пт</th>\
+                        <th class="schedule_table_cell ">31.08 сб</th>\
                     </tr>';
     $.ajax({
         type: "POST",
@@ -328,141 +346,74 @@ function clickTeam(team) {
         success: function (data) {
             for (let i = 0; i < data.length; i++) {
                 app = app + "\
-                    <tr class='taxi-history_tr'>\
-                        <td class='taxi-history' style='display:none;'>"+ data[i]['id'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['fio'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['team'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['fte'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['01.08 чт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['02.08 пт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['03.08 сб'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['04.08 вс'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['05.08 пн'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['06.08 вт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['07.08 ср'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['08.08 чт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['09.08 пт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['10.08 сб'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['11.08 вс'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['12.08 пн'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['13.08 вт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['14.08 ср'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['15.08 чт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['16.08 пт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['17.08 сб'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['18.08 вс'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['19.08 пн'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['20.08 вт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['21.08 ср'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['22.08 чт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['23.08 пт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['24.08 сб'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['25.08 вс'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['26.08 пн'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['27.08 вт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['28.08 ср'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['29.08 чт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['30.08 пт'] + "</td>\
-                        <td class='taxi-history'>"+ data[i]['31.08 сб'] + "</td>\
-                    </tr>";
-
-                // function countFte() {
-                //     let number1 = parseInt(data[0]['01.08 чт'].replace(/\D+/g, ""));
-                //     let number2 = parseInt(data[0]['03.08 сб'].replace(/\D+/g, ""));
-                //     let hours = 24;
-                //     let start1 = Math.floor(number1 / 100);
-                //     let start2 = Math.floor(number2 / 100);
-                //     let end1 = number1 % 100;
-                //     let end2 = number2 % 100;
-                //     let sum1 = 0;
-                //     let sum2 = 0;
-                //     if (end1 < start1) {
-                //         sum1 = end1 - start1 + hours;
-                //     } else {
-                //         sum1 = end1 - start1;
-                //     }
-                //     if (end2 < start2) {
-                //         sum1 = end2 - start2 + hours;
-                //     } else {
-                //         sum2 = end2 - start2;
-                //     }
-                //     console.log(sum1 + sum2);
-                //     // let USER = document.getElementById('user');
-                //     // let WRAPPER_SHADOW = USER.getElementById('wrapper_shadow');
-                //     // let TABLE = WRAPPER_SHADOW.getElementById('taxi');
-                //     // let TR = TABLE.getElementById('taxi-history_tr');
-                //     // let TD = TR.getElementtById('taxi-history-td');
-                //     // console.log(TD);
-                //     // console.log(valueFte1);
-                //     // valueFte1.innerHTML = sum1;
-                // }
-                // countFte();
-                // // function countFte() {
-                //     let table = document.getElementById('tableID'),
-                //         cellsColection = table.getElementsByTagName('td');
-
-                //     let cellArr = Array.prototype.slice.call(cellsColection, 0);
-                //     let cell = cellArr[0].innerHTML;
-                //     let number = parseInt(cell.replace(/\D+/g, ""))
-                //     let hours = 24;
-                //     let start = Math.floor(number / 100);
-                //     let end = number % 100;
-                //     let sum = 0;
-                //     if (end < start) {
-                //         sum = end - start + hours;
-                //     } else {
-                //         sum = end - start;
-                //     }
-                //     // let result = cell.split(/(?=(?:\d{3})+(?!\d))/); // ['12-02']
-
-                //     console.log(sum);
-                // }
+                    <tbody><tr class='schedule_table_row'>\
+                        <td class='schedule_table_cell' style='display:none;'>"+ data[i]['id'] + "</td>\
+                        <th class='schedule_table_cell'>"+ data[i]['fio'] + "</th>\
+                        <td class='schedule_table_cell'>"+ data[i]['team'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['01.08 чт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['02.08 пт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['03.08 сб'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['04.08 вс'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['05.08 пн'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['06.08 вт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['07.08 ср'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['08.08 чт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['09.08 пт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['10.08 сб'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['11.08 вс'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['12.08 пн'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['13.08 вт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['14.08 ср'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['15.08 чт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['16.08 пт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['17.08 сб'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['18.08 вс'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['19.08 пн'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['20.08 вт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['21.08 ср'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['22.08 чт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['23.08 пт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['24.08 сб'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['25.08 вс'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['26.08 пн'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['27.08 вт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['28.08 ср'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['29.08 чт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['30.08 пт'] + "</td>\
+                        <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['31.08 сб'] + "</td>\
+                    </tr></tbody>";
             }
             app = app + "</table></div>";
+            app = app + "<input type='text' class='hundread' placeholder='Введите 100-% число'/>\
+            <input type='text' class='percentNum' placeholder='Введите количество %'/>\
+            <button type='button' class='calc' onclick='calcPercentage()'>Обчислить к-во</button>\
+            <button type='button' class='calcFTE' onclick='countWorkHours()'>FTE</button>";
             users.append(app);
-            // let value = data[0]['01.08 чт'];
-            // let where = data[0]['fte'];
-            // where = value;
-            // // let where = document.getElementById('')
-            // console.log(value);
-            // console.log(where);
         }
     });
 }
 
 function editUsersValue(td) {
     var obj = $(td);
-    var obj_val = obj.attr("value");
+    var obj_text = obj.text()
     var obj_ind = obj.index();
-    // if (obj_ind == 3) {
-    //     $(".taxi_table").find('input').remove();
-    //     $(".taxi_table").find('span').show();
-    //     var app_btn_car = '<input type="button" value="1" id="car1" onclick="edit_car(this)" class="taxi_table-car_num">\
-    //         <input type = "button" value = "2" id = "car2" onclick = "edit_car(this)" class="taxi_table-car_num" >\
-    //         <input type="button" value="3" id="car3" onclick="edit_car(this)" class="taxi_table-car_num">\
-    //         <input type="button" value="4" id="car4" onclick="edit_car(this)" class="taxi_table-car_num">\
-    //         <input type="button" value="5" id="car5" onclick="edit_car(this)" class="taxi_table-car_num">\
-    //         <input type="button" value="6" id="car6" onclick="edit_car(this)" class="taxi_table-car_num">';
-    //     obj.find("span").hide();
-    //     obj.append(app_btn_car);
-    // } else {
     var val_user = prompt("Введите новое значение:");
-    var obj_name = obj.parent().find(".taxi_table-body_td").eq(0).text();
+    var obj_id = obj.parent().find(".schedule_table_cell").eq(0).text();
     if (val_user !== null) {
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "/break/modules/taxi_edit.php",
+            url: "/break/modules/getUsersValue.php",
             data: {
                 index: obj_ind,
                 index_val: val_user,
-                index_name: obj_name
+                index_id: obj_id
             },
             success: function (respons) {
                 if (respons == true) {
                     obj.empty();
-                    if (obj_ind == 4) {
-                        obj.text(val_user + ":00");
+                    if (obj_ind == 3) {
+                        obj.text(val_user);
                     } else {
                         obj.text(val_user);
                     }
@@ -477,32 +428,164 @@ function editUsersValue(td) {
     }
 }
 
-// function error() {
-//     let cellsColection = table.getElementById('cellid');
-//     let cellArr = Array.prototype.slice.call(cellsColection, 0);
-//     let cell = cellArr[0].value;
-//     let number = parseInt(cell.replace(/\D+/g, ""))
-//     let hours = 24;
-//     let start = Math.floor(number / 100);
-//     let end = number % 100;
-//     let sum = 0;
-//     if (end < start) {
-//         sum = end - start + hours;
-//     } else {
-//         sum = end - start;
-//     }
-//     // let result = cell.split(/(?=(?:\d{3})+(?!\d))/); // ['12-02']
+localStorage.getItem('priority');
 
-//     console.log(sum);
-// }
 
-// window.onload = (function func() {
-//     let cellsColection = document.getElementById('cellid');
-//     console.log(cellsColection);
-//     let cellArr = Array.prototype.slice.call(cellsColection, 0);
-//     console.log(cellArr);
-//     let cell = cellArr[0].value;
-//     console.log(cell);
-// });
 
-// console.log(localStorage.getItem('priority'));
+function changeDay(indWeekDay) {
+    $(".dayAccept").click(function () {
+        var weekDay = $("#dayForChosen :selected").text();
+        alert(weekDay);
+        if ($("#dayForChosen :selected").text().length > 0) {
+            switch (weekDay) {
+                case "Воскресенье": indWeekDay = 0; break;
+                case "Понедельник": indWeekDay = 1; break;
+                case "Вторник": indWeekDay = 2; break;
+                case "Среда": indWeekDay = 3; break;
+                case "Четверг": indWeekDay = 4; break;
+                case "Пятница": indWeekDay = 5; break;
+                case "Суббота": indWeekDay = 6; break;
+            }
+        }
+        return indWeekDay;
+    });
+}
+$(function () {
+    var now = new Date(),
+        days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        day = days[now.getDay()];
+
+    var indWeekDay = 4;   //по дефолту = четверг
+    $button = $('.adminmenu_button');
+    id = localStorage.getItem('priority');
+    if (day === days[indWeekDay] && id === '1' || id === 'null') {
+        //приоритет "1" выбирает смены только в день с индексом IndWeekDay
+        //супервизоры должны быть с приоритетом "null", у других сотрудников обязательный приоритет!
+        $button.removeAttr('disabled');
+    }
+    else if (day !== days[indWeekDay] && id !== '1') {
+        $button.removeAttr('disabled');
+    }
+
+    $button.click(function () {
+        if ($(this).hasClass('disabled')) {
+            alert(localStorage.getItem('priority'));
+            return;
+        }
+    });
+});
+
+
+/*// ключ значение
+localStorage.setItem('test', text);
+alert(localStorage.getItem('test'));*/
+
+
+//работает.
+$(document).on('mouseover', ".schedule_table_cell", function () {
+    var tableHead = $(".schedule_table thead");
+    var table = $(".schedule_table");
+    var column = $(this).index();
+    var columnNum = column + 1;
+    //все белые
+    $(table).find($('tr td:not(:nth-child(' + columnNum + '))')).css({ "background-color": "#fff" });
+    //выделенные колонка и строка серые
+    $(table).find($('tr td:nth-child(' + columnNum + ')')).css({ "background-color": "#f2f2f2" });
+    $(this).parent().children().css({ "background-color": "#f2f2f2" });
+});
+
+function FilterShifts() {
+
+    $('.schedule_table_row').each(function () {
+        $("td:empty").addClass("glowingBorder");
+        //if($('td:empty', this).length)
+        //$(this).hide("500");
+    });
+}
+
+
+function userName()                                     //тянет имя с личного кабинета (формат "имя, фамилия")
+//                                                                   в формате "фамилия имя"
+{
+    var username = $(".login_userName").text();
+    var name = username.slice(0, username.indexOf(","));
+    var surname = username.slice(username.indexOf(" ") + 1);
+    return (surname + " " + name);
+}
+function checkSpaces_username()                     //проверка на лишние пробелы
+{
+    $("tbody th:nth-child(2)").css({ "text-decoration": "underline" });
+    $("tbody th:nth-child(2)").each(function () {
+        var fullName = $(this).text();
+        //alert("дано имя: " + fullName);
+        while (fullName[0] == " ")
+            fullName = fullName.slice(1);
+        //alert("без передних пробелов: " + fullName);
+        var indSpace = fullName.indexOf(" ");
+        //alert(indSpace);
+        while (fullName[indSpace + 1] == " ") {
+            fullName = fullName.slice(0, indSpace + 1) + fullName.slice(indSpace + 2);
+        }
+        //alert("normal name: " + fullName);
+    });
+}
+
+function mySearchFunction()										//фильтр поиска по фамилии
+{
+    checkSpaces_username();                         //проверка на лишние пробелы в именах
+    // Declare variables
+    var input, filter, table, tr, i, txtValue;
+    input = document.getElementById("mySearch");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("schedule_table");
+    tr = table.getElementsByTagName("tr");
+    var i = 0;
+    var name = userName();
+    $("tbody th:nth-child(2)").each(function () {
+        if ($(this) && $(this).text() != name) {
+
+            txtValue = $(this).text();
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            }
+            else {
+                tr[i].style.display = "none";
+            }
+        }
+        i++;
+    });
+}
+
+function calcPercentage()                   //поиск введенного процента введенного числа
+{
+    var num1 = $(".hundread").val();
+    var perc = $(".percentNum").val();
+    var num2 = Math.ceil((num1 * perc) / 100);
+    alert(num2);
+    return num2;
+}
+
+function dayHours(day)                //вырезает часы работы и считает их к-во (в пределах одной ячейки)
+{
+    var hyphenInd = day.indexOf("-");
+    var start = Number(day.slice(0, hyphenInd));
+    var end = Number(day.slice(hyphenInd + 1));
+    if (end <= start) {
+        return (end - start + 24);
+    }
+    else {
+        return (end - start);
+    }
+}
+function countWorkHours() {
+    var myName = userName();
+    var myIndex = $("tr th:nth-child(2):contains('" + myName + "')").parent().index("tr");
+    var sumHours = 0;
+    $("tr td:nth-child(3)").eq(myIndex).nextAll().each(function () {
+        if ($(this).text().includes("-")) {
+            sumHours += dayHours($(this).text());
+        }
+    })
+    alert("Количество часов: ", sumHours);
+    return sumHours;
+}

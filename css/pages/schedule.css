@@ -1,0 +1,133 @@
+@font-face {
+    font-family: DinPro;
+    src: url('..fonts/DinPro.otf');
+}
+
+.schedule_table {
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 500px;
+    overflow-x: auto;
+}
+
+.schedule_table_head {
+    background-color: #3a4750;
+    color: #fff;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.schedule_table_head th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.schedule_table_row {
+    background-color: #fff;
+}
+
+.schedule_table_cell {
+    padding: 10px 30px;
+    font-family: DinPro;
+}
+
+.schedule_table tbody tr th {
+    background-color: #3a4750 !important;
+    color: #fff !important;
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+}
+
+.schedule_table tbody tr:hover {
+    background-color: #f2f2f2 !important;
+}
+
+.schedule_table {
+    max-height: 70%;
+    overflow-y: scroll;
+}
+
+.schedule_table tbody td:hover {
+    background-color: #3a4750 !important;
+    color: #fff;
+}
+
+.schedule_table_head th:nth-child(2) {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    z-index: 3;
+}
+
+/*thead:nth-child(n+3)
+{
+    overflow: hidden;
+}*/
+
+.wrapper_shadow {
+    overflow-x: auto;
+}
+
+.button {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    position: relative;
+    color: #3a4750;
+    border: none;
+    border-bottom: 3px solid #1a73e8;
+    background-color: #e7e7e7;
+    font-weight: 300;
+    /*font-family: 'Montserrat', sans-serif;*/
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: DinPro;
+}
+
+.button:before, .button:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.button:before {
+    border-bottom: none;
+    bottom: 0;
+    left: 0;
+    border-left: 3px solid #1a73e8;
+    border-top: 3px solid #1a73e8;
+    transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+}
+
+.button:after {
+    top: 0;
+    right: 0;
+    border-right: 3px solid #1a73e8;
+    transition: 0s ease opacity .4s, .2s ease width, .2s ease height .2s;
+}
+
+.button:hover:before, .button:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+.button:hover:before {
+    transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+
+.button:hover:after {
+    transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
+}
+
+#filterShifts {
+    background-color: #fca22c !important;
+}

@@ -1,0 +1,116 @@
+@font-face {
+  font-family: DinPro;
+  src: url("..fonts/DinPro.otf");
+}
+.schedule_table {
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+  max-width: 500px;
+  overflow-x: auto;
+  max-height: 70%;
+  overflow-y: scroll;
+  &_head {
+    background-color: #3a4750;
+    color: #fff;
+    pointer-events: none;
+    font-weight: bold;
+    & th {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    }
+  }
+  &_row {
+    background-color: #fff;
+  }
+  &_cell {
+    padding: 10px 30px;
+    font-family: DinPro;
+  }
+  & tbody {
+    tr th {
+      background-color: #3a4750 !important;
+      color: #fff !important;
+      position: -webkit-sticky;
+      position: sticky;
+      left: 0;
+    }
+    tr:hover {
+      background-color: #f2f2f2 !important;
+    }
+    td:hover {
+      background-color: #3a4750 !important;
+      color: #fff;
+    }
+  }
+}
+.schedule_table_head th:nth-child(2) {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 3;
+}
+/*thead:nth-child(n+3)
+{
+    overflow: hidden;
+}*/
+.wrapper_shadow {
+  overflow-x: auto;
+}
+
+.button {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  position: relative;
+  color: #3a4750;
+  border: none;
+  border-bottom: 1px solid #3a4750;
+  background-color: #e7e7e7;
+  font-weight: 300;
+  /*font-family: 'Montserrat', sans-serif;*/
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: DinPro;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+  }
+  &:before {
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid #3a4750;
+    border-top: 1px solid #3a4750;
+    transition: 0s ease opacity 0.8s, 0.2s ease width 0.4s, 0.2s ease height 0.6s;
+  }
+  &:after {
+    top: 0;
+    right: 0;
+    border-right: 1px solid #3a4750;
+    transition: 0s ease opacity 0.4s, 0.2s ease width, 0.2s ease height 0.2s;
+  }
+  &:hover:before,
+  &:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+  }
+  &:hover:before {
+    transition: 0s ease opacity 0s, 0.2s ease height, 0.2s ease width 0.2s;
+  }
+  &:hover:after {
+    transition: 0s ease opacity 0.4s, 0.2s ease height 0.4s, 0.2s ease width 0.6s;
+  }
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}

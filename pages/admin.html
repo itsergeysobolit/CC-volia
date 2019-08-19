@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/break/image/favicon.ico">
     <title>Админ панель</title>
+
     <link rel="stylesheet" href="/break/css/main.css">
     <link rel="stylesheet" href="/break/css/pages/admin.css">
-    <link href="/break/css/global/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/break/css/global/select2.min.css" />
+    <link rel="stylesheet" href="/break/css/pages/schedule.css" />
+
 </head>
 
 <body>
@@ -89,17 +92,25 @@
             <button class="adminmenu_button" onclick="informing()">Информирование</button>
             <button class="adminmenu_button" onclick="user_list()">Пользователи</button>
             <button class="adminmenu_button" onclick="update_indicators()">Обновление KPI</button>
-            <button class="adminmenu_button" onclick="schedule()">График</button>
+            <button disabled class="adminmenu_button" onclick="schedule()">График</button>
         </div>
         <div class="user">
+            <form>
+                <select id="dayForChosen">
+                    <option>Понедельник</option>
+                    <option>Вторник</option>
+                    <option>Среда</option>
+                    <option>Четверг</option>
+                    <option>Пятница</option>
+                    <option>Суббота</option>
+                    <option>Воскресенье</option>
+                </select>
+            </form>
+            <button class="dayAccept">Подтвердить</button>
         </div>
     </div>
 
-    <script src="/break/script/jquery-3.3.1.min.js"></script>
-    <script src="/break/script/script.js"></script>
-    <script src="/break/script/xlsx.full.min.js"></script>
-    <script src="/break/script/filesaver.min.js"></script>
-    <script src="/break/script/_admin.js"></script>
+
     <footer class="footer">
         <div>&copy; 2019 <span class="footer_developers">Oleh Kykot</span> and <span class="footer_developers">Anton
                 Netiukhailo</span></div>
@@ -109,6 +120,20 @@
                     class="footer_developers">anton.netiukhailo@volia.com</span></p>
         </div>
     </footer>
+    <script src="/break/script/jquery-3.3.1.min.js"></script>
+    <script src="/break/script/script.js"></script>
+    <script src="/break/script/xlsx.full.min.js"></script>
+    <script src="/break/script/filesaver.min.js"></script>
+    <script src="/break/script/_admin.js"></script>
 </body>
+<div class="wrappingkostul"></div>
+<style>
+    .glowingBorder {
+        border: 2px solid #9ecaed;
+        border-radius: 7px;
+        outline: none;
+        box-shadow: 0 0 10px #9ecaed;
+    }
+</style>
 
 </html>
