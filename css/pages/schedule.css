@@ -131,3 +131,7 @@
 #filterShifts {
     background-color: #fca22c !important;
 }
+
+.borderBorder {
+    border: 1px solid gray;
+}

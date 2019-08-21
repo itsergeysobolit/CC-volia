@@ -1,12 +1,12 @@
 <?php
 include "connect.php";
-$date ="";
+$date = "";
 $sql = "SELECT * FROM  taxi_order";
-$result=mysqli_query($link, $sql); 
-$taxi_arr= array();
-if($result){
+$result = mysqli_query($link, $sql);
+$taxi_arr = array();
+if ($result) {
     $rows = mysqli_num_rows($result);
-    for ($i =0 ; $i < $rows ; ++$i){
+    for ($i = 0; $i < $rows; ++$i) {
         $row = mysqli_fetch_row($result);
         $taxi_array[$i]["id"] = $row[1];
         $taxi_array[$i]["name"] = $row[2];
@@ -17,13 +17,6 @@ if($result){
         $taxi_array[$i]["date"] = $row[7];
     }
     echo json_encode($taxi_array);
-} else{
+} else {
     echo "<script>alert('Что-то не так');</script>";
 }
-
- 
-?>
-
-
-
-
