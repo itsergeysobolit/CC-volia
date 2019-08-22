@@ -1,14 +1,9 @@
-@font-face {
-    font-family: DinPro;
-    src: url('..fonts/DinPro.otf');
-}
-
 .schedule_table {
     padding: 20px;
     text-align: center;
     margin-top: 30px;
     max-width: 500px;
-    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .schedule_table_head {
@@ -18,11 +13,6 @@
     font-weight: bold;
 }
 
-.schedule_table_head th {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-}
 
 .schedule_table_row {
     background-color: #fff;
@@ -30,7 +20,7 @@
 
 .schedule_table_cell {
     padding: 10px 30px;
-    font-family: DinPro;
+    font-family: DinProLight;
 }
 
 .schedule_table tbody tr th {
@@ -47,7 +37,6 @@
 
 .schedule_table {
     max-height: 70%;
-    overflow-y: scroll;
 }
 
 .schedule_table tbody td:hover {
@@ -55,17 +44,16 @@
     color: #fff;
 }
 
+.schedule_table_head {
+    z-index: 6;
+}
+
 .schedule_table_head th:nth-child(2) {
     position: -webkit-sticky;
     position: sticky;
     left: 0;
-    z-index: 3;
+    z-index: 1;
 }
-
-/*thead:nth-child(n+3)
-{
-    overflow: hidden;
-}*/
 
 .wrapper_shadow {
     overflow-x: auto;
@@ -77,16 +65,15 @@
     display: inline-block;
     padding: 20px 30px;
     margin: 10px 20px;
+    margin-right: auto;
     position: relative;
     color: #3a4750;
     border: none;
     border-bottom: 3px solid #1a73e8;
     background-color: #e7e7e7;
-    font-weight: 300;
-    /*font-family: 'Montserrat', sans-serif;*/
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-family: DinPro;
+    font-family: DinProRegular;
 }
 
 .button:before, .button:after {
@@ -128,10 +115,101 @@
     transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
 }
 
-#filterShifts {
+.filterShifts, .calcWorkHours {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    padding: 20px 0;
+    margin: 10px 20px;
+    margin-right: auto;
+    position: relative;
+    color: #fff;
+    border: none;
+    border-bottom: 3px solid #1a73e8;
+    background-color: #1a73e8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: DinProRegular;
+}
+
+.filterShifts {
+    min-width: 150px;
+}
+
+.calcWorkHours {
+    min-width: 180px;
+}
+
+.filterShifts:before, .filterShifts:after, .calcWorkHours:before, .calcWorkHours:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.filterShifts:before, .calcWorkHours:before {
+    bottom: 0;
+    left: 0;
+    border-left: 3px solid #1a73e8;
+    border-top: 3px solid #1a73e8;
+    transition: 0s ease opacity .1s, .2s ease width .4s, .2s ease height .6s;
+}
+
+.filterShifts:after, .calcWorkHours:after {
+    top: 0;
+    right: 0;
+    border-right: 3px solid #1a73e8;
+    transition: 0s ease opacity 0s, .2s ease width, .2s ease height .2s;
+}
+
+.filterShifts:hover:before, .filterShifts:hover:after, .calcWorkHours:hover:before, .calcWorkHours:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+.filterShifts:hover:before, .calcWorkHours:hover:before {
+    transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+
+.filterShifts:hover:after, .calcWorkHours:hover:after {
+    transition: 0s ease opacity 0s, .2s ease height .4s, .2s ease width .6s;
+}
+
+.filterShifts:hover, .calcWorkHours:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #000;
+    /*раскомментить когда перенесем в личный кабинет*/
+}
+
+#mySearch {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    padding: 6px 30px;
+    margin: 23px 0;
+    font-size: 14pt;
+    font-family: DinProLight;
+    border: 3px solid #1a73e8;
+    border-style: ridge;
+    margin-left: auto;
+    background-color: #e7e7e7;
+}
+
+#mySearch::placeholder {
+    font-style: italic;
+}
+
+.glowingBorder {
+    box-shadow: inset 0px 0px 10px rgba(252, 162, 44, .5);
+}
+
+.backgroundForMe {
     background-color: #fca22c !important;
 }
 
 .borderBorder {
-    border: 1px solid gray;
+    border: 1px solid rgba(252, 162, 44, .5);
 }

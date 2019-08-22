@@ -7,10 +7,8 @@
 -- Server version: 5.7.18-0ubuntu0.16.04.1
 -- PHP Version: 5.6.30-7+deb.sury.org~xenial+1
 
-SET SQL_MODE
-= "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone
-= "+00:00";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -28,30 +26,19 @@ SET time_zone
 -- Table structure for table `break`
 --
 
-CREATE TABLE `
-break
-`
-(
-  `id` int
-(2) NOT NULL,
-  `hours` int
-(2) NOT NULL,
-  `minutes` int
-(2) NOT NULL,
+CREATE TABLE `break` (
+  `id` int(2) NOT NULL,
+  `hours` int(2) NOT NULL,
+  `minutes` int(2) NOT NULL,
   `peoples` text NOT NULL,
-  `amount` int
-(2) NOT NULL
+  `amount` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `break`
 --
 
-INSERT INTO `
-
-break
-`
-(`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
+INSERT INTO `break` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 (1, 8, 0, 's:0:""', 8),
 (2, 8, 30, 's:33:" Светлана, Купрата";', 8),
 (3, 8, 40, 's:29:" Дмитрий, Ткачук";', 8),
@@ -139,27 +126,19 @@ break
 -- Table structure for table `break_cross`
 --
 
-CREATE TABLE `break_cross`
-(
-  `id` int
-(2) NOT NULL,
-  `hours` int
-(2) NOT NULL,
-  `minutes` int
-(2) NOT NULL,
+CREATE TABLE `break_cross` (
+  `id` int(2) NOT NULL,
+  `hours` int(2) NOT NULL,
+  `minutes` int(2) NOT NULL,
   `peoples` text NOT NULL,
-  `amount` int
-(2) NOT NULL
+  `amount` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `break_cross`
 --
 
-INSERT INTO `break_cross` (`
-id`,
-`hours
-`, `minutes`, `peoples`, `amount`) VALUES
+INSERT INTO `break_cross` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 (1, 8, 0, 's:0:""', 10),
 (2, 8, 30, 's:0:""', 10),
 (3, 8, 40, 's:0:""', 10),
@@ -247,27 +226,19 @@ id`,
 -- Table structure for table `break_happy`
 --
 
-CREATE TABLE `break_happy`
-(
-  `id` int
-(2) NOT NULL,
-  `hours` int
-(2) NOT NULL,
-  `minutes` int
-(2) NOT NULL,
+CREATE TABLE `break_happy` (
+  `id` int(2) NOT NULL,
+  `hours` int(2) NOT NULL,
+  `minutes` int(2) NOT NULL,
   `peoples` text NOT NULL,
-  `amount` int
-(2) NOT NULL
+  `amount` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `break_happy`
 --
 
-INSERT INTO `break_happy` (`
-id`,
-`hours
-`, `minutes`, `peoples`, `amount`) VALUES
+INSERT INTO `break_happy` (`id`, `hours`, `minutes`, `peoples`, `amount`) VALUES
 (1, 8, 0, 's:0:""', 10),
 (2, 8, 30, 's:0:""', 10),
 (3, 8, 40, 's:0:""', 10),
@@ -355,83 +326,46 @@ id`,
 -- Table structure for table `fact fte`
 --
 
-CREATE TABLE `fact fte`
-(
-  `01.08 чт` int
-(10) NOT NULL,
-  `02.08 пт` int
-(10) NOT NULL,
-  `03.08 сб` int
-(10) NOT NULL,
-  `04.08 вс` int
-(10) NOT NULL,
-  `05.08 пн` int
-(10) NOT NULL,
-  `06.08 вт` int
-(10) NOT NULL,
-  `07.08 ср` int
-(10) NOT NULL,
-  `08.08 чт` int
-(10) NOT NULL,
-  `09.08 пт` int
-(10) NOT NULL,
-  `10.08 сб` int
-(10) NOT NULL,
-  `11.08 вс` int
-(10) NOT NULL,
-  `12.08 пн` int
-(10) NOT NULL,
-  `13.08 вт` int
-(10) NOT NULL,
-  `14.08 ср` int
-(10) NOT NULL,
-  `15.08 чт` int
-(10) NOT NULL,
-  `16.08 пт` int
-(10) NOT NULL,
-  `17.08 сб` int
-(10) NOT NULL,
-  `18.08 вс` int
-(10) NOT NULL,
-  `19.08 пн` int
-(10) NOT NULL,
-  `20.08 вт` int
-(10) NOT NULL,
-  `21.08 ср` int
-(10) NOT NULL,
-  `22.08 чт` int
-(10) NOT NULL,
-  `23.08 пт` int
-(10) NOT NULL,
-  `24.08 сб` int
-(10) NOT NULL,
-  `25.08 вс` int
-(10) NOT NULL,
-  `26.08 пн` int
-(10) NOT NULL,
-  `27.08 вт` int
-(10) NOT NULL,
-  `28.08 ср` int
-(10) NOT NULL,
-  `29.08 чт` int
-(10) NOT NULL,
-  `30.08 пт` int
-(10) NOT NULL,
-  `31.08 сб` int
-(10) NOT NULL,
-  `hours` varchar
-(10) NOT NULL
+CREATE TABLE `fact fte` (
+  `01.08 чт` int(10) NOT NULL,
+  `02.08 пт` int(10) NOT NULL,
+  `03.08 сб` int(10) NOT NULL,
+  `04.08 вс` int(10) NOT NULL,
+  `05.08 пн` int(10) NOT NULL,
+  `06.08 вт` int(10) NOT NULL,
+  `07.08 ср` int(10) NOT NULL,
+  `08.08 чт` int(10) NOT NULL,
+  `09.08 пт` int(10) NOT NULL,
+  `10.08 сб` int(10) NOT NULL,
+  `11.08 вс` int(10) NOT NULL,
+  `12.08 пн` int(10) NOT NULL,
+  `13.08 вт` int(10) NOT NULL,
+  `14.08 ср` int(10) NOT NULL,
+  `15.08 чт` int(10) NOT NULL,
+  `16.08 пт` int(10) NOT NULL,
+  `17.08 сб` int(10) NOT NULL,
+  `18.08 вс` int(10) NOT NULL,
+  `19.08 пн` int(10) NOT NULL,
+  `20.08 вт` int(10) NOT NULL,
+  `21.08 ср` int(10) NOT NULL,
+  `22.08 чт` int(10) NOT NULL,
+  `23.08 пт` int(10) NOT NULL,
+  `24.08 сб` int(10) NOT NULL,
+  `25.08 вс` int(10) NOT NULL,
+  `26.08 пн` int(10) NOT NULL,
+  `27.08 вт` int(10) NOT NULL,
+  `28.08 ср` int(10) NOT NULL,
+  `29.08 чт` int(10) NOT NULL,
+  `30.08 пт` int(10) NOT NULL,
+  `31.08 сб` int(10) NOT NULL,
+  `hours` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `fact fte`
 --
 
-INSERT INTO `
-fact
-fte
-`
-(`01.08 чт`, `02.08 пт`, `03.08 сб`, `04.08 вс`, `05.08 пн`, `06.08 вт`, `07.08 ср`, `08.08 чт`, `09.08 пт`, `10.08 сб`, `11.08 вс`, `12.08 пн`, `13.08 вт`, `14.08 ср`, `15.08 чт`, `16.08 пт`, `17.08 сб`, `18.08 вс`, `19.08 пн`, `20.08 вт`, `21.08 ср`, `22.08 чт`, `23.08 пт`, `24.08 сб`, `25.08 вс`, `26.08 пн`, `27.08 вт`, `28.08 ср`, `29.08 чт`, `30.08 пт`, `31.08 сб`, `hours`) VALUES
+INSERT INTO `fact fte` (`01.08 чт`, `02.08 пт`, `03.08 сб`, `04.08 вс`, `05.08 пн`, `06.08 вт`, `07.08 ср`, `08.08 чт`, `09.08 пт`, `10.08 сб`, `11.08 вс`, `12.08 пн`, `13.08 вт`, `14.08 ср`, `15.08 чт`, `16.08 пт`, `17.08 сб`, `18.08 вс`, `19.08 пн`, `20.08 вт`, `21.08 ср`, `22.08 чт`, `23.08 пт`, `24.08 сб`, `25.08 вс`, `26.08 пн`, `27.08 вт`, `28.08 ср`, `29.08 чт`, `30.08 пт`, `31.08 сб`, `hours`) VALUES
 (2, 1, 1, 2, 0, 0, -1, 0, 1, 1, 1, -2, 0, -2, -3, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0-1'),
 (3, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '1-2'),
 (1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2-3'),
@@ -463,10 +397,8 @@ fte
 -- Table structure for table `forecast`
 --
 
-CREATE TABLE `forecast`
-(
-  `id` int
-(10) NOT NULL,
+CREATE TABLE `forecast` (
+  `id` int(10) NOT NULL,
   `name` text NOT NULL,
   `time` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -475,10 +407,7 @@ CREATE TABLE `forecast`
 -- Dumping data for table `forecast`
 --
 
-INSERT INTO `forecast` (`
-id`,
-`name
-`, `time`) VALUES
+INSERT INTO `forecast` (`id`, `name`, `time`) VALUES
 (1, '08:00 08:30 08:45 09:00 09:30 09:45 10:00 10:30 10:45 11:00 11:30 11:45 12:00 12:30 12:45 13:00 13:30 13:45 14:00 14:30 14:45 15:00 15:30 15:45 16:00 16:30 16:45 17:00 17:30 17:45 18:00 18:30 18:45 19:00 19:30 19:45 20:00 20:30 20:45 21:00 21:30 21:45 22:00 22:30 22:45 23:00 23:30 23:45', '7	2	2	2	2	2	3	8	15	25	33	36	42	46	46	45	47	41	35	28	25	22	16	10'),
 (2, 'Кыкоть Олег', ''),
 (3, '08:00 08:30 08:45 09:00 09:30 09:45 10:00 10:30 10:45 11:00 11:30 11:45 12:00 12:30 12:45 13:00 13:30 13:45 14:00 14:30 14:45 15:00 15:30 15:45 16:00 16:30 16:45 17:00 17:30 17:45 18:00 18:30 18:45 19:00 19:30 19:45 20:00 20:30 20:45 21:00 21:30 21:45 22:00 22:30 22:45 23:00 23:30 23:45', '10	10	10	10	10	10	10	10	10	10	10	10	10	10	10	10	10	10	10	10	10	10	10	10');
@@ -489,83 +418,46 @@ id`,
 -- Table structure for table `frcst fte`
 --
 
-CREATE TABLE `frcst fte`
-(
-  `01.08 чт` int
-(10) DEFAULT NULL,
-  `02.08 пт` int
-(10) DEFAULT NULL,
-  `03.08 сб` int
-(10) DEFAULT NULL,
-  `04.08 вс` int
-(10) DEFAULT NULL,
-  `05.08 пн` int
-(10) DEFAULT NULL,
-  `06.08 вт` int
-(10) DEFAULT NULL,
-  `07.08 ср` int
-(10) DEFAULT NULL,
-  `08.08 чт` int
-(10) DEFAULT NULL,
-  `09.08 пт` int
-(10) DEFAULT NULL,
-  `10.08 сб` int
-(10) DEFAULT NULL,
-  `11.08 вс` int
-(10) DEFAULT NULL,
-  `12.08 пн` int
-(10) DEFAULT NULL,
-  `13.08 вт` int
-(10) DEFAULT NULL,
-  `14.08 ср` int
-(10) DEFAULT NULL,
-  `15.08 чт` int
-(10) DEFAULT NULL,
-  `16.08 пт` int
-(10) DEFAULT NULL,
-  `17.08 сб` int
-(10) DEFAULT NULL,
-  `18.08 вс` int
-(10) DEFAULT NULL,
-  `19.08 пн` int
-(10) DEFAULT NULL,
-  `20.08 вт` int
-(10) DEFAULT NULL,
-  `21.08 ср` int
-(10) DEFAULT NULL,
-  `22.08 чт` int
-(10) DEFAULT NULL,
-  `23.08 пт` int
-(10) DEFAULT NULL,
-  `24.08 сб` int
-(10) DEFAULT NULL,
-  `25.08 вс` int
-(10) DEFAULT NULL,
-  `26.08 пн` int
-(10) DEFAULT NULL,
-  `27.08 вт` int
-(10) DEFAULT NULL,
-  `28.08 ср` int
-(10) DEFAULT NULL,
-  `29.08 чт` int
-(10) DEFAULT NULL,
-  `30.08 пт` int
-(10) DEFAULT NULL,
-  `31.08 сб` int
-(10) DEFAULT NULL,
-  `hours` varchar
-(10) DEFAULT NULL
+CREATE TABLE `frcst fte` (
+  `01.08 чт` int(10) DEFAULT NULL,
+  `02.08 пт` int(10) DEFAULT NULL,
+  `03.08 сб` int(10) DEFAULT NULL,
+  `04.08 вс` int(10) DEFAULT NULL,
+  `05.08 пн` int(10) DEFAULT NULL,
+  `06.08 вт` int(10) DEFAULT NULL,
+  `07.08 ср` int(10) DEFAULT NULL,
+  `08.08 чт` int(10) DEFAULT NULL,
+  `09.08 пт` int(10) DEFAULT NULL,
+  `10.08 сб` int(10) DEFAULT NULL,
+  `11.08 вс` int(10) DEFAULT NULL,
+  `12.08 пн` int(10) DEFAULT NULL,
+  `13.08 вт` int(10) DEFAULT NULL,
+  `14.08 ср` int(10) DEFAULT NULL,
+  `15.08 чт` int(10) DEFAULT NULL,
+  `16.08 пт` int(10) DEFAULT NULL,
+  `17.08 сб` int(10) DEFAULT NULL,
+  `18.08 вс` int(10) DEFAULT NULL,
+  `19.08 пн` int(10) DEFAULT NULL,
+  `20.08 вт` int(10) DEFAULT NULL,
+  `21.08 ср` int(10) DEFAULT NULL,
+  `22.08 чт` int(10) DEFAULT NULL,
+  `23.08 пт` int(10) DEFAULT NULL,
+  `24.08 сб` int(10) DEFAULT NULL,
+  `25.08 вс` int(10) DEFAULT NULL,
+  `26.08 пн` int(10) DEFAULT NULL,
+  `27.08 вт` int(10) DEFAULT NULL,
+  `28.08 ср` int(10) DEFAULT NULL,
+  `29.08 чт` int(10) DEFAULT NULL,
+  `30.08 пт` int(10) DEFAULT NULL,
+  `31.08 сб` int(10) DEFAULT NULL,
+  `hours` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `frcst fte`
 --
 
-INSERT INTO `
-frcst
-fte
-`
-(`01.08 чт`, `02.08 пт`, `03.08 сб`, `04.08 вс`, `05.08 пн`, `06.08 вт`, `07.08 ср`, `08.08 чт`, `09.08 пт`, `10.08 сб`, `11.08 вс`, `12.08 пн`, `13.08 вт`, `14.08 ср`, `15.08 чт`, `16.08 пт`, `17.08 сб`, `18.08 вс`, `19.08 пн`, `20.08 вт`, `21.08 ср`, `22.08 чт`, `23.08 пт`, `24.08 сб`, `25.08 вс`, `26.08 пн`, `27.08 вт`, `28.08 ср`, `29.08 чт`, `30.08 пт`, `31.08 сб`, `hours`) VALUES
+INSERT INTO `frcst fte` (`01.08 чт`, `02.08 пт`, `03.08 сб`, `04.08 вс`, `05.08 пн`, `06.08 вт`, `07.08 ср`, `08.08 чт`, `09.08 пт`, `10.08 сб`, `11.08 вс`, `12.08 пн`, `13.08 вт`, `14.08 ср`, `15.08 чт`, `16.08 пт`, `17.08 сб`, `18.08 вс`, `19.08 пн`, `20.08 вт`, `21.08 ср`, `22.08 чт`, `23.08 пт`, `24.08 сб`, `25.08 вс`, `26.08 пн`, `27.08 вт`, `28.08 ср`, `29.08 чт`, `30.08 пт`, `31.08 сб`, `hours`) VALUES
 (7, 7, 7, 7, 8, 7, 7, 7, 7, 6, 6, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 6, 6, 5, 5, 6, '0-1'),
 (4, 3, 4, 4, 4, 4, 3, 3, 3, 3, 4, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, '1-2'),
 (2, 2, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, '2-3'),
@@ -597,10 +489,8 @@ fte
 -- Table structure for table `log_login`
 --
 
-CREATE TABLE `log_login`
-(
-  `id` int
-(10) NOT NULL,
+CREATE TABLE `log_login` (
+  `id` int(10) NOT NULL,
   `user` text NOT NULL,
   `date` text NOT NULL,
   `ip` text NOT NULL
@@ -610,11 +500,7 @@ CREATE TABLE `log_login`
 -- Dumping data for table `log_login`
 --
 
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (1, 'yuliia.demediuk', '27.10.18 19:18:40', '10.113.12.99'),
 (2, 'andriy.hryhoryev', '27.10.18 19:21:49', '10.113.12.76'),
 (3, 'illia.oliinyk', '27.10.18 19:25:48', '10.113.12.76'),
@@ -1427,11 +1313,7 @@ id`,
 (810, 'artem.tsymbal', '04.11.18 12:51:50', '10.113.12.152'),
 (811, 'artem.tsymbal', '04.11.18 12:51:51', '10.113.12.152'),
 (812, 'dymytrii.burkovskyi', '04.11.18 13:27:25', '10.112.58.16');
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (813, 'ania', '04.11.18 13:37:23', '10.113.12.76'),
 (814, 'vladyslav.more', '04.11.18 13:42:30', '10.112.58.196'),
 (815, 'viacheslav.tsurikov', '04.11.18 13:49:31', '10.112.58.130'),
@@ -2232,11 +2114,7 @@ id`,
 (1610, 'artur.o.haiduk', '12.11.18 13:42:57', '10.112.58.21'),
 (1611, 'dmytro.kurochka', '12.11.18 13:45:03', '10.113.12.208'),
 (1612, 'yuliia.kozachenko', '12.11.18 13:47:27', '10.112.58.16');
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (1613, 'yuliia.kozachenko', '12.11.18 13:47:31', '10.112.58.16'),
 (1614, 'artem.ivanovskyi', '12.11.18 13:50:30', '10.113.12.207'),
 (1615, 'artem.ivanovskyi', '12.11.18 13:50:51', '10.113.12.207'),
@@ -3040,11 +2918,7 @@ id`,
 (2413, 'ihor.rykun', '19.11.18 17:01:12', '10.112.58.234'),
 (2414, 'bohdan.nechyporuk', '19.11.18 17:05:07', '10.112.58.52'),
 (2415, 'anton.netiukhailo', '19.11.18 17:08:12', '10.113.12.3');
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (2416, 'diana.koziar', '19.11.18 17:25:27', '10.112.58.173'),
 (2417, 'illia.oliinyk', '19.11.18 17:44:57', '10.112.58.55'),
 (2418, 'viktoriia.yermenchuk', '19.11.18 18:02:47', '10.112.58.112'),
@@ -3841,11 +3715,7 @@ id`,
 (3209, 'artem.kapytsia', '27.11.18 08:31:15', '10.112.58.16'),
 (3210, 'vadym.hrydasov', '27.11.18 08:58:24', '10.112.58.114'),
 (3211, 'anna.kobernik', '27.11.18 08:58:44', '10.112.58.127');
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (3212, 'kateryna.datskova', '27.11.18 09:00:30', '10.112.58.8'),
 (3213, 'diana.polishchuk', '27.11.18 09:00:31', '10.112.58.33'),
 (3214, 'iryna.bielkina', '27.11.18 09:02:38', '10.112.58.180'),
@@ -4641,11 +4511,7 @@ id`,
 (4004, 'andrii.mazurenko', '04.12.18 09:13:05', '10.112.58.61'),
 (4005, 'svitlana.kuprata', '04.12.18 09:45:01', '10.112.58.100'),
 (4006, 'tetiana.trach', '04.12.18 09:47:12', '10.112.58.88');
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (4007, 'natalii.korniichuk', '04.12.18 09:51:31', '10.112.58.81'),
 (4008, 'tetiana.pryhlad', '04.12.18 10:00:18', '10.112.58.70'),
 (4009, 'viktoriia.khoptiar', '04.12.18 10:04:28', '10.113.12.116'),
@@ -5440,11 +5306,7 @@ id`,
 (4798, 'dmytro.kurochka', '11.12.18 20:51:10', '10.113.12.162'),
 (4799, 'dmytro.pasichnyk', '11.12.18 20:51:26', '10.112.58.230'),
 (4800, 'oleksandr.koval', '11.12.18 20:57:44', '10.112.58.196');
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (4801, 'nazarii.hranatovych', '11.12.18 20:58:30', '10.112.58.92'),
 (4802, 'maksym.kolyada', '11.12.18 21:19:03', '10.112.58.111'),
 (4803, 'andrii.yurchuk', '11.12.18 21:45:08', '10.112.58.86'),
@@ -6241,11 +6103,7 @@ id`,
 (5594, 'nataliia.padiuka', '19.12.18 07:12:38', '10.112.58.151'),
 (5595, 'viktoriia.shvydko', '19.12.18 07:35:42', '10.112.58.7'),
 (5596, 'vitalii.parubchyshyn', '19.12.18 07:38:11', '10.112.58.135');
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (5597, 'veronika.zvoliak', '19.12.18 07:39:01', '10.112.58.148'),
 (5598, 'nataliia.kondratiuk', '19.12.18 07:43:47', '10.112.58.230'),
 (5599, 'nazarii.hranatovych', '19.12.18 07:44:02', '10.112.58.111'),
@@ -7042,11 +6900,7 @@ id`,
 (6390, 'oleh.kykot', '26.12.18 18:53:36', '10.113.12.172'),
 (6391, 'inna.tsymbaliuk', '26.12.18 18:55:04', '10.113.12.57'),
 (6392, 'inna.tsymbaliuk', '26.12.18 18:55:05', '10.113.12.57');
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (6393, 'inna.tsymbaliuk', '26.12.18 18:55:23', '10.113.12.57'),
 (6394, 'ihor.o.bondarenko', '26.12.18 19:09:41', '10.112.58.204'),
 (6395, 'vladyslav.rastiapin', '26.12.18 19:11:20', '10.112.58.190'),
@@ -7842,11 +7696,7 @@ id`,
 (7185, 'andrii.viniar', '03.01.19 09:55:55', '10.112.58.69'),
 (7186, 'kateryna.haluzinska', '03.01.19 10:01:54', '10.112.58.116'),
 (7187, 'denys.shashyn', '03.01.19 10:27:31', '10.112.58.108');
-INSERT INTO `log_login` (`
-id`,
-`user`,
-`date
-`, `ip`) VALUES
+INSERT INTO `log_login` (`id`, `user`, `date`, `ip`) VALUES
 (7188, 'viktoriia.khoptiar', '03.01.19 10:41:24', '10.113.12.64'),
 (7189, 'valentyna.hedz', '03.01.19 10:46:41', '10.112.58.84'),
 (7190, 'vasyl.kravchuk', '03.01.19 10:48:44', '10.112.58.174'),
@@ -8206,88 +8056,49 @@ id`,
 -- Table structure for table `operators_cc`
 --
 
-CREATE TABLE `operators_cc`
-(
-  `id` varchar
-(20) NOT NULL,
-  `team` varchar
-(55) NOT NULL,
-  `ставка` varchar
-(3) NOT NULL,
-  `fte` int
-(3) NOT NULL,
-  `01.08 чт` varchar
-(10) NOT NULL,
-  `02.08 пт` varchar
-(10) NOT NULL,
-  `03.08 сб` varchar
-(10) NOT NULL,
-  `04.08 вс` varchar
-(10) NOT NULL,
-  `05.08 пн` varchar
-(10) NOT NULL,
-  `06.08 вт` varchar
-(10) NOT NULL,
-  `07.08 ср` varchar
-(10) NOT NULL,
-  `08.08 чт` varchar
-(10) NOT NULL,
-  `09.08 пт` varchar
-(10) NOT NULL,
-  `10.08 сб` varchar
-(10) NOT NULL,
-  `11.08 вс` varchar
-(10) NOT NULL,
-  `12.08 пн` varchar
-(10) NOT NULL,
-  `13.08 вт` varchar
-(10) NOT NULL,
-  `14.08 ср` varchar
-(10) NOT NULL,
-  `15.08 чт` varchar
-(10) NOT NULL,
-  `16.08 пт` varchar
-(10) NOT NULL,
-  `17.08 сб` varchar
-(10) NOT NULL,
-  `18.08 вс` varchar
-(10) NOT NULL,
-  `19.08 пн` varchar
-(10) NOT NULL,
-  `20.08 вт` varchar
-(10) NOT NULL,
-  `21.08 ср` varchar
-(10) NOT NULL,
-  `22.08 чт` varchar
-(10) NOT NULL,
-  `23.08 пт` varchar
-(10) NOT NULL,
-  `24.08 сб` varchar
-(10) NOT NULL,
-  `25.08 вс` varchar
-(10) NOT NULL,
-  `26.08 пн` varchar
-(10) NOT NULL,
-  `27.08 вт` varchar
-(10) NOT NULL,
-  `28.08 ср` varchar
-(10) NOT NULL,
-  `29.08 чт` varchar
-(10) NOT NULL,
-  `30.08 пт` varchar
-(10) NOT NULL,
-  `31.08 сб` varchar
-(10) NOT NULL
+CREATE TABLE `operators_cc` (
+  `id` varchar(20) NOT NULL,
+  `team` varchar(55) NOT NULL,
+  `ставка` varchar(3) NOT NULL,
+  `fte` int(3) NOT NULL,
+  `01.08 чт` varchar(10) NOT NULL,
+  `02.08 пт` varchar(10) NOT NULL,
+  `03.08 сб` varchar(10) NOT NULL,
+  `04.08 вс` varchar(10) NOT NULL,
+  `05.08 пн` varchar(10) NOT NULL,
+  `06.08 вт` varchar(10) NOT NULL,
+  `07.08 ср` varchar(10) NOT NULL,
+  `08.08 чт` varchar(10) NOT NULL,
+  `09.08 пт` varchar(10) NOT NULL,
+  `10.08 сб` varchar(10) NOT NULL,
+  `11.08 вс` varchar(10) NOT NULL,
+  `12.08 пн` varchar(10) NOT NULL,
+  `13.08 вт` varchar(10) NOT NULL,
+  `14.08 ср` varchar(10) NOT NULL,
+  `15.08 чт` varchar(10) NOT NULL,
+  `16.08 пт` varchar(10) NOT NULL,
+  `17.08 сб` varchar(10) NOT NULL,
+  `18.08 вс` varchar(10) NOT NULL,
+  `19.08 пн` varchar(10) NOT NULL,
+  `20.08 вт` varchar(10) NOT NULL,
+  `21.08 ср` varchar(10) NOT NULL,
+  `22.08 чт` varchar(10) NOT NULL,
+  `23.08 пт` varchar(10) NOT NULL,
+  `24.08 сб` varchar(10) NOT NULL,
+  `25.08 вс` varchar(10) NOT NULL,
+  `26.08 пн` varchar(10) NOT NULL,
+  `27.08 вт` varchar(10) NOT NULL,
+  `28.08 ср` varchar(10) NOT NULL,
+  `29.08 чт` varchar(10) NOT NULL,
+  `30.08 пт` varchar(10) NOT NULL,
+  `31.08 сб` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `operators_cc`
 --
 
-INSERT INTO `operators_cc` (`
-id`,
-`team
-`, `ставка`, `fte`, `01.08 чт`, `02.08 пт`, `03.08 сб`, `04.08 вс`, `05.08 пн`, `06.08 вт`, `07.08 ср`, `08.08 чт`, `09.08 пт`, `10.08 сб`, `11.08 вс`, `12.08 пн`, `13.08 вт`, `14.08 ср`, `15.08 чт`, `16.08 пт`, `17.08 сб`, `18.08 вс`, `19.08 пн`, `20.08 вт`, `21.08 ср`, `22.08 чт`, `23.08 пт`, `24.08 сб`, `25.08 вс`, `26.08 пн`, `27.08 вт`, `28.08 ср`, `29.08 чт`, `30.08 пт`, `31.08 сб`) VALUES
+INSERT INTO `operators_cc` (`id`, `team`, `ставка`, `fte`, `01.08 чт`, `02.08 пт`, `03.08 сб`, `04.08 вс`, `05.08 пн`, `06.08 вт`, `07.08 ср`, `08.08 чт`, `09.08 пт`, `10.08 сб`, `11.08 вс`, `12.08 пн`, `13.08 вт`, `14.08 ср`, `15.08 чт`, `16.08 пт`, `17.08 сб`, `18.08 вс`, `19.08 пн`, `20.08 вт`, `21.08 ср`, `22.08 чт`, `23.08 пт`, `24.08 сб`, `25.08 вс`, `26.08 пн`, `27.08 вт`, `28.08 ср`, `29.08 чт`, `30.08 пт`, `31.08 сб`) VALUES
 ('9138026', 'SOIP_Khmelnitsky_Braha', '100', 0, '13-22', '', '10-22', '11-23', '14-23', '14-23', '14-23', '15-00', '', '16-23', '14-23', '14-23', '14-23', '14-23', '13-22', '', '', '14-23', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ('8139945', 'SOIP_Khmelnitsky_Mikhailovskaya', '75', 0, '17-01', '17-01', '', '14-00', '17-01', '17-01', '', '17-22', '17-01', '17-01', '', '17-00', '17-01', '17-01', '', 'о', 'о', 'о', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ('0627193', 'SOIP_Khmelnitsky_Braha', '75', 0, 'о', 'о', 'о', 'о', 'о', 'о', 'о', '08-18', '16-00', '', '13-23', '16-22', '18-23', '13-23', '13-23', '', '', '12-22', '', '', '', '', '', '', '', '', '', '', '', '', ''),
@@ -8410,10 +8221,8 @@ id`,
 -- Table structure for table `other`
 --
 
-CREATE TABLE `other`
-(
-  `var` varchar
-(100) NOT NULL,
+CREATE TABLE `other` (
+  `var` varchar(100) NOT NULL,
   `val` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -8421,10 +8230,7 @@ CREATE TABLE `other`
 -- Dumping data for table `other`
 --
 
-INSERT INTO `other` (`
-var`,
-`val
-`) VALUES
+INSERT INTO `other` (`var`, `val`) VALUES
 ('message', ''),
 ('message-a', ''),
 ('message-q', ''),
@@ -8436,10 +8242,8 @@ var`,
 -- Table structure for table `su_discount`
 --
 
-CREATE TABLE `su_discount`
-(
-  `id` int
-(6) NOT NULL,
+CREATE TABLE `su_discount` (
+  `id` int(6) NOT NULL,
   `tp` text NOT NULL,
   `kod` text NOT NULL,
   `discount` text NOT NULL
@@ -8449,10 +8253,7 @@ CREATE TABLE `su_discount`
 -- Dumping data for table `su_discount`
 --
 
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (1, 'F_TM', 'F_KOD', 'MAX_DISCOUNT'),
 (2, 'Інтернет всюди (Docsis) (10142)', '10142', '0'),
 (3, 'Дніпро: Volia-Lifecell _Інтернет всюди (DP_1620)', 'DP_1620', '0'),
@@ -9221,10 +9022,7 @@ id`,
 (766, 'Пакет Україна і світ+Меломан+Спорт+Воля Extra HD (ZP_783/3)', 'ZP_783/3', '20'),
 (767, 'Пакет Україна і світ+Меломан+Спорт+Кіно+Воля Extra HD (ZP_784/3)', 'ZP_784/3', '20'),
 (768, 'Пакет Україна і світ+Меломан+Кіно+Воля Extra HD (ZP_785/3)', 'ZP_785/3', '20');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (769, 'Пакет Україна і світ+Стиль життя+Воля Extra HD (ZP_786/3)', 'ZP_786/3', '20'),
 (770, 'Пакет Україна і світ+Стиль життя+Спорт+Воля Extra HD (ZP_787/3)', 'ZP_787/3', '20'),
 (771, 'Пакет Україна і світ+Стиль життя+Спорт+Кіно+Воля Extra HD (ZP_788/3)', 'ZP_788/3', '20'),
@@ -9939,10 +9737,7 @@ id`,
 (1480, 'Україна і світ + Меломан + Стиль життя + Спорт + Кіно (362/3)', '362/3', '20'),
 (1481, 'ЗАКРЫТ Україна і світ + Меломан + Стиль життя + Спорт + Кіно (363/3)', '363/3', '20'),
 (1482, 'ЗАКРЫТ Україна і світ + Меломан + Стиль життя + Спорт  (364/3)', '364/3', '20');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (1483, 'Україна і світ + Меломан + Стиль життя + Кіно (365/3)', '365/3', '20'),
 (1484, 'ЗАКРЫТ Україна і світ + Меломан + Стиль життя + Кіно (366/3)', '366/3', '20'),
 (1485, 'ЗАКРЫТ Україна і світ + Меломан + Стиль життя (367/3)', '367/3', '20'),
@@ -10744,10 +10539,7 @@ id`,
 (2281, 'Львів: Boom Максимум (L391)', 'L391', '0'),
 (2282, 'Львів: Драйв Максимум (L392)', 'L392', '0'),
 (2283, 'Львів: Драйв Тест D3 (L393)', 'L393', '0');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (2284, 'Львів: Всесвіт (П-306)', 'П-306', '0'),
 (2285, 'Львів: Бізнес Стартовий (L_2271)', 'L_2271', '0'),
 (2286, 'Львів: Стартовий (L1143)', 'L1143', '20'),
@@ -11450,10 +11242,7 @@ id`,
 (2983, 'Полтава: Всесвіт + Спорт + Кіно (P_402)', 'P_402', '0'),
 (2984, 'Полтава: Всесвіт + Спорт + Кіно (P_402/2)', 'P_402/2', '0'),
 (2985, 'Полтава: Всесвіт + Спорт + Кіно (P_402/3)', 'P_402/3', '0');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (2986, 'Полтава: Всесвіт + Кіно (P_405)', 'P_405', '0'),
 (2987, 'Полтава: Всесвіт + Кіно (P_405/2)', 'P_405/2', '0'),
 (2988, 'Полтава: Всесвіт + Кіно (P_405/3)', 'P_405/3', '0'),
@@ -12105,10 +11894,7 @@ id`,
 (3634, 'Солоницівка: Преміальний HD (SOL_809)', 'SOL_809', '0'),
 (3635, 'Солоницівка: Оптимальний HD (SOL_432)', 'SOL_432', '0'),
 (3636, 'Солоницівка: Оптимальний (SOL_306)', 'SOL_306', '30');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (3637, 'Mobile Optimal (PP) (PP_031)', 'PP_031', '0'),
 (3638, 'Lifecell Mobile Optimal (PP_031_test)', 'PP_031_test', '0'),
 (3639, 'Spec_Dinamo (ІР) (IP_432)', 'IP_432', '0'),
@@ -12866,10 +12652,7 @@ id`,
 (4391, 'Пакет Україна і світ+Планета знань+Спорт+Кіно+Воля Extra HD (HV_813)', 'HV_813', '20'),
 (4392, 'Пакет Україна і світ+Планета знань+Кіно+Воля Extra HD (HV_814)', 'HV_814', '20'),
 (4393, 'Пакет Україна і світ+Стиль життя+Воля Extra HD (HV_815)', 'HV_815', '20');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (4394, 'Пакет Україна і світ+Стиль життя+Спорт+Воля Extra HD (HV_816)', 'HV_816', '20'),
 (4395, 'Пакет Україна і світ+Стиль життя+Спорт+Кіно+Воля Extra HD (HV_817)', 'HV_817', '20'),
 (4396, 'Пакет Україна і світ+Стиль життя+Кіно+Воля Extra HD (HV_818)', 'HV_818', '20'),
@@ -13567,10 +13350,7 @@ id`,
 (5088, 'Spec_Dinamo (ІР) (IP_432)', 'IP_432', '0'),
 (5089, 'FILMUADRAMA (IP_ FILMUA_1)', 'IP_ FILMUA_1', '0'),
 (5090, 'БІЗНЕС Стартовий 2 (IP) (IP_1232)', 'IP_1232', '0');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (5091, 'БІЗНЕС Оптимальний 2 (IP) (IP_1233)', 'IP_1233', '0'),
 (5092, 'БІЗНЕС Оптимальний HD 2 (IP) (IP_1234)', 'IP_1234', '0'),
 (5093, 'Стартовий (IP) (IP_001)', 'IP_001', '0'),
@@ -14302,10 +14082,7 @@ id`,
 (5819, 'Кременец: Базовий ТБ + 20 Мбiт/с (CZ_021)', 'CZ_021', '20'),
 (5820, 'Кременец: Базовий ТБ + 30 Мбiт/с (CZ_022)', 'CZ_022', '20'),
 (5821, 'Стартовий ТБ (ІР)+20 Мбіт/с (Docsis) (IP_013)', 'IP_013', '20');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (5822, 'Стартовий ТБ (ІР)+60 Мбіт/с (Docsis) (IP_014)', 'IP_014', '20'),
 (5823, 'Стартовий ТБ (ІР)+100 Мбіт/с (Docsis) (IP_015)', 'IP_015', '20'),
 (5824, 'Оптимальний ТБ (ІР)+20 Мбіт/с (Docsis) (IP_016)', 'IP_016', '10'),
@@ -15000,10 +14777,7 @@ id`,
 (6513, 'Оптимальний HD ТБ (ІР)+100 Мбіт/с (Ethernet+АТБ)(IP_012/1)', 'IP_012/1', '10'),
 (6514, 'Воля TV Start HD + 100(Ethernet)(2 пристрої) (IP_1441)', 'IP_1441', '20'),
 (6515, 'Воля TV Super HD + 100(Ethernet)(3 пристрої) (IP_1442)', 'IP_1442', '10');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (6516, 'Воля Power Time(IP) 500(Ethernet) (IP_1479)', 'IP_1479', '10'),
 (6517, 'Воля Power Time(IP) 500(Ethernet+АТБ) (IP_1479/1)', 'IP_1479/1', '10'),
 (6518, 'Воля Turbo HD(IP) 250(Ethernet) (IP_1480)', 'IP_1480', '10'),
@@ -15701,10 +15475,7 @@ id`,
 (7210, 'Херсон: Базовий ТБ + Інтернет день (HN_284)', 'HN_284', '20'),
 (7211, 'Херсон: Стартовий ТБ + Інтернет день (HN_285)', 'HN_285', '30'),
 (7212, 'Херсон: Оптимальний ТБ + Інтернет день (HN_286)', 'HN_286', '10');
-INSERT INTO `su_discount` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_discount` (`id`, `tp`, `kod`, `discount`) VALUES
 (7213, 'Херсон: Оптимальний HD ТБ + Інтернет день (HN_287)', 'HN_287', '10'),
 (7214, 'Воля Power Time old (HN_3210)', 'HN_3210', '10'),
 (7215, 'Стартовий ТБ + 60 Мбiт/с old (HN_600)', 'HN_600', '30'),
@@ -16083,10 +15854,8 @@ id`,
 -- Table structure for table `su_mega`
 --
 
-CREATE TABLE `su_mega`
-(
-  `id` int
-(6) NOT NULL,
+CREATE TABLE `su_mega` (
+  `id` int(6) NOT NULL,
   `tp` text NOT NULL,
   `kod` text NOT NULL,
   `discount` text NOT NULL
@@ -16096,10 +15865,7 @@ CREATE TABLE `su_mega`
 -- Dumping data for table `su_mega`
 --
 
-INSERT INTO `su_mega` (`
-id`,
-`tp
-`, `kod`, `discount`) VALUES
+INSERT INTO `su_mega` (`id`, `tp`, `kod`, `discount`) VALUES
 (1, 'Регулярный тариф', '', 'Максимально допустимый номинал                                                     Мега скидки'),
 (2, 'Киев: Інтернет 100 (2932)', '2932', '40'),
 (3, 'Львів: Internet 100 Mbit (L_AB_01)', 'L_AB_01', '40'),
@@ -16559,34 +16325,22 @@ id`,
 -- Table structure for table `taxi_order`
 --
 
-CREATE TABLE `taxi_order`
-(
-  `id_people` int
-(11) NOT NULL,
-  `id` varchar
-(100) NOT NULL,
-  `name` varchar
-(30) NOT NULL,
-  `time` varchar
-(2) NOT NULL,
-  `area` varchar
-(30) NOT NULL,
-  `street` varchar
-(30) NOT NULL,
-  `car_num` varchar
-(2) NOT NULL,
-  `date` varchar
-(10) NOT NULL
+CREATE TABLE `taxi_order` (
+  `id_people` int(11) NOT NULL,
+  `id` varchar(100) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `time` varchar(2) NOT NULL,
+  `area` varchar(30) NOT NULL,
+  `street` varchar(30) NOT NULL,
+  `car_num` varchar(2) NOT NULL,
+  `date` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `taxi_order`
 --
 
-INSERT INTO `taxi_order` (`
-id_people`,
-`id
-`, `name`, `time`, `area`, `street`, `car_num`, `date`) VALUES
+INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `car_num`, `date`) VALUES
 (40, '8799080', ' Владимир, Марамон', '', '', '', '0', '11.07.2019'),
 (43, '6015388', ' Оксана, Михалюк', '1', 'Озерная', 'Садова 1/1', '2', '11.07.2019'),
 (45, '966756', 'Игорь, Пирнат', '', '', '', '0', '11.07.2019'),
@@ -17170,10 +16924,7 @@ id_people`,
 (1015, '4350516', 'Александр, Рунов', '23', 'Дубово', 'Ранкова, 1', '3', '04.08.2019'),
 (1016, '9885659', ' Андрей, Мазур', '24', 'Прибугская', '20', '1', '04.08.2019'),
 (1017, '5641651', 'Юрий, Кашперский', '21', 'Центр', 'Гагаріна 60', '2', '04.08.2019');
-INSERT INTO `taxi_order` (`
-id_people`,
-`id
-`, `name`, `time`, `area`, `street`, `car_num`, `date`) VALUES
+INSERT INTO `taxi_order` (`id_people`, `id`, `name`, `time`, `area`, `street`, `car_num`, `date`) VALUES
 (1018, '9191413', 'Никита, Подгурский', '24', 'Центр', 'владимирская 78', '1', '04.08.2019'),
 (1019, '8', ' Михаил, Каськов', '21', 'Раково', 'Чорновола 134/1', '1', '04.08.2019'),
 (1020, '9885209', ' Богдан, Нестерчук', '', '', '', '0', '04.08.2019'),
@@ -17618,34 +17369,19 @@ id_people`,
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users`
-(
-  `id` varchar
-(20) NOT NULL,
-  `name` varchar
-(255) NOT NULL,
-  `lastname` varchar
-(255) NOT NULL,
-  `priority` int
-(5) NOT NULL,
-  `phone` varchar
-(20) NOT NULL DEFAULT '0',
-  `login` varchar
-(255) NOT NULL,
-  `password` varchar
-(32) NOT NULL DEFAULT 'Volia123',
-  `access` int
-(3) NOT NULL DEFAULT '1',
-  `photo` varchar
-(100) NOT NULL DEFAULT 'no-avatar.jpg',
-  `Lastlogin` varchar
-(15) CHARACTER
-SET utf8
-COLLATE utf8_general_mysql500_ci NOT NULL DEFAULT '0',
-  `session` int
-(1) NOT NULL DEFAULT '0',
-  `message` int
-(2) NOT NULL DEFAULT '0',
+CREATE TABLE `users` (
+  `id` varchar(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `priority` int(5) NOT NULL,
+  `phone` varchar(20) NOT NULL DEFAULT '0',
+  `login` varchar(255) NOT NULL,
+  `password` varchar(32) NOT NULL DEFAULT 'Volia123',
+  `access` int(3) NOT NULL DEFAULT '1',
+  `photo` varchar(100) NOT NULL DEFAULT 'no-avatar.jpg',
+  `Lastlogin` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_mysql500_ci NOT NULL DEFAULT '0',
+  `session` int(1) NOT NULL DEFAULT '0',
+  `message` int(2) NOT NULL DEFAULT '0',
   `bday` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -17653,10 +17389,7 @@ COLLATE utf8_general_mysql500_ci NOT NULL DEFAULT '0',
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`
-id`,
-`name
-`, `lastname`, `priority`, `phone`, `login`, `password`, `access`, `photo`, `Lastlogin`, `session`, `message`, `bday`) VALUES
+INSERT INTO `users` (`id`, `name`, `lastname`, `priority`, `phone`, `login`, `password`, `access`, `photo`, `Lastlogin`, `session`, `message`, `bday`) VALUES
 ('0054068', ' Роман', 'Мазур', 1, '0', 'roman.mazur', '1111', 1, '0054068.jpg', '15.08.19', 0, 0, '10.08.2000'),
 ('0182395', ' Ольга', 'Яворская', 2, '0', 'olha.yavorska', 'Byonka2019', 1, '0182395.jpg', '17.08.19', 0, 0, '31.08.1999'),
 ('0297137', 'Вадим', 'Гвоздецкий', 1, '0', 'vadym.hvozdetskyi', '1234567890Aa', 1, '0297137.jpg', '17.08.19', 0, 0, '21.04.2001'),
@@ -17806,60 +17539,35 @@ id`,
 -- Table structure for table `users_indicators`
 --
 
-CREATE TABLE `users_indicators`
-(
-  `id` varchar
-(20) NOT NULL,
-  `date_of_issue` varchar
-(20) NOT NULL DEFAULT '0',
-  `logged_time` varchar
-(10) NOT NULL DEFAULT '0',
-  `work_break` varchar
-(10) NOT NULL DEFAULT '0',
-  `csat` varchar
-(10) NOT NULL DEFAULT '0',
-  `klk` varchar
-(10) NOT NULL DEFAULT '0',
-  `aht` varchar
-(10) NOT NULL DEFAULT '0',
-  `sr` varchar
-(10) NOT NULL DEFAULT '0',
-  `tss` varchar
-(10) NOT NULL DEFAULT '0',
-  `sts` varchar
-(10) NOT NULL DEFAULT '0',
-  `rft` varchar
-(10) NOT NULL DEFAULT '0',
-  `phone` varchar
-(10) NOT NULL DEFAULT '0',
-  `email` varchar
-(10) NOT NULL DEFAULT '0',
-  `work_` varchar
-(10) NOT NULL DEFAULT '0',
-  `klk_happy` varchar
-(10) NOT NULL DEFAULT '0',
-  `nps` varchar
-(10) NOT NULL DEFAULT '0',
-  `reg` varchar
-(10) NOT NULL DEFAULT '0',
-  `plan_hours` varchar
-(10) NOT NULL DEFAULT '',
-  `exp` varchar
-(10) NOT NULL DEFAULT '0',
-  `rank` varchar
-(30) NOT NULL,
-  `sales_coef` varchar
-(10) NOT NULL DEFAULT '0'
+CREATE TABLE `users_indicators` (
+  `id` varchar(20) NOT NULL,
+  `date_of_issue` varchar(20) NOT NULL DEFAULT '0',
+  `logged_time` varchar(10) NOT NULL DEFAULT '0',
+  `work_break` varchar(10) NOT NULL DEFAULT '0',
+  `csat` varchar(10) NOT NULL DEFAULT '0',
+  `klk` varchar(10) NOT NULL DEFAULT '0',
+  `aht` varchar(10) NOT NULL DEFAULT '0',
+  `sr` varchar(10) NOT NULL DEFAULT '0',
+  `tss` varchar(10) NOT NULL DEFAULT '0',
+  `sts` varchar(10) NOT NULL DEFAULT '0',
+  `rft` varchar(10) NOT NULL DEFAULT '0',
+  `phone` varchar(10) NOT NULL DEFAULT '0',
+  `email` varchar(10) NOT NULL DEFAULT '0',
+  `work_` varchar(10) NOT NULL DEFAULT '0',
+  `klk_happy` varchar(10) NOT NULL DEFAULT '0',
+  `nps` varchar(10) NOT NULL DEFAULT '0',
+  `reg` varchar(10) NOT NULL DEFAULT '0',
+  `plan_hours` varchar(10) NOT NULL DEFAULT '',
+  `exp` varchar(10) NOT NULL DEFAULT '0',
+  `rank` varchar(30) NOT NULL,
+  `sales_coef` varchar(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users_indicators`
 --
 
-INSERT INTO `users_indicators` (`
-id`,
-`date_of_issue
-`, `logged_time`, `work_break`, `csat`, `klk`, `aht`, `sr`, `tss`, `sts`, `rft`, `phone`, `email`, `work_`, `klk_happy`, `nps`, `reg`, `plan_hours`, `exp`, `rank`, `sales_coef`) VALUES
+INSERT INTO `users_indicators` (`id`, `date_of_issue`, `logged_time`, `work_break`, `csat`, `klk`, `aht`, `sr`, `tss`, `sts`, `rft`, `phone`, `email`, `work_`, `klk_happy`, `nps`, `reg`, `plan_hours`, `exp`, `rank`, `sales_coef`) VALUES
 ('0054068', '18.11.2018', '65,74', '16', '23,62', '72', '248,26', '56,7', '87,39', '11,11', '75,17', '25', '7,69', '31,97', '0', '17,05', '91,63', '168', '2011', 'Легионер (Legionary)', '0'),
 ('0182395', '27.01.2019', '140,79', '13', '37,78', '89,67', '268,22', '70,67', '86,83', '77,08', '79,04', '40', '10,78', '14,96', '0', '37,93', '68,88', '52', '2469', 'Боец (Fighter)', '140,9'),
 ('0297137', '16.07.2019', '111,17', '10', '42,46', '84,06', '337,48', '59,22', '84,49', '82,1', '79,22', '74,19', '21,69', '32,3', '0', '33,86', '95,49', '168', '608', 'Искатель (Seeker)', '55,6'),
@@ -17988,81 +17696,68 @@ id`,
 --
 -- Indexes for table `break`
 --
-ALTER TABLE `
-break
-`
-ADD PRIMARY KEY
-(`id`);
+ALTER TABLE `break`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `break_cross`
 --
 ALTER TABLE `break_cross`
-ADD PRIMARY KEY
-(`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `break_happy`
 --
 ALTER TABLE `break_happy`
-ADD PRIMARY KEY
-(`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `forecast`
 --
 ALTER TABLE `forecast`
-ADD PRIMARY KEY
-(`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `log_login`
 --
 ALTER TABLE `log_login`
-ADD PRIMARY KEY
-(`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `other`
 --
 ALTER TABLE `other`
-ADD PRIMARY KEY
-(`var`);
+  ADD PRIMARY KEY (`var`);
 
 --
 -- Indexes for table `su_discount`
 --
 ALTER TABLE `su_discount`
-ADD PRIMARY KEY
-(`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `su_mega`
 --
 ALTER TABLE `su_mega`
-ADD PRIMARY KEY
-(`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `taxi_order`
 --
 ALTER TABLE `taxi_order`
-ADD PRIMARY KEY
-(`id_people`);
+  ADD PRIMARY KEY (`id_people`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-ADD PRIMARY KEY
-(`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users_indicators`
 --
 ALTER TABLE `users_indicators`
-ADD PRIMARY KEY
-(`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -18071,77 +17766,57 @@ ADD PRIMARY KEY
 --
 -- AUTO_INCREMENT for table `break`
 --
-ALTER TABLE `
-break
-`
-  MODIFY `id` int
-(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+ALTER TABLE `break`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
 -- AUTO_INCREMENT for table `break_cross`
 --
 ALTER TABLE `break_cross`
-  MODIFY `id` int
-(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
 -- AUTO_INCREMENT for table `break_happy`
 --
 ALTER TABLE `break_happy`
-  MODIFY `id` int
-(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
 -- AUTO_INCREMENT for table `forecast`
 --
 ALTER TABLE `forecast`
-  MODIFY `id` int
-(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `log_login`
 --
 ALTER TABLE `log_login`
-  MODIFY `id` int
-(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7540;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7540;
 --
 -- AUTO_INCREMENT for table `su_discount`
 --
 ALTER TABLE `su_discount`
-  MODIFY `id` int
-(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7584;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7584;
 --
 -- AUTO_INCREMENT for table `su_mega`
 --
 ALTER TABLE `su_mega`
-  MODIFY `id` int
-(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=453;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=453;
 --
 -- AUTO_INCREMENT for table `taxi_order`
 --
 ALTER TABLE `taxi_order`
-  MODIFY `id_people` int
-(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1551;
+  MODIFY `id_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1551;
 DELIMITER $$
 --
 -- Events
 --
-CREATE DEFINER=`root`@`localhost` EVENT `reset_people_happy` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO
-UPDATE new_break.break_happy SET peoples ='s:0:""'
-$$
+CREATE DEFINER=`root`@`localhost` EVENT `reset_people_happy` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE new_break.break_happy SET peoples ='s:0:""'$$
 
-CREATE DEFINER=`root`@`localhost` EVENT `mentor_reset` ON SCHEDULE EVERY 1 DAY STARTS '2019-07-15 03:00:00' ON COMPLETION NOT PRESERVE ENABLE COMMENT 'Обнуляем ментора' DO
-UPDATE users SET access = '1' WHERE access = '5'
-$$
+CREATE DEFINER=`root`@`localhost` EVENT `mentor_reset` ON SCHEDULE EVERY 1 DAY STARTS '2019-07-15 03:00:00' ON COMPLETION NOT PRESERVE ENABLE COMMENT 'Обнуляем ментора' DO UPDATE users SET access = '1' WHERE access = '5'$$
 
-CREATE DEFINER=`root`@`localhost` EVENT `reset_people_1st` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO
-UPDATE new_break.break SET peoples ='s:0:""'
-$$
+CREATE DEFINER=`root`@`localhost` EVENT `reset_people_1st` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE new_break.break SET peoples ='s:0:""'$$
 
-CREATE DEFINER=`root`@`localhost` EVENT `session_cleaner_event` ON SCHEDULE EVERY 10 MINUTE STARTS '2019-06-21 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO
-UPDATE users SET session = 0
-$$
+CREATE DEFINER=`root`@`localhost` EVENT `session_cleaner_event` ON SCHEDULE EVERY 10 MINUTE STARTS '2019-06-21 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE users SET session = 0$$
 
-CREATE DEFINER=`root`@`localhost` EVENT `forecast_download` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-15 23:19:00' ON COMPLETION NOT PRESERVE ENABLE COMMENT 'загрузка' DO
-UPDATE break SET `amount`= CASE
-WHEN `hours`='8'
-THEN '8'
+CREATE DEFINER=`root`@`localhost` EVENT `forecast_download` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-15 23:19:00' ON COMPLETION NOT PRESERVE ENABLE COMMENT 'загрузка' DO UPDATE break SET `amount`= CASE
+WHEN `hours`='8' THEN '8'
 WHEN `hours`='9' THEN '15'
 WHEN `hours`='10' THEN '24'
 WHEN `hours`='11' THEN '27'
@@ -18159,9 +17834,7 @@ WHEN `hours`='22' THEN '19'
 WHEN `hours`='23' THEN '11'
 END$$
 
-CREATE DEFINER=`root`@`localhost` EVENT `reset_people_cross` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO
-UPDATE new_break.break_cross SET peoples ='s:0:""'
-$$
+CREATE DEFINER=`root`@`localhost` EVENT `reset_people_cross` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-24 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE new_break.break_cross SET peoples ='s:0:""'$$
 
 DELIMITER ;
 

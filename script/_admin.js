@@ -263,9 +263,8 @@ function schedule() {
                 <button class="button" value="SOIP_Khmelnitsky_Mikhailovskaya" onclick="clickTeam(this.value)">Team Mikhailovskaya</button>\
                 <button class="button" value="I_Cross" onclick="clickTeam(this.value)">Team I_Cross</button>\
                 <button class="filterShifts" onclick="FilterShifts()">Есть/нет смены</button>\
-                <button type="button" class="calcFTE" onclick="countWorkHours()">FTE</button>\
-                <input type="text" id="mySearch" placeholder="Пошук.." onkeyup="mySearchFunction()" title="Type in a category">\
-                <div class="wrapper_shadow">';
+                <button type="button" class="calcWorkHours" onclick="countWorkHours()">Рабочие часы</button>\
+                <input type="text" id="mySearch" placeholder="Пошук.." onkeyup="mySearchFunction()" title="Type in a category">';
     wrapper.append(app);
     clickTeam(localStorage.getItem('team'));
 }
@@ -321,46 +320,45 @@ function clickTeam(team) {
             team: team
         },
         success: function (data) {
+            app = app + "\<tbody>";
             for (let i = 0; i < data.length; i++) {
                 app = app + "\
-                    <tbody>\
                         <tr class='schedule_table_row'>\
                             <td class='schedule_table_cell' style='display:none;'>"+ data[i]['id'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['fio'] + "</td>\
+                            <th class='schedule_table_cell'>"+ data[i]['fio'] + "</th>\
                             <td class='schedule_table_cell'>"+ data[i]['team'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['01.08 чт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['02.08 пт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['03.08 сб'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['04.08 вс'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['05.08 пн'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['06.08 вт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['07.08 ср'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['08.08 чт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['09.08 пт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['10.08 сб'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['11.08 вс'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['12.08 пн'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['13.08 вт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['14.08 ср'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['15.08 чт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['16.08 пт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['17.08 сб'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['18.08 вс'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['19.08 пн'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['20.08 вт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['21.08 ср'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['22.08 чт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['23.08 пт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['24.08 сб'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['25.08 вс'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['26.08 пн'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['27.08 вт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['28.08 ср'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['29.08 чт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['30.08 пт'] + "</td>\
-                            <td class='schedule_table_cell' onclick='editUsersValue(this)'>"+ data[i]['31.08 сб'] + "</td>\
-                        </tr>\
-                    </tbody>";
+                            <td class='schedule_table_cell'>" + data[i]['01.08 чт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['02.08 пт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['03.08 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['04.08 вс'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['05.08 пн'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['06.08 вт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['07.08 ср'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['08.08 чт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['09.08 пт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['10.08 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['11.08 вс'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['12.08 пн'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['13.08 вт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['14.08 ср'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['15.08 чт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['16.08 пт'] + "</td>\
+                            <td class='schedule_table_cell'>>"+ data[i]['17.08 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['18.08 вс'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['19.08 пн'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['20.08 вт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['21.08 ср'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['22.08 чт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['23.08 пт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['24.08 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['25.08 вс'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['26.08 пн'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['27.08 вт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['28.08 ср'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['29.08 чт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['30.08 пт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['31.08 сб'] + "</td>\
+                        </tr>";
                 var wb = XLSX.utils.book_new();
                 wb.Props = {
                     Title: "Taxi_report",
@@ -380,7 +378,7 @@ function clickTeam(team) {
                     return buf;
                 }
             }
-            app = app + "</table></div>";
+            app = app + "</tbody></table></div>";
             users.append(app);
         }
     });
@@ -388,7 +386,7 @@ function clickTeam(team) {
 
 function editUsersValue(td) {
     var obj = $(td);
-    var obj_text = obj.text()
+    var obj_text = obj.text();
     var obj_ind = obj.index();
     var val_user = prompt("Введите новое значение:");
     var obj_id = obj.parent().find(".schedule_table_cell").eq(0).text();
@@ -419,6 +417,42 @@ function editUsersValue(td) {
             }
         });
     }
+
+    function fatcFte() {
+        let number = parseInt(val_user.replace(/\D+/g, ""));
+        let start = Math.floor(number / 100);
+        let end = number % 100;
+        if (val_user !== null) {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/break/modules/factFte.php",
+                data: {
+                    index_val: val_user,
+                },
+                success: function (respons) {
+                    if (respons == true) {
+                        obj.empty();
+                        if (obj_ind == 3) {
+                            obj.text(val_user);
+                        } else {
+                            obj.text(val_user);
+                        }
+                    } else {
+                        alert("Что-то пошло не так! Обратитесь к Рыкуну.");
+                    }
+                },
+                error: function (respons) {
+                    alert("К сожалению, проблемы с обработчиком. Перезагрузите страницу и попробуйте еще раз.")
+                }
+            });
+        }
+        console.log(val_user);
+        console.log(number);
+        console.log(start);
+        console.log(end);
+    }
+    fatcFte(val_user);
 }
 
 function changeDay(indWeekDay) {
@@ -440,36 +474,83 @@ function changeDay(indWeekDay) {
     });
 }
 
-$(function () {
+function accessAllowed(elem) {
+    elem.css({ "cursor": "auto" });
+    elem.on('click', function () {
+        alert("click allowed");
+    });
+}
+
+function accessNotAllowed(elem) {
+    elem.css({ "cursor": "not-allowed" });
+    elem.on('click', function () {
+        alert("click is not allowed");
+    });
+}
+
+$(".adminmenu_button").removeAttr("disabled");
+
+$(document).one('mouseover', ".wrapper_shadow", function ()       //  ПРИОРИТЕЗАЦИЯ!     
+{
     var now = new Date(),
         days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        day = days[now.getDay()];
+        //day = days[now.getDay()];
+        day = 'Friday';
 
-    var indWeekDay = 4;   //по дефолту = четверг
-    $button = $('.adminmenu_button');
-    id = localStorage.getItem('priority');
-    if (day === days[indWeekDay] && id === '1' || id === 'null') {
-        //приоритет "1" выбирает смены только в день с индексом IndWeekDay
-        //супервизоры должны быть с приоритетом "null", у других сотрудников обязательный приоритет!
-        $button.removeAttr('disabled');
-    }
-    else if (day !== days[indWeekDay] && id !== '1') {
-        $button.removeAttr('disabled');
-    }
+    //приоритет "1" выбирает смены только в день с индексом indWeekDay_pr1
+    //супервизоры должны быть с приоритетом "null", у других сотрудников обязательный приоритет!
 
-    $button.click(function () {
-        if ($(this).hasClass('disabled')) {
-            alert(localStorage.getItem('priority'));
-            return;
+    var indWeekDay_pr1 = 4;   //по дефолту = четверг     для приоритета 1
+    var indWeekDay_pr2 = [5, 6];   //по дефолту = пятница и суббота     для приоритета 2
+    var indWeekDay_pr3 = [6, 0];   //по дефолту = суббота и воскресенье     для приоритета 3
+    var id = localStorage.getItem('priority');
+    var myName = userName();
+    var myRowData = $("tr th:nth-child(2):contains('" + myName + "')").parent();
+    myRowData.each(function () {
+        /*if (id==='null')
+        {
+            $(".schedule_table th:nth-child(3), td:nth-child(3)").css({"display":""});
+        }
+        else*/ if (id !== 'null')           //не супервизоры 
+        {
+            if (day === days[indWeekDay_pr1] && id === '1') {
+                accessAllowed($(this));
+            }
+            else if ((day === days[indWeekDay_pr2[0]] || day === days[indWeekDay_pr2[1]]) && id === '2') {
+                accessAllowed($(this));
+            }
+            else if ((day === days[indWeekDay_pr3[0]] || day === days[indWeekDay_pr3[1]]) && id === '3') {
+                accessAllowed($(this));
+            }
+            else {
+                accessNotAllowed($(this));
+            }
         }
     });
 });
-/*// ключ значение
-localStorage.setItem('test', text);
-alert(localStorage.getItem('test'));*/
-//работает.
+
+$(document).one('mouseover', ".wrapper_shadow", function ()           //кликабельность ячеек
+{
+    var id = localStorage.getItem('priority');
+    var myName = userName();
+    var myRowData = $("tr th:nth-child(2):contains('" + myName + "')").parent();
+
+    if (id !== 'null') {
+        myRowData.children("td:nth-child(4)").nextAll().on('click', function () {
+            //editUsersValue($(this));
+            $(this).css({ "text-decoration": "underline" });
+        });
+    }
+    else {
+        $("td:nth-child(3)").nextAll().on('click', function () {
+            editUsersValue($(this));
+            $(this).css({ "text-decoration": "underline" });
+        });
+    }
+    $("thead .schedule_table_head th:nth-child(2)").css({ "text-decoration": "underline" });
+});
+
 $(document).on('mouseover', ".schedule_table_cell", function () {
-    var tableHead = $(".schedule_table thead");
     var table = $(".schedule_table");
     var column = $(this).index();
     var columnNum = column + 1;
@@ -480,14 +561,17 @@ $(document).on('mouseover', ".schedule_table_cell", function () {
     $(this).parent().children().css({ "background-color": "#f2f2f2" });
 });
 
+//  есть/нет смен
 function FilterShifts() {
-
-    $('.schedule_table_row').each(function () {
-        $("td:empty").addClass("glowingBorder");
-        //if($('td:empty', this).length)
-        //$(this).hide("500");
-    });
-}
+    var text = $("#filterShifts").text();
+    if (text == 'Нет смен') {
+        $("#filterShifts").html('Есть смены');
+    } else if (text == 'Есть смены') {
+        $("#filterShifts").html('Нет смен');
+    }
+    $("td").toggleClass('borderBorder');
+    $("td:empty").toggleClass('glowingBorder');
+};
 
 function userName()                                     //тянет имя с личного кабинета (формат "имя, фамилия")
 //                                                                   в формате "фамилия имя"
@@ -497,29 +581,25 @@ function userName()                                     //тянет имя с �
     var surname = username.slice(username.indexOf(" ") + 1);
     return (surname + " " + name);
 }
+//удаление всех лишних пробелов в именах
 
-function checkSpaces_username()                     //проверка на лишние пробелы
-{
-    $("tbody th:nth-child(2)").css({ "text-decoration": "underline" });
+function deleteSpaces_usernames() {
     $("tbody th:nth-child(2)").each(function () {
         var fullName = $(this).text();
-        //alert("дано имя: " + fullName);
         while (fullName[0] == " ")
             fullName = fullName.slice(1);
-        //alert("без передних пробелов: " + fullName);
         var indSpace = fullName.indexOf(" ");
-        //alert(indSpace);
         while (fullName[indSpace + 1] == " ") {
             fullName = fullName.slice(0, indSpace + 1) + fullName.slice(indSpace + 2);
         }
-        //alert("normal name: " + fullName);
+        $(this).text(fullName);
     });
 }
 
-function mySearchFunction()										//фильтр поиска по фамилии
-{
-    checkSpaces_username();                         //проверка на лишние пробелы в именах
-    // Declare variables
+//фильтр поиска по фамилии
+function mySearchFunction() {
+    deleteSpaces_usernames();                         //удаление всех лишних пробелов в именах
+
     var input, filter, table, tr, i, txtValue;
     input = document.getElementById("mySearch");
     filter = input.value.toUpperCase();
@@ -527,7 +607,7 @@ function mySearchFunction()										//фильтр поиска по фамил
     tr = table.getElementsByTagName("tr");
     var i = 0;
     var name = userName();
-    $("tbody th:nth-child(2)").each(function () {
+    $("thead > tbody th:nth-child(2)").each(function () {
         if ($(this) && $(this).text() != name) {
 
             txtValue = $(this).text();
@@ -542,8 +622,8 @@ function mySearchFunction()										//фильтр поиска по фамил
     });
 }
 
-function calcPercentage()                   //поиск введенного процента введенного числа
-{
+//поиск введенного процента введенного числа
+function calcPercentage() {
     var num1 = $(".hundread").val();
     var perc = $(".percentNum").val();
     var num2 = Math.ceil((num1 * perc) / 100);
@@ -551,8 +631,8 @@ function calcPercentage()                   //поиск введенного п
     return num2;
 }
 
-function dayHours(day)                //вырезает часы работы и считает их к-во (в пределах одной ячейки)
-{
+//вырезает часы работы и считает их к-во (в пределах одной ячейки)
+function dayHours(day) {
     var hyphenInd = day.indexOf("-");
     var start = Number(day.slice(0, hyphenInd));
     var end = Number(day.slice(hyphenInd + 1));
@@ -575,9 +655,4 @@ function countWorkHours() {
     })
     alert("Количество часов: ", sumHours);
     return sumHours;
-}
-
-function FilterShifts() {
-    $("td").toggleClass('borderBorder');
-    $("td:empty").toggleClass('glowingBorder');
 }
