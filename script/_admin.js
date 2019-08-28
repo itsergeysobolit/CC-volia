@@ -418,40 +418,39 @@ function editUsersValue(td) {
             }
         });
     }
-
-    // function factFte() {
-    //     let number = parseInt(val_user.replace(/\D+/g, ""));
-    //     let start = Math.floor(number / 100);
-    //     let end = number % 100;
-    //     if (val_user !== null) {
-    //         $.ajax({
-    //             type: "POST",
-    //             dataType: "json",
-    //             url: "/break/modules/factFte.php",
-    //             data: {
-    //                 index_val: val_user,
-    //             },
-    //             success: function (respons) {
-    //                 if (respons == true) {
-    //                     obj.empty();
-    //                     if (obj_ind == 3) {
-    //                         obj.text(val_user);
-    //                     } else {
-    //                         obj.text(val_user);
-    //                     }
-    //                 } else {
-    //                     alert("Что-то пошло не так! Обратитесь к Рыкуну.");
-    //                 }
-    //             },
-    //             error: function (respons) {
-    //                 alert("К сожалению, проблемы с обработчиком. Перезагрузите страницу и попробуйте еще раз.")
-    //             }
-    //         });
-    //     }
-    //     console.log(start);
-    // }
-
-    // factFte(val_user);
+    
+    function editFactFte() {
+        let number = parseInt(val_user.replace(/\D+/g, ""));
+        let start = Math.floor(number / 100);
+        let end = number % 100;
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/break/modules/editFactFte.php",
+            data: {
+                start: start,
+                end: end,
+                index: obj_ind
+            },
+            success: function (respons) {
+                if (respons == true) {
+                    obj.empty();
+                    if (obj_ind == 3) {
+                        obj.text(val_user);
+                    } else {
+                        obj.text(val_user);
+                    }
+                } else {
+                    alert("Что-то пошло не так! Обратитесь к Рыкуну.");
+                }
+            },
+            error: function (respons) {
+                alert("К сожалению, проблемы с обработчиком. Перезагрузите страницу и попробуйте еще раз.")
+            }
+        });
+    }
+    editFactFte(val_user);
+    console.log(obj_ind);
 }
 
 function changeDay(indWeekDay) {
@@ -655,3 +654,10 @@ function countWorkHours() {
     alert("Количество часов: " + sumHours);
     return sumHours;
 }
+
+// function editFactFte(td) {
+//     var obj = $(td);
+//     var obj_text = obj.text();
+//     console.log(obj_text);
+// onclick='editFactFte(this)'
+// }
