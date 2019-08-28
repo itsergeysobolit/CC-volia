@@ -343,7 +343,7 @@ function clickTeam(team) {
                             <td class='schedule_table_cell'>"+ data[i]['14.08 ср'] + "</td>\
                             <td class='schedule_table_cell'>"+ data[i]['15.08 чт'] + "</td>\
                             <td class='schedule_table_cell'>"+ data[i]['16.08 пт'] + "</td>\
-                            <td class='schedule_table_cell'>>"+ data[i]['17.08 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['17.08 сб'] + "</td>\
                             <td class='schedule_table_cell'>"+ data[i]['18.08 вс'] + "</td>\
                             <td class='schedule_table_cell'>"+ data[i]['19.08 пн'] + "</td>\
                             <td class='schedule_table_cell'>"+ data[i]['20.08 вт'] + "</td>\
@@ -382,6 +382,7 @@ function clickTeam(team) {
             users.append(app);
         }
     });
+    changeShift();
 }
 
 function editUsersValue(td) {
@@ -418,41 +419,39 @@ function editUsersValue(td) {
         });
     }
 
-    function fatcFte() {
-        let number = parseInt(val_user.replace(/\D+/g, ""));
-        let start = Math.floor(number / 100);
-        let end = number % 100;
-        if (val_user !== null) {
-            $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: "/break/modules/factFte.php",
-                data: {
-                    index_val: val_user,
-                },
-                success: function (respons) {
-                    if (respons == true) {
-                        obj.empty();
-                        if (obj_ind == 3) {
-                            obj.text(val_user);
-                        } else {
-                            obj.text(val_user);
-                        }
-                    } else {
-                        alert("Что-то пошло не так! Обратитесь к Рыкуну.");
-                    }
-                },
-                error: function (respons) {
-                    alert("К сожалению, проблемы с обработчиком. Перезагрузите страницу и попробуйте еще раз.")
-                }
-            });
-        }
-        console.log(val_user);
-        console.log(number);
-        console.log(start);
-        console.log(end);
-    }
-    fatcFte(val_user);
+    // function factFte() {
+    //     let number = parseInt(val_user.replace(/\D+/g, ""));
+    //     let start = Math.floor(number / 100);
+    //     let end = number % 100;
+    //     if (val_user !== null) {
+    //         $.ajax({
+    //             type: "POST",
+    //             dataType: "json",
+    //             url: "/break/modules/factFte.php",
+    //             data: {
+    //                 index_val: val_user,
+    //             },
+    //             success: function (respons) {
+    //                 if (respons == true) {
+    //                     obj.empty();
+    //                     if (obj_ind == 3) {
+    //                         obj.text(val_user);
+    //                     } else {
+    //                         obj.text(val_user);
+    //                     }
+    //                 } else {
+    //                     alert("Что-то пошло не так! Обратитесь к Рыкуну.");
+    //                 }
+    //             },
+    //             error: function (respons) {
+    //                 alert("К сожалению, проблемы с обработчиком. Перезагрузите страницу и попробуйте еще раз.")
+    //             }
+    //         });
+    //     }
+    //     console.log(start);
+    // }
+
+    // factFte(val_user);
 }
 
 function changeDay(indWeekDay) {
@@ -489,16 +488,15 @@ function accessNotAllowed(elem) {
 }
 
 $(".adminmenu_button").removeAttr("disabled");
+//  ПРИОРИТЕЗАЦИЯ!  
 
-$(document).one('mouseover', ".wrapper_shadow", function ()       //  ПРИОРИТЕЗАЦИЯ!     
-{
+$(document).one('mouseover', ".wrapper_shadow", function () {
     var now = new Date(),
         days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        //day = days[now.getDay()];
-        day = 'Friday';
+        day = days[now.getDay()];
 
     //приоритет "1" выбирает смены только в день с индексом indWeekDay_pr1
-    //супервизоры должны быть с приоритетом "null", у других сотрудников обязательный приоритет!
+    //супервизоры должны быть с приоритетом 0, у других сотрудников обязательный приоритет!
 
     var indWeekDay_pr1 = 4;   //по дефолту = четверг     для приоритета 1
     var indWeekDay_pr2 = [5, 6];   //по дефолту = пятница и суббота     для приоритета 2
@@ -511,8 +509,8 @@ $(document).one('mouseover', ".wrapper_shadow", function ()       //  ПРИОР
         {
             $(".schedule_table th:nth-child(3), td:nth-child(3)").css({"display":""});
         }
-        else*/ if (id !== 'null')           //не супервизоры 
-        {
+        //не супервизоры 
+        else*/ if (id !== '0') {
             if (day === days[indWeekDay_pr1] && id === '1') {
                 accessAllowed($(this));
             }
@@ -529,26 +527,27 @@ $(document).one('mouseover', ".wrapper_shadow", function ()       //  ПРИОР
     });
 });
 
-$(document).one('mouseover', ".wrapper_shadow", function ()           //кликабельность ячеек
-{
-    var id = localStorage.getItem('priority');
-    var myName = userName();
-    var myRowData = $("tr th:nth-child(2):contains('" + myName + "')").parent();
+//кликабельность ячеек
+function changeShift() {
+    $(document).one('mouseover', ".wrapper_shadow", function () {
+        var id = localStorage.getItem('priority');
+        var myName = userName();
+        var myRowData = $("tr th:nth-child(2):contains('" + myName + "')").parent();
 
-    if (id !== 'null') {
-        myRowData.children("td:nth-child(4)").nextAll().on('click', function () {
-            //editUsersValue($(this));
-            $(this).css({ "text-decoration": "underline" });
-        });
-    }
-    else {
-        $("td:nth-child(3)").nextAll().on('click', function () {
-            editUsersValue($(this));
-            $(this).css({ "text-decoration": "underline" });
-        });
-    }
-    $("thead .schedule_table_head th:nth-child(2)").css({ "text-decoration": "underline" });
-});
+        if (id !== '0') {
+            myRowData.children("td:nth-child(4)").nextAll().on('click', function () {
+                editUsersValue($(this));
+                $(this).css({ "text-decoration": "underline" });
+            });
+        }
+        else {
+            $("td:nth-child(3)").nextAll().on('click', function () {
+                editUsersValue($(this));
+                $(this).css({ "text-decoration": "underline" });
+            });
+        }
+    });
+}
 
 $(document).on('mouseover', ".schedule_table_cell", function () {
     var table = $(".schedule_table");
@@ -573,9 +572,9 @@ function FilterShifts() {
     $("td:empty").toggleClass('glowingBorder');
 };
 
-function userName()                                     //тянет имя с личного кабинета (формат "имя, фамилия")
-//                                                                   в формате "фамилия имя"
-{
+//тянет имя с личного кабинета (формат "имя, фамилия")
+//в формате "фамилия имя"
+function userName() {
     var username = $(".login_userName").text();
     var name = username.slice(0, username.indexOf(","));
     var surname = username.slice(username.indexOf(" ") + 1);
@@ -648,11 +647,11 @@ function countWorkHours() {
     var myName = userName();
     var myIndex = $("tr th:nth-child(2):contains('" + myName + "')").parent().index("tr");
     var sumHours = 0;
-    $("tr td:nth-child(3)").eq(myIndex).nextAll().each(function () {
+    $("tr td:nth-child(3)").eq(myIndex - 1).nextAll().each(function () {
         if ($(this).text().includes("-")) {
             sumHours += dayHours($(this).text());
         }
     })
-    alert("Количество часов: ", sumHours);
+    alert("Количество часов: " + sumHours);
     return sumHours;
 }
