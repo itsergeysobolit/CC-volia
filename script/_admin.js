@@ -275,7 +275,7 @@ function clickTeam(team) {
     wrapper.remove();
     var app = '<div class="wrapper_shadow">\
                     <table class="schedule_table" id="schedule_table">\
-                    <input id="button-a" class="taxi-btn" type="button" value="Выгрузить отчет">\
+                    <input id="button-b" class="taxi-btn" type="button" value="Выгрузить отчет">\
                         <tr class="schedule_table_head">\
                             <th class="schedule_table_cell" style="display:none;">id</th>\
                             <th class="schedule_table_cell">ФИО</th>\
@@ -359,24 +359,31 @@ function clickTeam(team) {
                             <td class='schedule_table_cell'>"+ data[i]['30.08 пт'] + "</td>\
                             <td class='schedule_table_cell'>"+ data[i]['31.08 сб'] + "</td>\
                         </tr>";
+                wrapper.append(app + "</table>");
                 var wb = XLSX.utils.book_new();
                 wb.Props = {
-                    Title: "Taxi_report",
-                    Subject: "Taxi",
-                    Author: "Red Stapler",
+                    Title: "Schedule_report",
+                    Subject: "Schedule",
+                    Author: "Red Garden",
                     CreatedDate: new Date()
                 };
-                wb.SheetNames.push("Taxi_Report");
+                wb.SheetNames.push("Schedule_Report");
                 //                var ws_data = [['hello' , 'world']];
                 var ws = XLSX.utils.json_to_sheet(data);
-                wb.Sheets["Taxi_Report"] = ws;
+                wb.Sheets["Schedule_Report"] = ws;
                 var wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
                 function s2ab(s) {
+
                     var buf = new ArrayBuffer(s.length);
                     var view = new Uint8Array(buf);
                     for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
                     return buf;
+
                 }
+                $("#button-b").click(function () {
+                    console.log(1);
+                    saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'schedule.xlsx');
+                });
             }
             app = app + "</tbody></table></div>";
             users.append(app);
@@ -389,7 +396,11 @@ function editUsersValue(td) {
     var obj = $(td);
     var obj_text = obj.text();
     var obj_ind = obj.index();
-    var val_user = prompt("Введите новое значение:");
+    var val_user = prompt("Введите свою смену:", "Формат ввода: '03-08'");
+    // while (val_user !== new RegExp("^([0-1][0-9]|2[0-3]):[0-5][0-9]$")) {
+    //     alert("Вы ввели некорректные данные");
+    //     val_user = prompt("Введите свою смену:", "Формат ввода: '03-08'");
+    // }
     var obj_id = obj.parent().find(".schedule_table_cell").eq(0).text();
     if (val_user !== null) {
         $.ajax({
@@ -418,7 +429,7 @@ function editUsersValue(td) {
             }
         });
     }
-    
+
     function editFactFte() {
         let number = parseInt(val_user.replace(/\D+/g, ""));
         let start = Math.floor(number / 100);
@@ -654,10 +665,3 @@ function countWorkHours() {
     alert("Количество часов: " + sumHours);
     return sumHours;
 }
-
-// function editFactFte(td) {
-//     var obj = $(td);
-//     var obj_text = obj.text();
-//     console.log(obj_text);
-// onclick='editFactFte(this)'
-// }
