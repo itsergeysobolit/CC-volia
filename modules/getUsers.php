@@ -21,6 +21,13 @@ if ($result) {
         $row = mysqli_fetch_row($result);
         $getUsers_array[$i]["id"] = $row[0];
         $getUsers_array[$i]["team"] = $row[1];
+        for ($y = 0; $y < count($getFio_array); $y++) {
+            for ($j = 0; $j < count($getUsers_array); $j++) {
+                if ($getFio_array[$y]["id"] == $getUsers_array[$j]["id"]) {
+                    $getUsers_array[$j]["fio"] = $getFio_array[$y]["fio"];
+                }
+            }
+        }
         $getUsers_array[$i]['01.08 чт'] = $row[4];
         $getUsers_array[$i]['02.08 пт'] = $row[5];
         $getUsers_array[$i]['03.08 сб'] = $row[6];
@@ -53,13 +60,7 @@ if ($result) {
         $getUsers_array[$i]['30.08 пт'] = $row[33];
         $getUsers_array[$i]['31.08 сб'] = $row[34];
     }
-    for ($y = 0; $y < count($getFio_array); $y++) {
-        for ($j = 0; $j < count($getUsers_array); $j++) {
-            if ($getFio_array[$y]["id"] == $getUsers_array[$j]["id"]) {
-                $getUsers_array[$j]["fio"] = $getFio_array[$y]["fio"];
-            }
-        }
-    }
+
     echo json_encode($getUsers_array);
 } else {
     echo "<script>alert('Что-то не так');</script>";

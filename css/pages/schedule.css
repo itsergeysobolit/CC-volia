@@ -62,9 +62,8 @@
     text-decoration: none;
     outline: none;
     display: inline-block;
-    padding: 20px 30px;
+    padding: 15px 20px;
     margin: 10px 20px;
-    margin-right: auto;
     position: relative;
     color: #3a4750;
     border: none;
@@ -73,6 +72,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: DinProRegular;
+    cursor: pointer;
 }
 
 .button:before, .button:after {
@@ -114,13 +114,64 @@
     transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
 }
 
+.button_download {
+    padding: 25px 40px;
+    color: white;
+    border: none;
+    border-bottom: 3px solid white;
+    background-color: red;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: DinProRegular;
+}
+
+.button_download:before, .button_download:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.button_download:before {
+    border-bottom: none;
+    bottom: 0;
+    left: 0;
+    border-left: 3px solid white;
+    border-top: 3px solid white;
+    transition: 0s ease opacity 0.8s, 0.2s ease width 0.4s, 0.2s ease height 0.6s;
+}
+
+.button_download:after {
+    top: 0;
+    right: 0;
+    border-right: 3px solid white;
+    transition: 0s ease opacity 0.4s, 0.2s ease width, 0.2s ease height 0.2s;
+}
+
+.button_download:hover:before, .button_download:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+.button_download:hover:before {
+    transition: 0s ease opacity 0s, 0.2s ease height, 0.2s ease width 0.2s;
+}
+
+.button_download:hover:after {
+    transition: 0s ease opacity 0.4s, 0.2s ease height 0.4s, 0.2s ease width 0.6s;
+}
+
 .filterShifts, .calcWorkHours {
+    cursor: pointer;
     text-decoration: none;
     outline: none;
     display: inline-block;
-    padding: 20px 0;
-    margin: 10px 20px;
-    margin-right: auto;
+    padding: 15px 20px;
+    margin: 10px 0;
+    margin-right: 40px;
     position: relative;
     color: #fff;
     border: none;
@@ -187,13 +238,12 @@
     text-decoration: none;
     outline: none;
     display: inline-block;
-    padding: 6px 30px;
-    margin: 23px 0;
+    padding: 10px 15px;
+    margin: 10px 0;
     font-size: 14pt;
     font-family: DinProLight;
     border: 3px solid #1a73e8;
     border-style: ridge;
-    margin-left: auto;
     background-color: #e7e7e7;
 }
 
