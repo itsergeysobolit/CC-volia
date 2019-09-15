@@ -1,9 +1,14 @@
 .schedule_table {
+  cursor: pointer;
   padding: 20px;
   text-align: center;
   margin-top: 30px;
   max-width: 500px;
   white-space: nowrap;
+}
+
+th.schedule_table_cell {
+  font-size: 20px;
 }
 
 .schedule_table_head {

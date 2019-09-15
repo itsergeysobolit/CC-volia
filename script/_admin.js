@@ -395,7 +395,9 @@ function editUsersValue(td) {
     var obj = $(td);
     var obj_text = obj.text();
     var obj_ind = obj.index();
+
     var val_user = prompt("Введите свою смену:", "Формат ввода: '03-08'");
+    if (val_user.match(/^(d{1,2}|m{1,2}|y{4}|y{2})([^a-zA-Z0-9]+)(d{1,2}|m{1,2}|y{4}|y{2})\2(d{1,2}|m{1,2}|y{4}|y{2})$/)) alert('вы ввели не только цифры');
     // while (val_user !== new RegExp("^([0-1][0-9]|2[0-3]):[0-5][0-9]$")) {
     //     alert("Вы ввели некорректные данные");
     //     val_user = prompt("Введите свою смену:", "Формат ввода: '03-08'");
@@ -547,12 +549,14 @@ function changeShift() {
             myRowData.children("td:nth-child(4)").nextAll().on('click', function () {
                 editUsersValue($(this));
                 $(this).css({ "text-decoration": "underline" });
+                $(this).css({ "pointer-events": "none" });
             });
         }
         else {
             $("td:nth-child(3)").nextAll().on('click', function () {
                 editUsersValue($(this));
                 $(this).css({ "text-decoration": "underline" });
+                $(this).css({ "pointer-events": "none" });
             });
         }
     });
@@ -605,7 +609,7 @@ function deleteSpaces_usernames() {
 }
 
 //фильтр поиска по фамилии
-function mySearchFunction() {
+function mySearchFunction() {									//фильтр поиска по фамилии
     deleteSpaces_usernames();                         //удаление всех лишних пробелов в именах
 
     var input, filter, table, tr, i, txtValue;
@@ -615,15 +619,16 @@ function mySearchFunction() {
     tr = table.getElementsByTagName("tr");
     var i = 0;
     var name = userName();
-    $("thead > tbody th:nth-child(2)").each(function () {
-        if ($(this) && $(this).text() != name) {
-
-            txtValue = $(this).text();
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            }
-            else {
-                tr[i].style.display = "none";
+    $("th:nth-child(2)").each(function () {
+        if ($(this).parent().hasClass("schedule_table_row")) {
+            if ($(this) && ($(this).text() != name)) {
+                txtValue = $(this).text();
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
             }
         }
         i++;
