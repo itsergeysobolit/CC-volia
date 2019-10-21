@@ -262,6 +262,7 @@ function schedule() {
                 <button class="button" value="SOIP_Khmelnitsky_Kykot" onclick="clickTeam(this.value)">Team Kykot</button>\
                 <button class="button" value="SOIP_Khmelnitsky_Mikhailovskaya" onclick="clickTeam(this.value)">Team Mikhailovskaya</button>\
                 <button class="button" value="I_Cross" onclick="clickTeam(this.value)">Team I_Cross</button>\
+                <button class="button" value="I_Cross" onclick="clickTeam(this.value)">All Team</button>\
                 <button class="filterShifts" onclick="FilterShifts()">Есть/нет смены</button>\
                 <button type="button" class="calcWorkHours" onclick="countWorkHours()">Рабочие часы</button>\
                 <input type="text" id="mySearch" placeholder="Пошук.." onkeyup="mySearchFunction()" title="Type in a category">\
@@ -281,37 +282,36 @@ function clickTeam(team) {
                             <th class="schedule_table_cell" style="display:none;">id</th>\
                             <th class="schedule_table_cell">ФИО</th>\
                             <th class="schedule_table_cell">Team</th>\
-                            <th class="schedule_table_cell">01.08 чт</th>\
-                            <th class="schedule_table_cell">02.08 пт</th>\
-                            <th class="schedule_table_cell">03.08 сб</th>\
-                            <th class="schedule_table_cell">04.08 вс</th>\
-                            <th class="schedule_table_cell">05.08 пн</th>\
-                            <th class="schedule_table_cell">06.08 вт</th>\
-                            <th class="schedule_table_cell">07.08 ср</th>\
-                            <th class="schedule_table_cell">08.08 чт</th>\
-                            <th class="schedule_table_cell">09.08 пт</th>\
-                            <th class="schedule_table_cell">10.08 сб</th>\
-                            <th class="schedule_table_cell">11.08 вс</th>\
-                            <th class="schedule_table_cell">12.08 пн</th>\
-                            <th class="schedule_table_cell">13.08 вт</th>\
-                            <th class="schedule_table_cell">14.08 ср</th>\
-                            <th class="schedule_table_cell">15.08 чт</th>\
-                            <th class="schedule_table_cell">16.08 пт</th>\
-                            <th class="schedule_table_cell">17.08 сб</th>\
-                            <th class="schedule_table_cell">18.08 вс</th>\
-                            <th class="schedule_table_cell">19.08 пн</th>\
-                            <th class="schedule_table_cell">20.08 вт</th>\
-                            <th class="schedule_table_cell">21.08 ср</th>\
-                            <th class="schedule_table_cell">22.08 чт</th>\
-                            <th class="schedule_table_cell">23.08 пт</th>\
-                            <th class="schedule_table_cell">24.08 сб</th>\
-                            <th class="schedule_table_cell">25.08 вс</th>\
-                            <th class="schedule_table_cell">26.08 пн</th>\
-                            <th class="schedule_table_cell">27.08 вт</th>\
-                            <th class="schedule_table_cell">28.08 ср</th>\
-                            <th class="schedule_table_cell">29.08 чт</th>\
-                            <th class="schedule_table_cell">30.08 пт</th>\
-                            <th class="schedule_table_cell">31.08 сб</th>\
+                            <th class="schedule_table_cell">01.11 пт</th>\
+                            <th class="schedule_table_cell">02.11 сб</th>\
+                            <th class="schedule_table_cell">03.11 вс</th>\
+                            <th class="schedule_table_cell">04.11 пн</th>\
+                            <th class="schedule_table_cell">05.11 вт</th>\
+                            <th class="schedule_table_cell">06.11 ср</th>\
+                            <th class="schedule_table_cell">07.11 чт</th>\
+                            <th class="schedule_table_cell">08.11 пт</th>\
+                            <th class="schedule_table_cell">09.11 сб</th>\
+                            <th class="schedule_table_cell">10.11 вс</th>\
+                            <th class="schedule_table_cell">11.11 пн</th>\
+                            <th class="schedule_table_cell">12.11 вт</th>\
+                            <th class="schedule_table_cell">13.11 ср</th>\
+                            <th class="schedule_table_cell">14.11 чт</th>\
+                            <th class="schedule_table_cell">15.11 пт</th>\
+                            <th class="schedule_table_cell">16.11 сб</th>\
+                            <th class="schedule_table_cell">17.11 вс</th>\
+                            <th class="schedule_table_cell">18.11 пн</th>\
+                            <th class="schedule_table_cell">19.11 вт</th>\
+                            <th class="schedule_table_cell">20.11 ср</th>\
+                            <th class="schedule_table_cell">21.11 чт</th>\
+                            <th class="schedule_table_cell">22.11 пт</th>\
+                            <th class="schedule_table_cell">23.11 сб</th>\
+                            <th class="schedule_table_cell">24.11 вс</th>\
+                            <th class="schedule_table_cell">25.11 пн</th>\
+                            <th class="schedule_table_cell">26.11 вт</th>\
+                            <th class="schedule_table_cell">27.11 ср</th>\
+                            <th class="schedule_table_cell">28.11 чт</th>\
+                            <th class="schedule_table_cell">29.11 пт</th>\
+                            <th class="schedule_table_cell">30.11 сб</th>\
                         </tr>';
     $.ajax({
         type: "POST",
@@ -328,37 +328,36 @@ function clickTeam(team) {
                             <td class='schedule_table_cell' style='display:none;'>"+ data[i]['id'] + "</td>\
                             <th class='schedule_table_cell'>"+ data[i]['fio'] + "</th>\
                             <td class='schedule_table_cell'>"+ data[i]['team'] + "</td>\
-                            <td class='schedule_table_cell'>" + data[i]['01.08 чт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['02.08 пт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['03.08 сб'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['04.08 вс'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['05.08 пн'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['06.08 вт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['07.08 ср'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['08.08 чт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['09.08 пт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['10.08 сб'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['11.08 вс'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['12.08 пн'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['13.08 вт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['14.08 ср'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['15.08 чт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['16.08 пт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['17.08 сб'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['18.08 вс'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['19.08 пн'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['20.08 вт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['21.08 ср'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['22.08 чт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['23.08 пт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['24.08 сб'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['25.08 вс'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['26.08 пн'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['27.08 вт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['28.08 ср'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['29.08 чт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['30.08 пт'] + "</td>\
-                            <td class='schedule_table_cell'>"+ data[i]['31.08 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['01.11 пт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['02.11 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['03.11 вс'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['04.11 пн'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['05.11 вт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['06.11 ср'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['07.11 чт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['08.11 пт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['09.11 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['10.11 вс'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['11.11 пн'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['12.11 вт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['13.11 ср'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['14.11 чт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['15.11 пт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['16.11 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['17.11 вс'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['18.11 пн'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['19.11 вт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['20.11 ср'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['21.11 чт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['22.11 пт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['23.11 сб'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['24.11 вс'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['25.11 пн'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['26.11 вт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['27.11 ср'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['28.11 чт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['29.11 пт'] + "</td>\
+                            <td class='schedule_table_cell'>"+ data[i]['30.11 сб'] + "</td>\
                         </tr>";
             }
             app = app + "</tbody></table></div>";
